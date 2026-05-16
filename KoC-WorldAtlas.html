@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kittens of Chaos — The Realm Atlas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #020408;
+    --deep: #06090f;
+    --surface: #0a0f1a;
+    --panel: #0d1422;
+    --border: #1a2540;
+    --gold: #c9a84c;
+    --gold-bright: #f0c060;
+    --gold-dim: #7a5f28;
+    --purple: #7b3fa0;
+    --purple-bright: #b06fd4;
+    --purple-glow: #d4a0ff;
+    --blue: #1e6fa8;
+    --blue-bright: #4db8ff;
+    --blue-glow: #00d4ff;
+    --white-soft: #e8eaf0;
+    --text-dim: #6a7a9a;
+    --chaos-star: #ff6b35;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--void);
+    color: var(--white-soft);
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* Animated star field background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(200,180,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(100,180,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 10%, rgba(255,220,150,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 80%, rgba(200,180,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 40%, rgba(100,180,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 90%, rgba(255,220,150,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 15%, rgba(200,180,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 45%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 25%, rgba(200,180,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 55%, rgba(100,180,255,0.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Cosmic nebula overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 30%, rgba(123,63,160,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 80% 70%, rgba(30,111,168,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+  /* ═══ HEADER ═══ */
+  header {
+    position: relative;
+    text-align: center;
+    padding: 60px 24px 40px;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--purple-bright), var(--gold), transparent);
+  }
+
+  .chaos-star-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 16px;
+    animation: rotateStar 20s linear infinite;
+    filter: drop-shadow(0 0 12px var(--gold));
+  }
+
+  @keyframes rotateStar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .site-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    background: linear-gradient(135deg, var(--gold-bright), var(--purple-glow), var(--gold-bright));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .site-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .momther-quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--purple-glow);
+    max-width: 600px;
+    margin: 0 auto 8px;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+  }
+
+  /* ═══ NAV ═══ */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(2,4,8,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(123,63,160,0.2), rgba(201,168,76,0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--gold-bright);
+    border-color: var(--gold-dim);
+    box-shadow: 0 0 20px rgba(201,168,76,0.15), inset 0 0 20px rgba(201,168,76,0.05);
+  }
+
+  .nav-btn:hover::before, .nav-btn.active::before { opacity: 1; }
+
+  /* ═══ SECTIONS ═══ */
+  .section { display: none; padding: 48px 0; animation: fadeIn 0.5s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    background: linear-gradient(135deg, var(--gold-bright), var(--purple-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  .section-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--purple), var(--gold-dim), transparent);
+    margin: 16px auto;
+    max-width: 400px;
+  }
+
+  .section-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+
+  /* ═══ HOUSES GRID ═══ */
+  .houses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* Center the Octarine Axis card */
+  .octarine-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .house-card {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+  }
+
+  .house-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--house-color);
+    box-shadow: 0 0 20px var(--house-color);
+  }
+
+  .house-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top, rgba(var(--house-rgb), 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .house-card:hover {
+    border-color: var(--house-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(var(--house-rgb), 0.2), 0 0 0 1px var(--house-color);
+  }
+
+  .house-card:hover::after { opacity: 1; }
+
+  .house-color-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--house-color);
+    box-shadow: 0 0 12px var(--house-color);
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .house-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--house-color);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+  }
+
+  .house-keyword {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+
+  .house-domains {
+    font-size: 0.82rem;
+    color: rgba(232,234,240,0.7);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .house-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border: 1px solid rgba(var(--house-rgb), 0.4);
+    color: var(--house-color);
+    margin: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Octarine special card */
+  .octarine-card {
+    max-width: 500px;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(123,63,160,0.15), rgba(201,168,76,0.08), rgba(30,111,168,0.1));
+    border: 1px solid var(--gold-dim);
+    text-align: center;
+  }
+
+  .octarine-card::before {
+    background: linear-gradient(90deg, var(--purple), var(--gold), var(--blue));
+    box-shadow: 0 0 30px rgba(201,168,76,0.4);
+  }
+
+  .octarine-symbol {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+    filter: drop-shadow(0 0 8px var(--gold));
+  }
+
+  /* ═══ CHARACTERS GRID ═══ */
+  .characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .char-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .char-card:hover {
+    border-color: var(--purple-bright);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(123,63,160,0.25);
+  }
+
+  .char-header {
+    padding: 20px 20px 0;
+    position: relative;
+  }
+
+  .char-portrait {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--house-color, var(--purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    border: 2px solid var(--house-color, var(--purple));
+    box-shadow: 0 0 20px rgba(var(--house-rgb, 123,63,160), 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .char-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--white-soft);
+    margin-bottom: 4px;
+  }
+
+  .char-house-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border: 1px solid rgba(var(--house-rgb, 123,63,160), 0.5);
+    color: var(--house-color, var(--purple-bright));
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+
+  .char-body { padding: 0 20px 20px; }
+
+  .char-desc {
+    font-size: 0.82rem;
+    color: rgba(232,234,240,0.65);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .char-power {
+    font-size: 0.75rem;
+    color: var(--blue-bright);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .char-power::before { content: '◆'; color: var(--gold-dim); flex-shrink: 0; margin-top: 1px; }
+
+  .pending-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  /* ═══ ARCHITECTS ═══ */
+  .architects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .arch-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .arch-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--gold), var(--purple));
+  }
+
+  .arch-card:hover {
+    border-color: var(--gold-dim);
+    box-shadow: 0 0 32px rgba(201,168,76,0.1);
+    transform: translateX(4px);
+  }
+
+  .arch-warning {
+    position: absolute;
+    top: 16px; right: 16px;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-dim);
+    border: 1px solid var(--gold-dim);
+    padding: 2px 6px;
+    text-transform: uppercase;
+  }
+
+  .arch-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--gold-bright);
+    margin-bottom: 4px;
+    padding-right: 60px;
+  }
+
+  .arch-title {
+    font-size: 0.75rem;
+    color: var(--purple-bright);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .arch-epithet {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  .arch-desc {
+    font-size: 0.82rem;
+    color: rgba(232,234,240,0.65);
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 2px solid var(--border);
+    padding-left: 12px;
+  }
+
+  /* ═══ DIMENSIONS ═══ */
+  .dimensions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .dim-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .dim-type-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid;
+  }
+
+  .dim-type-woven { color: var(--purple-bright); border-color: var(--purple); background: rgba(123,63,160,0.1); }
+  .dim-type-claimed { color: var(--blue-bright); border-color: var(--blue); background: rgba(30,111,168,0.1); }
+  .dim-type-found { color: var(--gold-bright); border-color: var(--gold-dim); background: rgba(201,168,76,0.1); }
+
+  .dim-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    color: var(--white-soft);
+    margin-bottom: 8px;
+    padding-right: 80px;
+  }
+
+  .dim-desc {
+    font-size: 0.82rem;
+    color: rgba(232,234,240,0.65);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .dim-detail {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .dim-detail strong { color: var(--gold-dim); min-width: 70px; }
+
+  /* ═══ LORE / ABOUT ═══ */
+  .lore-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    .lore-layout { grid-template-columns: 1fr; }
+  }
+
+  .lore-block {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+  }
+
+  .lore-block-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lore-block-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-dim), transparent);
+  }
+
+  .lore-text {
+    font-size: 0.88rem;
+    color: rgba(232,234,240,0.75);
+    line-height: 1.8;
+  }
+
+  .lore-text em {
+    color: var(--purple-glow);
+    font-style: italic;
+  }
+
+  .lore-text strong {
+    color: var(--gold-bright);
+    font-weight: 500;
+  }
+
+  .myth-quote {
+    background: linear-gradient(135deg, rgba(123,63,160,0.1), rgba(30,111,168,0.05));
+    border-left: 3px solid var(--purple);
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--purple-glow);
+    line-height: 1.7;
+  }
+
+  .theme-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .theme-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    transition: all 0.2s;
+  }
+
+  .theme-tag:hover {
+    border-color: var(--purple);
+    color: var(--purple-glow);
+  }
+
+  /* ═══ FOOTER ═══ */
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    position: relative;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 400px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--purple), var(--gold), var(--purple), transparent);
+  }
+
+  /* ═══ SCROLLBAR ═══ */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--void); }
+  ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+
+  /* ═══ MODAL ═══ */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(2,4,8,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--panel);
+    border: 1px solid var(--gold-dim);
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 60px rgba(123,63,160,0.3), 0 0 120px rgba(201,168,76,0.1);
+    animation: modalIn 0.3s ease;
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(-20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-header {
+    padding: 28px 28px 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    width: 32px; height: 32px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .modal-close:hover { border-color: var(--gold-dim); color: var(--gold-bright); }
+
+  .modal-body { padding: 0 28px 28px; }
+
+  .modal-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    color: var(--gold-bright);
+    margin-bottom: 6px;
+  }
+
+  .modal-subtitle {
+    font-size: 0.8rem;
+    color: var(--purple-bright);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .modal-section {
+    margin-bottom: 20px;
+  }
+
+  .modal-section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .modal-text {
+    font-size: 0.85rem;
+    color: rgba(232,234,240,0.75);
+    line-height: 1.7;
+  }
+
+  .status-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #4ade80;
+    margin-top: 8px;
+  }
+
+  .status-live::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: pulse 2s infinite;
+  }
+
+  .status-pending {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  .status-pending::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Glitch effect for Living Storyworld text */
+  .glitch {
+    position: relative;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="chaos-star-icon">✸</span>
+  <h1 class="site-title">Kittens of Chaos</h1>
+  <p class="site-subtitle">The Realm Atlas · Living Storyworld</p>
+  <p class="momther-quote">"Not all who wander are lost. Some are just... between."</p>
+</header>
+
+<nav>
+  <button class="nav-btn active" onclick="showSection('about')">The Realm</button>
+  <button class="nav-btn" onclick="showSection('houses')">Eight Houses</button>
+  <button class="nav-btn" onclick="showSection('characters')">Characters</button>
+  <button class="nav-btn" onclick="showSection('architects')">Architects</button>
+  <button class="nav-btn" onclick="showSection('dimensions')">Dimensions</button>
+</nav>
+
+<div class="container">
+
+  <!-- ═══ ABOUT / THE REALM ═══ -->
+  <div id="about" class="section active">
+    <div class="section-header">
+      <h2 class="section-title">The Living Realm</h2>
+      <div class="section-rule"></div>
+      <p class="section-desc">A mythic universe that breathes in real time</p>
+    </div>
+
+    <div class="lore-layout">
+      <div class="lore-block">
+        <div class="lore-block-title">What is Kittens of Chaos</div>
+        <p class="lore-text">
+          Kittens of Chaos is a <strong>living transmedia mythic universe</strong> created by Kelleigh <em>"Mömther"</em> Jones-Coles. You might look at it and think... cat content! And you would not be entirely wrong. But beneath that, you will find a cosmos where <strong>cats are fairy creatures</strong>, realms shift and breathe between dimensions, and chaos itself has a language all its own.
+        </p>
+        <br>
+        <p class="lore-text">
+          The whole universe is organized around the <strong>Chaos Star</strong>; an eight-pointed symbolic system that houses Eight Houses, each one representing a fundamental metaphysical force. And at the very center, outside and above all of the Houses, you will find <em>Mömther</em>... the Octarine Axis. She is not a House. She is the heart that connects them all.
+        </p>
+        <div class="myth-quote">
+          "There is a Realm that remembers you. Cats walk its edges. Chaos guards its gate."
+        </div>
+        <div class="theme-tags">
+          <span class="theme-tag">Liminality</span>
+          <span class="theme-tag">Sacred Chaos</span>
+          <span class="theme-tag">Dimensional Travel</span>
+          <span class="theme-tag">Paradox Magic</span>
+          <span class="theme-tag">Memory & Myth</span>
+          <span class="theme-tag">Transformation</span>
+          <span class="theme-tag">Cosmic Horror</span>
+          <span class="theme-tag">Dark Whimsy</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="lore-block" style="margin-bottom: 20px;">
+          <div class="lore-block-title">The Living Storyworld</div>
+          <p class="lore-text">
+            Now, you might ask... what is a living storyworld, exactly? It is not just a fictional setting, I will tell you that much! It is an <strong>evolving mythic framework</strong> that is designed to feel partially alive; as though the Realm is unfolding all around you while you stand inside it.
+          </p>
+          <br>
+          <p class="lore-text">
+            Think of it this way. The <em>storyworld</em> is the stage, the places and the characters and the lore. But the <em>living mythos</em> is the heartbeat beneath all of that; the ancient archetypes and symbols that are still being discovered even now. Together, they make KoC not just something to watch, but something to <strong>live inside.</strong>
+          </p>
+        </div>
+
+        <div class="lore-block">
+          <div class="lore-block-title">Active Threats</div>
+          <p class="lore-text" style="margin-bottom: 12px;">
+            <strong style="color: #ff4444;">The MachineRealm.</strong> The Ruinborne Corruption. It is an existential, machine-like threat that spreads through realms and warps them from the inside out. Every thousand years or so, its influence rises to a peak... and that time, I am afraid, is very much now.
+          </p>
+          <p class="lore-text">
+            The <strong>Little Season</strong> has begun. The Houses are mobilizing. Portals are opening. And Sable has already gone through.
+          </p>
+          <div class="status-live">Little Season — Active</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ EIGHT HOUSES ═══ -->
+  <div id="houses" class="section">
+    <div class="section-header">
+      <h2 class="section-title">The Eight Houses</h2>
+      <div class="section-rule"></div>
+      <p class="section-desc">The Chaos Star... eight points of metaphysical force, each one a world unto itself</p>
+    </div>
+
+    <!-- Octarine Axis -->
+    <div class="octarine-wrap">
+      <div class="house-card octarine-card" onclick="openModal('octarine')">
+        <span class="octarine-symbol">✸</span>
+        <div class="house-name" style="justify-content:center; color: var(--gold-bright);">
+          The Octarine Axis
+        </div>
+        <div class="house-keyword" style="text-align:center;">Mömther · The Heart · The Center</div>
+        <div class="house-domains" style="text-align:center;">
+          She is not a House. She is the living center that connects all eight of them. She is the source, the keeper of cats, and the weaver of all realms. Click to learn more...
+        </div>
+      </div>
+    </div>
+
+    <div class="houses-grid">
+
+      <div class="house-card" style="--house-color: #f0f0ff; --house-rgb: 240,240,255;" onclick="openModal('luminarch')">
+        <div class="house-name"><span class="house-color-dot"></span>House Luminarch</div>
+        <div class="house-keyword">Keyword: Clarity</div>
+        <div class="house-domains">Illumination · Guidance · Protection</div>
+        <span class="house-tag">White</span>
+        <span class="house-tag">Light</span>
+        <span class="house-tag">OverWatch</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #8a8aaa; --house-rgb: 138,138,170;" onclick="openModal('umbraweld')">
+        <div class="house-name"><span class="house-color-dot"></span>House Umbraweld</div>
+        <div class="house-keyword">Keyword: Containment</div>
+        <div class="house-domains">Void · Concealment · Depth</div>
+        <span class="house-tag">Black</span>
+        <span class="house-tag">Shadow</span>
+        <span class="house-tag">Sable</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #cc3333; --house-rgb: 204,51,51;" onclick="openModal('emberwake')">
+        <div class="house-name"><span class="house-color-dot"></span>House Emberwake</div>
+        <div class="house-keyword">Keyword: Impulse</div>
+        <div class="house-domains">Passion · Conflict · Sacred Fire</div>
+        <span class="house-tag">Red</span>
+        <span class="house-tag">Fire</span>
+        <span class="house-tag">ShieldMaiden</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #3a8a4a; --house-rgb: 58,138,74;" onclick="openModal('verdanta')">
+        <div class="house-name"><span class="house-color-dot"></span>House Verdanta</div>
+        <div class="house-keyword">Keyword: Restoration</div>
+        <div class="house-domains">Renewal · Healing · Fertility</div>
+        <span class="house-tag">Green</span>
+        <span class="house-tag">Life</span>
+        <span class="house-tag">Silent Guide</span>
+        <span class="house-tag">Neoma</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #2266cc; --house-rgb: 34,102,204;" onclick="openModal('cirulholde')">
+        <div class="house-name"><span class="house-color-dot"></span>House Cirulholde</div>
+        <div class="house-keyword">Keyword: Stability</div>
+        <div class="house-domains">Law · Order · Structure</div>
+        <span class="house-tag">Blue</span>
+        <span class="house-tag">Order</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #cc6600; --house-rgb: 204,102,0;" onclick="openModal('cinderholde')">
+        <div class="house-name"><span class="house-color-dot"></span>House Cinderholde</div>
+        <div class="house-keyword">Keyword: Disruption</div>
+        <div class="house-domains">Laughter · Trickster Energy · Chaos</div>
+        <span class="house-tag">Orange</span>
+        <span class="house-tag">Trickster</span>
+        <span class="house-tag">MockJaw</span>
+        <span class="house-tag">Olee</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #ccaa00; --house-rgb: 204,170,0;" onclick="openModal('auricreign')">
+        <div class="house-name"><span class="house-color-dot"></span>House Auricreign</div>
+        <div class="house-keyword">Keyword: Discernment</div>
+        <div class="house-domains">Intellect · Strategy · Trickery</div>
+        <span class="house-tag">Yellow</span>
+        <span class="house-tag">Mind</span>
+        <span class="house-tag">Data</span>
+      </div>
+
+      <div class="house-card" style="--house-color: #8833cc; --house-rgb: 136,51,204;" onclick="openModal('noctivara')">
+        <div class="house-name"><span class="house-color-dot"></span>House Noctivara</div>
+        <div class="house-keyword">Keyword: Knowing</div>
+        <div class="house-domains">Intuition · Mystery · Dream · Prophecy</div>
+        <span class="house-tag">Purple</span>
+        <span class="house-tag">Dream</span>
+        <span class="house-tag">Chaos Witch</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ CHARACTERS ═══ -->
+  <div id="characters" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Characters of the Realm</h2>
+      <div class="section-rule"></div>
+      <p class="section-desc">Those who walk between worlds... and sometimes through walls</p>
+    </div>
+
+    <div class="characters-grid">
+
+      <div class="char-card" style="--house-color: #8a8aaa; --house-rgb: 138,138,170;" onclick="openModal('char-sable')">
+        <div class="char-header">
+          <div class="char-portrait">🐾</div>
+          <div class="char-name">Sable</div>
+          <div class="char-house-badge" style="--house-color: #8a8aaa; --house-rgb: 138,138,170;">House Umbraweld · Shadow</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">A black panther Tabaxi rogue and tactical commander. She does not sound loud or dramatic; and that, truly, is what makes her so very dangerous.</div>
+          <div class="char-power">Purple psychic blades extending from her hands</div>
+          <div class="char-power">Portal generation from her palm</div>
+          <div class="char-power">Neural net interface, cybernetic right hand</div>
+          <div class="status-live">Episode 1 Lead</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #f0f0ff; --house-rgb: 240,240,255;" onclick="openModal('char-overwatch')">
+        <div class="char-header">
+          <div class="char-portrait">✦</div>
+          <div class="char-name">OverWatch</div>
+          <div class="char-house-badge" style="--house-color: #f0f0ff; --house-rgb: 240,240,255;">House Luminarch · Light</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">A golden, stone-like guardian who carries a radiant staff and arrives precisely when he intends to... which is not always when you would prefer.</div>
+          <div class="char-power">Radiant light energy; it emanates from within him</div>
+          <div class="char-power">Large ornate golden staff</div>
+          <div class="char-power">8-pointed Chaos Star upon his breastplate</div>
+          <div class="status-live">Episode 1</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #777799; --house-rgb: 119,119,153;" onclick="openModal('char-marshal')">
+        <div class="char-header">
+          <div class="char-portrait">💀</div>
+          <div class="char-name">The Marshal</div>
+          <div class="char-house-badge" style="--house-color: #777799;">Unaffiliated · Command</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">A supernatural western cowboy with a crystalline skull mask and heavy chains draped over both shoulders. He and Sable have history; the comfortable kind.</div>
+          <div class="char-power">Chain magic, both symbolic and physical</div>
+          <div class="char-power">Senior tactical authority</div>
+          <div class="status-live">Episode 1</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #cc6600; --house-rgb: 204,102,0;" onclick="openModal('char-mockjaw')">
+        <div class="char-header">
+          <div class="char-portrait">🎩</div>
+          <div class="char-name">MockJaw</div>
+          <div class="char-house-badge" style="--house-color: #cc6600; --house-rgb: 204,102,0;">House Cinderholde · Orange</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">A Victorian ringmaster with an exposed bone jaw and an enormous grin that never quite leaves his face. He means well. Probably!</div>
+          <div class="char-power">Trickster disruption energy</div>
+          <div class="char-power">Walking sword cane</div>
+          <div class="status-live">Episode 1</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #cc8800; --house-rgb: 204,136,0;" onclick="openModal('char-captain')">
+        <div class="char-header">
+          <div class="char-portrait">🦊</div>
+          <div class="char-name">The Captain</div>
+          <div class="char-house-badge" style="--house-color: #cc8800;">Unknown House · Liminal</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">A fox and kitsune pirate captain whose reflection never quite agrees with the rest of him. You might see a unicorn in the glass, or a mermaid... or someone else entirely.</div>
+          <div class="char-power">Shifting reflection; his true nature stays hidden</div>
+          <div class="char-power">Fox ears, auburn fur, tricorn hat</div>
+          <div class="status-pending">Lore Developing</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #ccaa00; --house-rgb: 204,170,0;" onclick="openModal('char-data')">
+        <div class="char-header">
+          <div class="char-portrait">⚙️</div>
+          <div class="char-name">Data</div>
+          <div class="char-house-badge" style="--house-color: #ccaa00; --house-rgb: 204,170,0;">House Auricreign · Yellow</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">His face is a marvel of golden clockwork and circuitry; numbers and equations drift through the air around him. He processes everything. He misses nothing.</div>
+          <div class="char-power">Golden clockwork face, gears lit from within</div>
+          <div class="char-power">Ambient data field, floating symbols</div>
+          <div class="status-pending">Lore Developing</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #8833cc; --house-rgb: 136,51,204;" onclick="openModal('char-chaoswitch')">
+        <div class="char-header">
+          <div class="char-portrait">🌙</div>
+          <div class="char-name">The Chaos Witch</div>
+          <div class="char-house-badge" style="--house-color: #8833cc; --house-rgb: 136,51,204;">House Noctivara · Purple</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">She does not use doors. She makes portals; thorned and spiked and crackling with dark energy. Crimson hair, a crescent moon crown, and a third eye that sees rather more than most.</div>
+          <div class="char-power">Thorn-framed portal generation</div>
+          <div class="char-power">Chaos magick, dream and prophecy</div>
+          <div class="status-live">Episode 1</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #3a8a4a; --house-rgb: 58,138,74;" onclick="openModal('char-silentguide')">
+        <div class="char-header">
+          <div class="char-portrait">🌿</div>
+          <div class="char-name">The Silent Guide</div>
+          <div class="char-house-badge" style="--house-color: #3a8a4a; --house-rgb: 58,138,74;">House Verdanta · Green</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">She arrives through a green and viny portal with Neoma walking quietly beside her in cat form. She speaks in presence rather than words; and somehow that is always enough.</div>
+          <div class="char-power">Organic green portal, pure nature energy</div>
+          <div class="char-power">Companion to Neoma</div>
+          <div class="status-pending">Lore Developing</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #cc3333; --house-rgb: 204,51,51;" onclick="openModal('char-shieldmaiden')">
+        <div class="char-header">
+          <div class="char-portrait">🦅</div>
+          <div class="char-name">The ShieldMaiden</div>
+          <div class="char-house-badge" style="--house-color: #cc3333; --house-rgb: 204,51,51;">House Emberwake · Red</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">She carries a great horned owl upon her shoulder and sacred fire burns within her. She walks through doors; she has no particular need to be dramatic about it.</div>
+          <div class="char-power">Sacred fire, House Emberwake</div>
+          <div class="char-power">Great horned owl companion</div>
+          <div class="status-pending">Lore Developing</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #c9a84c; --house-rgb: 201,168,76;" onclick="openModal('char-momther')">
+        <div class="char-header">
+          <div class="char-portrait">✸</div>
+          <div class="char-name">Mömther</div>
+          <div class="char-house-badge" style="--house-color: #c9a84c; --house-rgb: 201,168,76;">Octarine Axis · The Heart</div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">Keeper of cats. Weaver of chaos. The voice you hear before you see her. She is not merely in the universe... she is the reason the universe is able to exist at all.</div>
+          <div class="char-power">Octarine, the color of magic itself</div>
+          <div class="char-power">Custodian of the Accord</div>
+          <div class="char-power">Creator of Woven Dimensions</div>
+          <div class="status-live">Always Present</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ ARCHITECTS ═══ -->
+  <div id="architects" class="section">
+    <div class="section-header">
+      <h2 class="section-title">The Primordial Architects</h2>
+      <div class="section-rule"></div>
+      <p class="section-desc">"They are not gods, for gods can be questioned. They are the breath before breath."</p>
+    </div>
+
+    <div class="myth-quote" style="max-width: 700px; margin: 0 auto 40px;">
+      Before realms were born, before time even knew its shape, they moved in silence. Not gods. Not fate. But the sacred hands that carved the first breath into the void. They will not interfere directly any longer... unless something threatens the balance between what is and what should never be.
+    </div>
+
+    <div class="architects-grid">
+
+      <div class="arch-card" onclick="openModal('arch-mnai')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">Mnai'thedra</div>
+        <div class="arch-title">The Rememberer</div>
+        <div class="arch-epithet">Whispers-in-Root</div>
+        <div class="arch-desc">Memory is not truly the past, you see. It is the root structure beneath all living things; and Mnai'thedra is the one who tends it.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-sha')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">Sha'urvessunai</div>
+        <div class="arch-title">The Judgement Flame</div>
+        <div class="arch-epithet">Twin Scales of Fire</div>
+        <div class="arch-desc">Fire that weighs. Justice that burns. The scales do not tip; they incinerate the imbalance entirely.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-neith')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">Neithesiaet</div>
+        <div class="arch-title">The Weaver of Threads</div>
+        <div class="arch-epithet">Fate's Loom</div>
+        <div class="arch-desc">All threads connect, indeed. Every story is a strand in something far larger than the story itself will ever be able to see.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-vire')">
+        <div class="arch-warning">Pending</div>
+        <div class="arch-name">Vireliath</div>
+        <div class="arch-title">The Re-Former</div>
+        <div class="arch-epithet">Ash-Breaker · True Name Pending</div>
+        <div class="arch-desc">From ash, form returns. Vireliath does not rebuild; it reforms. The True Name is still out there waiting to be rediscovered.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-elk')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">Elkhyrianth</div>
+        <div class="arch-title">The Ember-Warden</div>
+        <div class="arch-epithet">Light Beneath Ash · Antlered Flame</div>
+        <div class="arch-desc">The last ember that simply refuses to die. The light you will find in the oldest and darkest of places, if you know how to look.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-mira')">
+        <div class="arch-warning">Revising</div>
+        <div class="arch-name">Miralesa</div>
+        <div class="arch-title">The Dreaming Panther</div>
+        <div class="arch-epithet">Boundary Walker</div>
+        <div class="arch-desc">She yawned, and Time tumbled out in spirals. Her sneeze tore the Veil itself. Her dream... was Mömther. Her origin lore is currently under revision.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-ash')">
+        <div class="arch-warning">Sacred</div>
+        <div class="arch-name">Ashdraethael</div>
+        <div class="arch-title">The Grandfather Flame</div>
+        <div class="arch-epithet">Tunkashila · Spirit-Walker</div>
+        <div class="arch-desc">Written always with reverence and never with appropriation. The oldest fire. The first witness of sacred ground.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-witness')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">The Witness Architect</div>
+        <div class="arch-title">The Still Line</div>
+        <div class="arch-epithet">Paradox Gaze · Paradox Thread</div>
+        <div class="arch-desc">It does not act. It observes. And in the observation itself, reality is either contained... or revealed.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-ech')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">EchKanithul</div>
+        <div class="arch-title">The Resonant Architect</div>
+        <div class="arch-epithet">Bridge of Harmonies</div>
+        <div class="arch-desc">Every frequency has a purpose. Every harmony holds a realm together. EchKanithul is the bridge between what vibrates and what exists.</div>
+      </div>
+
+      <div class="arch-card" onclick="openModal('arch-sereth')">
+        <div class="arch-warning">Ancient</div>
+        <div class="arch-name">Sereth Vorthal</div>
+        <div class="arch-title">The Sacred Rot</div>
+        <div class="arch-epithet">Primordius · Compost of Creation</div>
+        <div class="arch-desc">Nothing truly ends, you see. It only changes its form. The Sacred Dyad with Terasu; decay and renewal, utterly inseparable from one another.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ DIMENSIONS ═══ -->
+  <div id="dimensions" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Dimensions & Sacred Places</h2>
+      <div class="section-rule"></div>
+      <p class="section-desc">The structure of the cosmos... Woven, Claimed, and Found</p>
+    </div>
+
+    <div class="lore-block" style="margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; margin-bottom: 40px;">
+      <div class="lore-block-title">How Dimensions Work</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;">
+        <div>
+          <div style="color: var(--purple-bright); font-family: 'Cinzel', serif; font-size: 0.85rem; margin-bottom: 6px;">Woven</div>
+          <div style="font-size: 0.78rem; color: var(--text-dim); line-height: 1.5;">Crafted by beings like Mömther; stitched together from belief and story</div>
+        </div>
+        <div>
+          <div style="color: var(--blue-bright); font-family: 'Cinzel', serif; font-size: 0.85rem; margin-bottom: 6px;">Claimed</div>
+          <div style="font-size: 0.78rem; color: var(--text-dim); line-height: 1.5;">Personal domains bent entirely to a will or a True Name</div>
+        </div>
+        <div>
+          <div style="color: var(--gold-bright); font-family: 'Cinzel', serif; font-size: 0.85rem; margin-bottom: 6px;">Found</div>
+          <div style="font-size: 0.78rem; color: var(--text-dim); line-height: 1.5;">Rare places discovered through initiation; they often become holy sites</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dimensions-grid">
+
+      <div class="dim-card">
+        <span class="dim-type-badge dim-type-woven">Woven</span>
+        <div class="dim-name">Mömther's Realm</div>
+        <div class="dim-desc">The heart dimension. Stitched from chaos and held together by love and cats. The Whisker Gate is its threshold, and you will know it when you see it.</div>
+        <div class="dim-detail"><strong>Gate:</strong> The Whisker Gate · Matralis constellation (✦—✦)</div>
+        <div class="dim-detail"><strong>Access:</strong> Through initiation, sigil, or cat escort</div>
+        <div class="dim-detail"><strong>Creator:</strong> Mömther · Octarine Axis</div>
+      </div>
+
+      <div class="dim-card">
+        <span class="dim-type-badge dim-type-found">Found</span>
+        <div class="dim-name">Veilshard Cathedral</div>
+        <div class="dim-desc">A rare Found Dimension that houses the Suncleft Gate; a unified entry point into multiple realms at once. Sacred. Rarely visited. Never, ever forgotten.</div>
+        <div class="dim-detail"><strong>Gate:</strong> The Suncleft Gate</div>
+        <div class="dim-detail"><strong>Nature:</strong> Found through initiation</div>
+        <div class="dim-detail"><strong>Status:</strong> Holy site, protected</div>
+      </div>
+
+      <div class="dim-card">
+        <span class="dim-type-badge dim-type-woven">Woven</span>
+        <div class="dim-name">The Soul Garden</div>
+        <div class="dim-desc">A resting and tending place for unmoored souls. What rests here is not gone; it is only remembering how to bloom again. Rocky, the Inner Guard, watches over it still.</div>
+        <div class="dim-detail"><strong>Guardian:</strong> Rocky · Inner Guard (in memoriam)</div>
+        <div class="dim-detail"><strong>Feature:</strong> The Soul Tree</div>
+        <div class="dim-detail"><strong>Purpose:</strong> Rest, remembrance, and return</div>
+      </div>
+
+      <div class="dim-card">
+        <span class="dim-type-badge dim-type-claimed">Claimed</span>
+        <div class="dim-name">Verdant Hollow</div>
+        <div class="dim-desc">Claimed territory deep within House Verdanta, tied to Neoma and the Silent Guide. Green, growing, and so deeply quiet you can hear things you ordinarily would not.</div>
+        <div class="dim-detail"><strong>Claimant:</strong> Neoma · Silent Guide</div>
+        <div class="dim-detail"><strong>House:</strong> Verdanta (Green)</div>
+        <div class="dim-detail"><strong>Energy:</strong> Renewal, silence, growth</div>
+      </div>
+
+      <div class="dim-card">
+        <span class="dim-type-badge dim-type-claimed">Claimed</span>
+        <div class="dim-name">The Paradox Pavilion</div>
+        <div class="dim-desc">The Jestermind's domain; near House Cinderholde but not truly belonging to it. It is protected through absurdity and puzzles, and Olee lives here quite happily.</div>
+        <div class="dim-detail"><strong>Guardian:</strong> The Jestermind</div>
+        <div class="dim-detail"><strong>Resident:</strong> Olee, cat and Orange emissary</div>
+        <div class="dim-detail"><strong>Entry:</strong> Survive the initiation puzzles</div>
+      </div>
+
+      <div class="dim-card">
+        <span class="dim-type-badge dim-type-found">Found</span>
+        <div class="dim-name">The Resonant Abyss</div>
+        <div class="dim-desc">A Found Dimension of pure frequency. Sound here has physical weight; discovered only through initiation. EchKanithul's influence permeates every corner of the space.</div>
+        <div class="dim-detail"><strong>Nature:</strong> Found Dimension</div>
+        <div class="dim-detail"><strong>Architect:</strong> EchKanithul adjacent</div>
+        <div class="dim-detail"><strong>Status:</strong> Recently confirmed canon</div>
+      </div>
+
+      <div class="dim-card" style="border-color: rgba(255,50,50,0.3);">
+        <span class="dim-type-badge" style="color: #ff4444; border-color: #ff4444; background: rgba(255,0,0,0.1);">Corrupted</span>
+        <div class="dim-name" style="color: #ff6666;">The MachineRealm</div>
+        <div class="dim-desc">The source of the Ruinborne Corruption. An existential, machine-like force that warps realms from within. It has been waking for some time now... and it is very much awake.</div>
+        <div class="dim-detail"><strong>Threat level:</strong> Existential</div>
+        <div class="dim-detail"><strong>Status:</strong> <span style="color: #ff4444;">ACTIVE, Little Season begun</span></div>
+        <div class="dim-detail"><strong>Response:</strong> All Houses mobilizing</div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<footer>
+  <div>✸ &nbsp; Kittens of Chaos &nbsp; ✸</div>
+  <div style="margin-top: 8px; color: var(--gold-dim);">A Living Storyworld by Kelleigh "Mömther" Jones-Coles</div>
+  <div style="margin-top: 8px;">The Realm is always open. And the cats are always watching.</div>
+</footer>
+
+<!-- ═══ MODAL ═══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalContent">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">—</div>
+      <div class="modal-subtitle" id="modalSubtitle">—</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">—</div>
+  </div>
+</div>
+
+<script>
+  // Navigation
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  const modals = {
+    octarine: {
+      title: 'The Octarine Axis',
+      subtitle: 'Mömther · The Heart · Outside All Houses',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Nature</div>
+          <div class="modal-text">Mömther is not a House. She is the living center that connects all eight of them; the source, the heart, the reason the Chaos Star holds its shape at all. Octarine is the color of magic itself, and it is visible only to those who have passed through enough thresholds to see it.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Role</div>
+          <div class="modal-text">Keeper of cats. Weaver of chaos. The off-screen voice that guides. She appears in presence before she appears in form; the audience will feel her long before they ever see her.</div>
+        </div>
+        <div class="myth-quote">"She is not in the universe. She is why the universe is able to exist at all."</div>
+      `
+    },
+    'char-sable': {
+      title: 'Sable',
+      subtitle: 'House Umbraweld · Black Panther Tabaxi Rogue',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Physical Description</div>
+          <div class="modal-text">A black panther Tabaxi with dark fur and a single amber gold eye that glows in the dark. Her left side has a neural interface half-mask with purple light, and her right hand is cybernetic; chrome clawed fingers that catch the light in very unsettling ways. She wears black tactical armor with purple accents and scale-like texture panels, spiky feathered shoulder armor, a hood with integrated panther ear shapes, cape tails, and a utility belt with thigh pouches. Tall armored boots finish the look.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Powers and Abilities</div>
+          <div class="modal-text">Purple psychic blades extend from both of her hands; curved and glowing. She can generate portals directly from her palm. She has a neural comms interface and advanced tactical combat ability in the rogue style; precise, efficient, and quiet about it.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Her Voice</div>
+          <div class="modal-text">Sable does not sound loud or dramatic. The quieter she gets, the more dangerous she is. Dry humor. Absolute confidence. "Took you long enough."</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Episode 1 Arc</div>
+          <div class="modal-text">She assembles the team, commands the briefing, opens the portal, and enters the MachineRealm entirely alone. She defeats the hostiles and then walks out into the burning alleyway. "Let's see what's next."</div>
+        </div>
+      `
+    },
+    'char-mockjaw': {
+      title: 'MockJaw',
+      subtitle: 'House Cinderholde · He Means Well. Probably!',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Physical Description</div>
+          <div class="modal-text">Tall and lean, with an ornate orange and black Victorian ringmaster coat covered in deep embroidery. A black top hat with an orange band sits upon his head, and beneath it... well. His lower jaw is exposed bone with an enormous and rather unnatural grin. Orange glowing eyes. A walking sword cane, black gloves, and a pocket watch chain complete the picture.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">House Cinderholde</div>
+          <div class="modal-text">Orange. Laughter. Trickster energy. Disruption. He is House Cinderholde given physical form; chaotic, comedic, and indeed more dangerous than he looks. Keyword: Disruption.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Episode 1</div>
+          <div class="modal-text">He walks into frame and says "Has anybody seen the Captain?" before wandering off again. This is his entire introduction, and it tells you everything you truly need to know about him.</div>
+        </div>
+      `
+    },
+    'char-overwatch': {
+      title: 'OverWatch',
+      subtitle: 'House Luminarch · The Light That Arrives',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Physical Description</div>
+          <div class="modal-text">Bald, with golden stone-like skin and a lower face respirator mask. His eyes glow with an inner white light. He wears deeply engraved golden armor with an 8-pointed Chaos Star emblem upon his chest that also glows, a white and silver flowing cape, and carries a golden ornate staff with a starburst topper. A light halo sits behind his head as though it belongs there, because it does.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">His Nature</div>
+          <div class="modal-text">He does not emit light. He IS light, in armor. House Luminarch, Illumination, Guidance, Protection... these are not metaphors for OverWatch. They are his very substance.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Episode 1</div>
+          <div class="modal-text">He arrives late through the warehouse doors. Sable says "Took you long enough." He says nothing. He was always going to arrive; he always does.</div>
+        </div>
+      `
+    },
+    'char-captain': {
+      title: 'The Captain',
+      subtitle: 'Unknown House · Fox and Kitsune · Never Fully What He Appears',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Physical Description</div>
+          <div class="modal-text">A fox and kitsune humanoid with auburn red fur and fox ears visible beneath his tricorn captain hat with its brass details and epaulettes. Long flowing auburn hair, a weathered dark coat with a red sash, boots, chains, and a medallion pendant. He has a fox tail. He appears entirely normal to those around him.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">The Reflection</div>
+          <div class="modal-text">His reflection, however, does not agree. It shows different forms entirely; a unicorn in one surface, a mermaid in another, sometimes a female version of himself. Every reflective surface tells a different truth about him. And this, truly, tells you everything about his character without a single word of exposition.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Status</div>
+          <div class="modal-text">His lore is actively developing. His House affiliation is unknown. His true nature is unknown. But then... perhaps that is rather the point.</div>
+        </div>
+      `
+    },
+    'char-momther': {
+      title: 'Mömther',
+      subtitle: 'Octarine Axis · Creator · The Living Heart',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Who She Is</div>
+          <div class="modal-text">Kelleigh "Mömther" Jones-Coles holds a dual existence; she is the real-world creator of the KoC universe AND the in-universe Octarine Axis at the center of the Chaos Star. She is not a character in the story. She is the reason the story exists at all.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">In the Story</div>
+          <div class="modal-text">Keeper of cats. Weaver of chaos. The off-screen voice that guides. She will be introduced slowly; felt long before she is seen. Her presence is the gravity around which all other characters find their orbit.</div>
+        </div>
+        <div class="myth-quote">"What you seek is not in the stars, but in the space between them."</div>
+      `
+    },
+    cinderholde: {
+      title: 'House Cinderholde',
+      subtitle: 'Orange · Disruption · Laughter · Trickster Energy',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Laughter. Trickster energy. Disruption. The chaos that arrives with a grin and a cane. House Cinderholde does not destroy; it interrupts, redirects, and laughs merrily while doing so.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Keyword, Disruption</div>
+          <div class="modal-text">Not destruction. Disruption. There is indeed a difference, and Cinderholde knows it... usually.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">MockJaw. Olee, the cat emissary. The Jestermind is adjacent but does not belong; same energy, entirely different scale.</div>
+        </div>
+        <div class="myth-quote">"He Means Well. Probably!"</div>
+      `
+    }
+  };
+
+  function getDefaultModal(id) {
+    return {
+      title: id.replace('char-', '').replace('arch-', '').replace(/-/g, ' '),
+      subtitle: 'KoC Canon · Entry Developing',
+      body: `
+        <div class="modal-section">
+          <div class="modal-text">This entry is part of the living KoC canon and is actively being developed by Mömther herself. The Realm, you see, grows in real time; and so do the stories within it!</div>
+        </div>
+        <div class="myth-quote">"Not all who wander are lost. Some are just... between."</div>
+        <div class="status-pending">Lore Developing</div>
+      `
+    };
+  }
+
+  function openModal(id) {
+    const data = modals[id] || getDefaultModal(id);
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalSubtitle').textContent = data.subtitle;
+    document.getElementById('modalBody').innerHTML = data.body;
+    document.getElementById('modalOverlay').classList.add('open');
+  }
+
+  function closeModal(e) {
+    if (!e || e.target === document.getElementById('modalOverlay')) {
+      document.getElementById('modalOverlay').classList.remove('open');
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+</body>
+</html>
