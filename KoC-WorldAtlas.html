@@ -914,21 +914,51 @@
       </div>
     </div>
 
+    <!-- Chaos Pairs Intro -->
+    <div class="lore-block" style="margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <div class="lore-block-title">The Chaos Pairs</div>
+      <p class="lore-text">
+        The Eight Houses do not stand alone. They exist in four sacred pairs; each one a duality, a tension, a closed loop of cosmic energy. You cannot have one without the other. They are Chaos in rhythm.
+      </p>
+      <br>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 12px;">
+        <div style="border-left: 2px solid #f0f0ff; padding-left: 12px;">
+          <div style="color: #f0f0ff; font-family: 'Cinzel', serif; font-size: 0.8rem; margin-bottom: 4px;">Luminarch + Umbraweld</div>
+          <div style="font-size: 0.75rem; color: var(--text-dim); font-style: italic;">"Only in darkness can light be seen. Only through light can shadow be shaped."</div>
+        </div>
+        <div style="border-left: 2px solid #cc3333; padding-left: 12px;">
+          <div style="color: #cc3333; font-family: 'Cinzel', serif; font-size: 0.8rem; margin-bottom: 4px;">Emberwake + Verdanta</div>
+          <div style="font-size: 0.75rem; color: var(--text-dim); font-style: italic;">"What burns must bloom. What blooms must burn."</div>
+        </div>
+        <div style="border-left: 2px solid #2266cc; padding-left: 12px;">
+          <div style="color: #2266cc; font-family: 'Cinzel', serif; font-size: 0.8rem; margin-bottom: 4px;">Cirulholde + Cinderholde</div>
+          <div style="font-size: 0.75rem; color: var(--text-dim); font-style: italic;">"Only the absurd can reveal the rigid. Only the rigid can withstand the absurd."</div>
+        </div>
+        <div style="border-left: 2px solid #ccaa00; padding-left: 12px;">
+          <div style="color: #ccaa00; font-family: 'Cinzel', serif; font-size: 0.8rem; margin-bottom: 4px;">Auricreign + Noctivara</div>
+          <div style="font-size: 0.75rem; color: var(--text-dim); font-style: italic;">"To see clearly, one must think beyond. To think beyond, one must see within."</div>
+        </div>
+      </div>
+    </div>
+
     <div class="houses-grid">
 
       <div class="house-card" style="--house-color: #f0f0ff; --house-rgb: 240,240,255;" onclick="openModal('luminarch')">
         <div class="house-name"><span class="house-color-dot"></span>House Luminarch</div>
-        <div class="house-keyword">Keyword: Clarity</div>
+        <div class="house-keyword">Keyword: Clarity · Pronunciation: LOO-mih-nark</div>
         <div class="house-domains">Illumination · Guidance · Protection</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Prism-palaces, law-bound halls. Created through contracts and oaths. They light the path and reveal the truth.</div>
         <span class="house-tag">White</span>
         <span class="house-tag">Light</span>
         <span class="house-tag">OverWatch</span>
+        <span class="house-tag">Lucien</span>
       </div>
 
       <div class="house-card" style="--house-color: #8a8aaa; --house-rgb: 138,138,170;" onclick="openModal('umbraweld')">
         <div class="house-name"><span class="house-color-dot"></span>House Umbraweld</div>
-        <div class="house-keyword">Keyword: Containment</div>
+        <div class="house-keyword">Keyword: Containment · Pronunciation: UHM-bruh-weld</div>
         <div class="house-domains">Void · Concealment · Depth</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Shadow-thick libraries, shifting void halls. Must be remembered or forgotten to exist. They hold the unknown and protect through silence.</div>
         <span class="house-tag">Black</span>
         <span class="house-tag">Shadow</span>
         <span class="house-tag">Sable</span>
@@ -936,8 +966,9 @@
 
       <div class="house-card" style="--house-color: #cc3333; --house-rgb: 204,51,51;" onclick="openModal('emberwake')">
         <div class="house-name"><span class="house-color-dot"></span>House Emberwake</div>
-        <div class="house-keyword">Keyword: Impulse</div>
+        <div class="house-keyword">Keyword: Impulse · Pronunciation: EM-bur-wake</div>
         <div class="house-domains">Passion · Conflict · Sacred Fire</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Burnt arenas, bloodstone cairns, echoing roars. Claimed through combat or sacrifice. The Red does not ask permission. It strikes, and you become.</div>
         <span class="house-tag">Red</span>
         <span class="house-tag">Fire</span>
         <span class="house-tag">ShieldMaiden</span>
@@ -945,8 +976,9 @@
 
       <div class="house-card" style="--house-color: #3a8a4a; --house-rgb: 58,138,74;" onclick="openModal('verdanta')">
         <div class="house-name"><span class="house-color-dot"></span>House Verdanta</div>
-        <div class="house-keyword">Keyword: Restoration</div>
+        <div class="house-keyword">Keyword: Restoration · Pronunciation: vur-DON-tuh</div>
         <div class="house-domains">Renewal · Healing · Fertility</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Vines, ancient bones, living fungi. Grown slowly through ritual and time. Chaos with chlorophyll. Do not mistake them for harmless.</div>
         <span class="house-tag">Green</span>
         <span class="house-tag">Life</span>
         <span class="house-tag">Silent Guide</span>
@@ -955,28 +987,33 @@
 
       <div class="house-card" style="--house-color: #2266cc; --house-rgb: 34,102,204;" onclick="openModal('cirulholde')">
         <div class="house-name"><span class="house-color-dot"></span>House Cirulholde</div>
-        <div class="house-keyword">Keyword: Stability</div>
+        <div class="house-keyword">Keyword: Stability · Pronunciation: VEER-hold</div>
         <div class="house-domains">Law · Order · Structure</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Holders of law and the steadfast spine of order. They uphold oaths and guard the framework. Created through contracts and sworn rites.</div>
         <span class="house-tag">Blue</span>
         <span class="house-tag">Order</span>
         <span class="house-tag">The Marshal</span>
         <span class="house-tag">The Vigilante</span>
+        <span class="house-tag">The Arbiter</span>
       </div>
 
       <div class="house-card" style="--house-color: #cc6600; --house-rgb: 204,102,0;" onclick="openModal('cinderholde')">
         <div class="house-name"><span class="house-color-dot"></span>House Cinderholde</div>
-        <div class="house-keyword">Keyword: Disruption</div>
+        <div class="house-keyword">Keyword: Disruption · Pronunciation: SIN-druh-hode</div>
         <div class="house-domains">Laughter · Trickster Energy · Chaos</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Sacred jesters and ash dancers. They unravel certainty and dance with paradox. The Paradox Pavilion is their domain. MockJaw means well. Probably.</div>
         <span class="house-tag">Orange</span>
         <span class="house-tag">Trickster</span>
         <span class="house-tag">MockJaw</span>
         <span class="house-tag">Olee</span>
+        <span class="house-tag">Jestermind</span>
       </div>
 
       <div class="house-card" style="--house-color: #ccaa00; --house-rgb: 204,170,0;" onclick="openModal('auricreign')">
         <div class="house-name"><span class="house-color-dot"></span>House Auricreign</div>
-        <div class="house-keyword">Keyword: Discernment</div>
+        <div class="house-keyword">Keyword: Discernment · Pronunciation: OR-ih-krayn</div>
         <div class="house-domains">Intellect · Strategy · Trickery</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">The crown of cunning and trickster sovereigns of thought. They calculate patterns and use wit as a blade. Numbers float in the air around them.</div>
         <span class="house-tag">Yellow</span>
         <span class="house-tag">Mind</span>
         <span class="house-tag">Data</span>
@@ -984,14 +1021,33 @@
 
       <div class="house-card" style="--house-color: #8833cc; --house-rgb: 136,51,204;" onclick="openModal('noctivara')">
         <div class="house-name"><span class="house-color-dot"></span>House Noctivara</div>
-        <div class="house-keyword">Keyword: Knowing</div>
+        <div class="house-keyword">Keyword: Knowing · Pronunciation: NOK-tih-VAH-ruh</div>
         <div class="house-domains">Intuition · Mystery · Dream · Prophecy</div>
+        <div class="house-domains" style="margin-top:8px; font-style:italic; font-size:0.78rem; opacity:0.7;">Dreamwalkers and keepers of veiled knowing. Spiral towers and laughing winds. Created in dreams and visions. They know without knowing.</div>
         <span class="house-tag">Purple</span>
         <span class="house-tag">Dream</span>
         <span class="house-tag">Chaos Witch</span>
       </div>
 
     </div>
+
+    <!-- Cat Sith note -->
+    <div class="lore-block" style="margin-top: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <div class="lore-block-title">The Cat Sìth</div>
+      <p class="lore-text">
+        The Cat Sìth are the liminal guides of the Realm; multidimensional beings who walk many paths at once. They escort souls, guard thresholds, and carry messages between Houses. Each one is unique, each one sacred. And each one, in this universe, is inspired by a very real cat who walks among us in the waking world.
+      </p>
+      <br>
+      <p class="lore-text">
+        <strong style="color: var(--gold-bright);">Lorian (Lori)</strong> the Littlest Demon. <strong style="color: var(--gold-bright);">Neoma (Neo)</strong>, companion to the Silent Guide. <strong style="color: var(--gold-bright);">Lucien (Luci)</strong> of the Light. <strong style="color: var(--gold-bright);">Olorin (Olee)</strong>, emissary of Orange and resident of the Paradox Pavilion. <strong style="color: var(--gold-bright);">Runyx (Nyx)</strong>. <strong style="color: var(--gold-bright);">Miss Kitty</strong>. <strong style="color: var(--gold-bright);">Kiki</strong>. <strong style="color: var(--gold-bright);">Cleo</strong>. <strong style="color: var(--gold-bright);">Macchi</strong>. And <strong style="color: var(--gold-bright);">Sir Gilbert</strong>, who carries himself with the dignity of someone who has always known exactly what he is.
+      </p>
+      <div class="myth-quote">"There is a Realm that remembers you. Cats walk its edges. Chaos guards its gate."</div>
+    </div>
+
+    </div>
+
+    <!-- Cat Sith note already added above -->
+
   </div>
 
   <!-- ═══ CHARACTERS ═══ -->
@@ -1006,9 +1062,12 @@
 
       <div class="char-card" style="--house-color: #8a8aaa; --house-rgb: 138,138,170;" onclick="openModal('char-sable')">
         <div class="char-header">
-          <div class="char-portrait">🐾</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('Sable_fullbody_bladesextended_1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">Sable</div>
           <div class="char-house-badge" style="--house-color: #8a8aaa; --house-rgb: 138,138,170;">House Umbraweld · Shadow</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">A black panther Tabaxi rogue and tactical commander. She does not sound loud or dramatic; and that, truly, is what makes her so very dangerous.</div>
@@ -1021,9 +1080,12 @@
 
       <div class="char-card" style="--house-color: #f0f0ff; --house-rgb: 240,240,255;" onclick="openModal('char-overwatch')">
         <div class="char-header">
-          <div class="char-portrait">✦</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('OverWatch_portrait1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">OverWatch</div>
           <div class="char-house-badge" style="--house-color: #f0f0ff; --house-rgb: 240,240,255;">House Luminarch · Light</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">A golden, stone-like guardian who carries a radiant staff and arrives precisely when he intends to... which is not always when you would prefer.</div>
@@ -1034,11 +1096,14 @@
         </div>
       </div>
 
-      <div class="char-card" style="--house-color: #777799; --house-rgb: 119,119,153;" onclick="openModal('char-marshal')">
+      <div class="char-card" style="--house-color: #2266cc; --house-rgb: 34,102,204;" onclick="openModal('char-marshal')">
         <div class="char-header">
-          <div class="char-portrait">💀</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('marshal-official-lore-card.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">The Marshal</div>
-          <div class="char-house-badge" style="--house-color: #777799;">Unaffiliated · Command</div>
+          <div class="char-house-badge" style="--house-color: #2266cc;">House Cirulholde · Blue</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">A supernatural western cowboy with a crystalline skull mask and heavy chains draped over both shoulders. He and Sable have history; the comfortable kind.</div>
@@ -1050,9 +1115,12 @@
 
       <div class="char-card" style="--house-color: #cc6600; --house-rgb: 204,102,0;" onclick="openModal('char-mockjaw')">
         <div class="char-header">
-          <div class="char-portrait">🎩</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('mockjaw-ai-lore-card-official-1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">MockJaw</div>
           <div class="char-house-badge" style="--house-color: #cc6600; --house-rgb: 204,102,0;">House Cinderholde · Orange</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">A Victorian ringmaster with an exposed bone jaw and an enormous grin that never quite leaves his face. He means well. Probably!</div>
@@ -1078,9 +1146,12 @@
 
       <div class="char-card" style="--house-color: #ccaa00; --house-rgb: 204,170,0;" onclick="openModal('char-data')">
         <div class="char-header">
-          <div class="char-portrait">⚙️</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('Data_Yellow_1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">Data</div>
           <div class="char-house-badge" style="--house-color: #ccaa00; --house-rgb: 204,170,0;">House Auricreign · Yellow</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">His face is a marvel of golden clockwork and circuitry; numbers and equations drift through the air around him. He processes everything. He misses nothing.</div>
@@ -1106,9 +1177,12 @@
 
       <div class="char-card" style="--house-color: #3a8a4a; --house-rgb: 58,138,74;" onclick="openModal('char-silentguide')">
         <div class="char-header">
-          <div class="char-portrait">🌿</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('The Silent Guide_portrait1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">The Silent Guide</div>
           <div class="char-house-badge" style="--house-color: #3a8a4a; --house-rgb: 58,138,74;">House Verdanta · Green</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">She arrives through a green and viny portal with Neoma walking quietly beside her in cat form. She speaks in presence rather than words; and somehow that is always enough.</div>
@@ -1120,14 +1194,51 @@
 
       <div class="char-card" style="--house-color: #cc3333; --house-rgb: 204,51,51;" onclick="openModal('char-shieldmaiden')">
         <div class="char-header">
-          <div class="char-portrait">🦅</div>
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('The ShieldMaiden_portrait1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
           <div class="char-name">The ShieldMaiden</div>
           <div class="char-house-badge" style="--house-color: #cc3333; --house-rgb: 204,51,51;">House Emberwake · Red</div>
+          </div>
         </div>
         <div class="char-body">
           <div class="char-desc">She carries a great horned owl upon her shoulder and sacred fire burns within her. She walks through doors; she has no particular need to be dramatic about it.</div>
           <div class="char-power">Sacred fire, House Emberwake</div>
           <div class="char-power">Great horned owl companion</div>
+          <div class="status-pending">Lore Developing</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #2266cc; --house-rgb: 34,102,204;" onclick="openModal('char-vigilante')">
+        <div class="char-header">
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('The Vigilante_portrait1.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
+          <div class="char-name">The Vigilante</div>
+          <div class="char-house-badge" style="--house-color: #2266cc;">House Cirulholde · Blue</div>
+          </div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">The Marshal's twin brother. He lost his Marshal powers through his own choices and became something the Marshal cannot be; free of the rules of engagement. The Marshal starts it... the Vigilante finishes it in the dark.</div>
+          <div class="char-power">Chain magic, darker and unbound</div>
+          <div class="char-power">Goes where the Marshal cannot</div>
+          <div class="status-pending">Lore Developing</div>
+        </div>
+      </div>
+
+      <div class="char-card" style="--house-color: #2266cc; --house-rgb: 34,102,204;" onclick="openModal('char-arbiter')">
+        <div class="char-header">
+          <div class="char-portrait" style="width:100%; height:200px; border-radius:4px; background-image:url('arbiter-official-portrait-blue.png'); background-size:cover; background-position:center top;">
+          </div>
+          <div style="padding:12px 0 0;">
+          <div class="char-name">The Arbiter</div>
+          <div class="char-house-badge" style="--house-color: #2266cc;">House Cirulholde · Blue</div>
+          </div>
+        </div>
+        <div class="char-body">
+          <div class="char-desc">She wears the blue diamond pendant of House Cirulholde; the same one the Marshal carries. Law, order, and authority expressed in her own feminine power.</div>
+          <div class="char-power">House Cirulholde authority</div>
+          <div class="char-power">Blue diamond pendant, House sigil</div>
           <div class="status-pending">Lore Developing</div>
         </div>
       </div>
@@ -1480,23 +1591,168 @@
     },
     cinderholde: {
       title: 'House Cinderholde',
-      subtitle: 'Orange · Disruption · Laughter · Trickster Energy',
+      subtitle: 'SIN-druh-hode · Orange · Disruption · The Jester',
       body: `
         <div class="modal-section">
           <div class="modal-section-title">Domain</div>
-          <div class="modal-text">Laughter. Trickster energy. Disruption. The chaos that arrives with a grin and a cane. House Cinderholde does not destroy; it interrupts, redirects, and laughs merrily while doing so.</div>
+          <div class="modal-text">Laughter, Trickster Energy, and Disruption. Sacred jesters and ash dancers. They unravel certainty and dance with paradox. The Paradox Pavilion is their domain; a place protected through absurdity and puzzles, where Olee lives quite happily.</div>
         </div>
         <div class="modal-section">
-          <div class="modal-section-title">Keyword, Disruption</div>
-          <div class="modal-text">Not destruction. Disruption. There is indeed a difference, and Cinderholde knows it... usually.</div>
+          <div class="modal-section-title">The Nature of Orange</div>
+          <div class="modal-text">Not destruction. Disruption. There is indeed a difference, and Cinderholde knows it... usually. They dance with paradox and reveal the absurd truth hiding inside rigid things. You cannot have order without something to disrupt it.</div>
         </div>
         <div class="modal-section">
-          <div class="modal-section-title">Known Members</div>
-          <div class="modal-text">MockJaw. Olee, the cat emissary. The Jestermind is adjacent but does not belong; same energy, entirely different scale.</div>
+          <div class="modal-section-title">Their Pair · House Cirulholde</div>
+          <div class="modal-text">Only the absurd can reveal the rigid. Only the rigid can withstand the absurd. Cinderholde and Cirulholde are the truth through nonsense and the truth through structure; forever dancing around each other.</div>
         </div>
         <div class="myth-quote">"He Means Well. Probably!"</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">MockJaw. Olee, the cat emissary. The Jestermind, Guardian of the Paradox Pavilion.</div>
+        </div>
       `
-    }
+    },
+    cirulholde: {
+      title: 'House Cirulholde',
+      subtitle: 'VEER-hold · Blue · Stability · The Warden',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Law, Order, and Structure. Holders of law and the steadfast spine of order. They uphold oaths and guard the framework. Created through contracts and sworn rites. The blue diamond pendant is their sigil; worn by all who carry their authority.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Cinderholde</div>
+          <div class="modal-text">Only the absurd can reveal the rigid. Only the rigid can withstand the absurd. Cirulholde and Cinderholde are forever in productive tension; the structure that holds and the chaos that tests it.</div>
+        </div>
+        <div class="myth-quote">"Only the absurd can reveal the rigid. Only the rigid can withstand the absurd."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">The Marshal. The Vigilante. The Arbiter. All three carry the blue diamond pendant of the House; law expressed three different ways.</div>
+        </div>
+      `
+    },
+    luminarch: {
+      title: 'House Luminarch',
+      subtitle: 'LOO-mih-nark · White · Clarity · The Beacon',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Illumination, Guidance, and Protection. Prism-palaces and law-bound halls. Created through contracts and oaths. They light the path and reveal the truth; sometimes whether you are ready for it or not.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Umbraweld</div>
+          <div class="modal-text">Luminarch and Umbraweld are the twin forces of revelation and restraint. The seen and the unseen. The guardian and the ghost. Neither can truly exist without the other.</div>
+        </div>
+        <div class="myth-quote">"Only in darkness can light be seen. Only through light can shadow be shaped."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">OverWatch. Lucien.</div>
+        </div>
+      `
+    },
+    umbraweld: {
+      title: 'House Umbraweld',
+      subtitle: 'UHM-bruh-weld · Black · Containment · The Veil',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Void, Concealment, and Depth. Shadow-thick libraries and shifting void halls. A dimension of Umbraweld must be remembered or forgotten to exist at all. They hold the unknown and protect through silence.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Luminarch</div>
+          <div class="modal-text">The binders of shadow to the beacons of light. What the light reveals, the shadow contains. What the shadow holds, the light will eventually find.</div>
+        </div>
+        <div class="myth-quote">"Only in darkness can light be seen. Only through light can shadow be shaped."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">Sable.</div>
+        </div>
+      `
+    },
+    emberwake: {
+      title: 'House Emberwake',
+      subtitle: 'EM-bur-wake · Red · Impulse · The Catalyst',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Passion, Conflict, and Sacred Fire. Burnt arenas, bloodstone cairns, echoing roars. Claimed through combat or sacrifice. The Red House governs the sacred collision; the instant where stillness is broken and inertia shatters.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">The Nature of Red</div>
+          <div class="modal-text">The Red does not ask permission. It is the slap that wakes the sleeper. The kiss that breaks the spell. The scream that starts the battle. The moment the dam breaks. It does not destroy for the sake of ruin; it destroys the stagnant, the corrupt, the frozen. To Red, violence can be mercy. Passion can be purification. Even love can come sharp-edged.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Verdanta</div>
+          <div class="modal-text">The Red strikes. The Green heals. What burns must bloom. What blooms must burn. They are the cycle of becoming; the breaker and the binder.</div>
+        </div>
+        <div class="myth-quote">"Strike true. Burn bright. Begin again."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">The ShieldMaiden.</div>
+        </div>
+      `
+    },
+    verdanta: {
+      title: 'House Verdanta',
+      subtitle: 'vur-DON-tuh · Green · Restoration · The Sustainer',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Renewal, Healing, and Fertility. Vines, ancient bones, living fungi. Grown slowly through ritual and time. The Green does not rush. It is the breath after the cry. The earth that closes the wound. The touch that soothes the broken blade. The silence where the soul regrows.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">The Nature of Green</div>
+          <div class="modal-text">The Green House does not avoid chaos; it integrates it. All ruin can return to root. All fire leaves ash, and from ash grows the next thing. Green is not passive; it is relentless, coiling, blooming, reclaiming. They wield softness like a weapon and healing like a storm. Do not mistake them for harmless. They are chaos with chlorophyll.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Emberwake</div>
+          <div class="modal-text">The Green heals what the Red breaks. The Red ignites what the Green tends. Together they are the heartbeat of the Realm.</div>
+        </div>
+        <div class="myth-quote">"Grow slow. Mend deep. Remember the root."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">The Silent Guide. Neoma (Neo), who walks beside the Silent Guide through the green viny portal.</div>
+        </div>
+      `
+    },
+    auricreign: {
+      title: 'House Auricreign',
+      subtitle: 'OR-ih-krayn · Yellow · Discernment · The Sage',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Intellect, Strategy, and Trickery. The crown of cunning and the trickster sovereigns of thought. They calculate patterns and use wit as a blade. Numbers and equations drift through the air around those aligned with Yellow.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Noctivara</div>
+          <div class="modal-text">Auricreign thinks. Noctivara knows. The rational mind and the visionary knowing. One calculates the pattern; the other already saw the answer and has been waiting patiently for you to catch up.</div>
+        </div>
+        <div class="myth-quote">"To see clearly, one must think beyond. To think beyond, one must see within."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">Data.</div>
+        </div>
+      `
+    },
+    noctivara: {
+      title: 'House Noctivara',
+      subtitle: 'NOK-tih-VAH-ruh · Purple · Knowing · The Seer',
+      body: `
+        <div class="modal-section">
+          <div class="modal-section-title">Domain</div>
+          <div class="modal-text">Intuition, Mystery, Dream, and Prophecy. Spiral towers and laughing winds. Created in dreams and visions. The dreamwalkers and keepers of veiled knowing. They know without knowing; walk the liminal threads that others cannot even see.</div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">Their Pair · House Auricreign</div>
+          <div class="modal-text">Where Auricreign calculates, Noctivara simply perceives. Where the Yellow mind asks why, the Purple soul already knows the answer and is waiting patiently for you to catch up.</div>
+        </div>
+        <div class="myth-quote">"To see clearly, one must think beyond. To think beyond, one must see within."</div>
+        <div class="modal-section">
+          <div class="modal-section-title">Known Members</div>
+          <div class="modal-text">The Chaos Witch.</div>
+        </div>
+      `
+    },
   };
 
   function getDefaultModal(id) {
