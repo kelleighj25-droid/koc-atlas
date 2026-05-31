@@ -143,6 +143,83 @@
   .status-becoming { display: inline-flex; align-items: center; gap: 6px; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-bright); margin-top: 8px; }
   .status-becoming::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-bright); animation: pulse 3s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  /* QUIZ SECTION */
+  .screen { display: none; animation: fadeUp 0.5s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  .quiz-page { max-width: 780px; margin: 0 auto; padding: 0 0 40px; }
+  .intro-card { margin: 48px auto 0; max-width: 640px; background: var(--panel); border: 1px solid var(--border); padding: 40px; position: relative; text-align: center; }
+  .intro-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--purple), var(--gold), var(--blue)); box-shadow: 0 0 20px rgba(201,168,76,0.3); }
+  .intro-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(1.2rem, 3vw, 1.8rem); background: linear-gradient(135deg, var(--gold-bright), var(--purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
+  .intro-text { font-size: 0.9rem; color: rgba(232,234,240,0.75); line-height: 1.85; margin-bottom: 28px; }
+  .intro-text em { color: var(--purple-glow); font-style: italic; }
+  .intro-text strong { color: var(--gold-bright); font-weight: 500; }
+  .houses-preview { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 32px; }
+  .house-pip { display: flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border: 1px solid; opacity: 0.8; transition: opacity 0.2s; }
+  .house-pip:hover { opacity: 1; }
+  .pip-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .btn-begin { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 14px 40px; background: transparent; border: 1px solid var(--gold-dim); color: var(--gold-bright); cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .btn-begin::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(123,63,160,0.08)); opacity: 0; transition: opacity 0.3s; }
+  .btn-begin:hover { border-color: var(--gold); box-shadow: 0 0 24px rgba(201,168,76,0.2); }
+  .btn-begin:hover::before { opacity: 1; }
+  .quiz-header { margin: 40px 0 32px; text-align: center; }
+  .progress-bar-wrap { width: 100%; height: 2px; background: var(--border); margin-bottom: 10px; position: relative; }
+  .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--gold)); transition: width 0.4s ease; box-shadow: 0 0 8px rgba(201,168,76,0.4); }
+  .progress-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; }
+  .question-card { background: var(--panel); border: 1px solid var(--border); padding: 36px; position: relative; margin-bottom: 24px; transition: opacity 0.2s, transform 0.2s; }
+  .question-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); }
+  .question-num { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 14px; }
+  .question-text { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--white-soft); line-height: 1.5; margin-bottom: 28px; }
+  .answers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 540px) { .answers-grid { grid-template-columns: 1fr; } }
+  .answer-btn { background: rgba(13,20,34,0.6); border: 1px solid var(--border); padding: 16px 18px; text-align: left; cursor: pointer; transition: all 0.25s ease; position: relative; overflow: hidden; color: rgba(232,234,240,0.8); font-family: 'Raleway', sans-serif; font-size: 0.85rem; line-height: 1.5; }
+  .answer-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold-dim); opacity: 0; transition: opacity 0.25s; }
+  .answer-btn:hover { border-color: rgba(201,168,76,0.4); color: var(--white-soft); background: rgba(13,20,34,0.9); transform: translateX(3px); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+  .answer-btn:hover::before { opacity: 1; }
+  .answer-btn.selected { border-color: var(--gold-dim); background: rgba(201,168,76,0.06); color: var(--white-soft); }
+  .answer-btn.selected::before { opacity: 1; }
+  .result-wrap { margin: 40px 0; }
+  .result-card { background: var(--panel); border: 2px solid; padding: 40px; position: relative; text-align: center; overflow: hidden; }
+  .result-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top, rgba(var(--house-rgb), 0.08) 0%, transparent 65%); pointer-events: none; }
+  .result-glow-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; box-shadow: 0 0 20px; }
+  .result-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px; }
+  .result-house-name { font-family: 'Cinzel Decorative', serif; font-size: clamp(1.6rem, 4vw, 2.6rem); margin-bottom: 6px; line-height: 1.1; }
+  .result-keyword { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; }
+  .result-divider { height: 1px; max-width: 280px; margin: 0 auto 24px; }
+  .result-desc { font-size: 0.92rem; color: rgba(232,234,240,0.8); line-height: 1.85; margin-bottom: 20px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .result-traits { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 28px; }
+  .result-trait { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border: 1px solid; }
+  .result-quote { background: linear-gradient(135deg, rgba(123,63,160,0.1), rgba(30,111,168,0.05)); border-left: 3px solid var(--purple); padding: 16px 20px; margin: 0 0 28px; font-style: italic; font-size: 0.88rem; color: var(--purple-glow); line-height: 1.7; text-align: left; }
+  .result-pair { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-bottom: 32px; line-height: 1.6; }
+  .result-pair strong { color: var(--gold-dim); }
+  .result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-retake { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 12px 28px; background: transparent; border: 1px solid var(--border); color: var(--text-dim); cursor: pointer; transition: all 0.3s; }
+  .btn-retake:hover { border-color: var(--gold-dim); color: var(--gold-bright); }
+  .btn-go-atlas { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 12px 28px; background: transparent; border: 1px solid var(--gold-dim); color: var(--gold-bright); cursor: pointer; transition: all 0.3s; }
+  .btn-go-atlas:hover { box-shadow: 0 0 20px rgba(201,168,76,0.2); border-color: var(--gold); }
+  .all-results { margin-top: 40px; }
+  .all-results-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-dim); text-align: center; margin-bottom: 20px; }
+  .score-bars { display: flex; flex-direction: column; gap: 8px; }
+  .score-row { display: grid; grid-template-columns: 110px 1fr 28px; align-items: center; gap: 10px; font-size: 0.72rem; }
+  .score-house-label { font-family: 'Cinzel', serif; letter-spacing: 0.1em; text-align: right; white-space: nowrap; }
+  .score-track { height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
+  .score-num { color: var(--text-dim); text-align: right; }
+  .pdf-callout { margin-top: 24px; background: linear-gradient(135deg, rgba(201,168,76,0.07), rgba(123,63,160,0.05)); border: 1px solid var(--gold-dim); padding: 32px 36px; text-align: center; position: relative; }
+  .pdf-callout::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--purple-bright), var(--gold), transparent); box-shadow: 0 0 12px rgba(201,168,76,0.3); }
+  .pdf-callout-star { font-size: 1.6rem; color: var(--gold); margin-bottom: 12px; filter: drop-shadow(0 0 8px var(--gold)); }
+  .pdf-callout-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(1rem, 2.5vw, 1.4rem); background: linear-gradient(135deg, var(--gold-bright), var(--purple-glow)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 14px; }
+  .pdf-callout-text { font-size: 0.88rem; color: rgba(232,234,240,0.75); line-height: 1.8; max-width: 480px; margin: 0 auto 12px; }
+  .pdf-callout-hook { font-size: 0.88rem; color: var(--purple-glow); font-style: italic; line-height: 1.7; max-width: 460px; margin: 0 auto 24px; }
+  .pdf-callout-form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto 12px; flex-wrap: wrap; justify-content: center; }
+  .email-input { flex: 1; min-width: 220px; background: rgba(2,4,8,0.6); border: 1px solid var(--border); color: var(--white-soft); padding: 11px 16px; font-family: 'Raleway', sans-serif; font-size: 0.85rem; outline: none; transition: border-color 0.3s; }
+  .email-input:focus { border-color: var(--gold-dim); }
+  .email-input::placeholder { color: var(--text-dim); }
+  .btn-pdf { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 11px 24px; background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(123,63,160,0.1)); border: 1px solid var(--gold-dim); color: var(--gold-bright); cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+  .btn-pdf:hover { box-shadow: 0 0 20px rgba(201,168,76,0.25); border-color: var(--gold); }
+  .pdf-success { font-size: 0.88rem; color: rgba(232,234,240,0.8); font-style: italic; margin: 8px 0; line-height: 1.7; }
+  .pdf-callout-note { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.1em; margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -161,6 +238,7 @@
   <button class="nav-btn" onclick="showSection('architects')">Architects</button>
   <button class="nav-btn" onclick="showSection('dimensions')">Dimensions</button>
   <button class="nav-btn" onclick="showSection('vision')">The Vision</button>
+  <button class="nav-btn" onclick="showSection('quiz')" style="color: var(--gold-bright); border-color: var(--gold-dim);">✸ Find Your House</button>
 </nav>
 
 <div class="container">
@@ -487,6 +565,95 @@
     <div class="myth-quote" style="max-width: 600px; margin: 48px auto 0;">"The Realm is always open. And it is always becoming more."</div>
   </div>
 
+  <!-- HOUSE QUIZ -->
+  <div id="quiz" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Which House Are You?</h2>
+      <div class="section-rule"></div>
+      <p class="section-desc">The Chaos Star does not assign. It reveals.</p>
+    </div>
+    <div class="quiz-page">
+
+      <!-- INTRO SCREEN -->
+      <div id="screen-intro" class="screen active">
+        <div class="intro-card">
+          <h2 class="intro-title">Enter the Star</h2>
+          <p class="intro-text">The Chaos Realm is divided into <strong>Eight Houses</strong> — each one a living current of energy, a way of moving through the world, a shape that existence itself can take. They are not titles or factions. They are not things you join. Each House is a fundamental truth about how reality bends, how power moves, how a soul orients itself when everything else falls away. They are truths that <em>choose you</em>.</p>
+          <p class="intro-text">This is not a personality test. It is a threshold. Answer honestly, and the Star will show you where you already belong.</p>
+          <div class="myth-quote">"Eight Houses. Eight truths. One of them has been yours all along."</div>
+          <div class="myth-quote">"You did not find this place by accident. Nothing in The Realm ever happens by accident."</div>
+          <div class="houses-preview">
+            <div class="house-pip" style="color:#f0f0ff; border-color:rgba(240,240,255,0.3);"><span class="pip-dot" style="background:#f0f0ff; box-shadow:0 0 8px #f0f0ff;"></span>Luminarc</div>
+            <div class="house-pip" style="color:#8a8aaa; border-color:rgba(138,138,170,0.3);"><span class="pip-dot" style="background:#8a8aaa; box-shadow:0 0 8px #8a8aaa;"></span>Umbraweld</div>
+            <div class="house-pip" style="color:#cc3333; border-color:rgba(204,51,51,0.3);"><span class="pip-dot" style="background:#cc3333; box-shadow:0 0 8px #cc3333;"></span>Emberwake</div>
+            <div class="house-pip" style="color:#3a8a4a; border-color:rgba(58,138,74,0.3);"><span class="pip-dot" style="background:#3a8a4a; box-shadow:0 0 8px #3a8a4a;"></span>Verdanta</div>
+            <div class="house-pip" style="color:#2266cc; border-color:rgba(34,102,204,0.3);"><span class="pip-dot" style="background:#2266cc; box-shadow:0 0 8px #2266cc;"></span>Cirulholde</div>
+            <div class="house-pip" style="color:#cc6600; border-color:rgba(204,102,0,0.3);"><span class="pip-dot" style="background:#cc6600; box-shadow:0 0 8px #cc6600;"></span>Cinderholde</div>
+            <div class="house-pip" style="color:#ccaa00; border-color:rgba(204,170,0,0.3);"><span class="pip-dot" style="background:#ccaa00; box-shadow:0 0 8px #ccaa00;"></span>Auricreign</div>
+            <div class="house-pip" style="color:#8833cc; border-color:rgba(136,51,204,0.3);"><span class="pip-dot" style="background:#8833cc; box-shadow:0 0 8px #8833cc;"></span>Noctivara</div>
+          </div>
+          <button class="btn-begin" onclick="startQuiz()">✸ &nbsp; Enter the Star &nbsp; ✸</button>
+        </div>
+      </div>
+
+      <!-- QUIZ SCREEN -->
+      <div id="screen-quiz" class="screen">
+        <div class="quiz-header">
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+          <div class="progress-label" id="progress-label">Question 1 of 12</div>
+        </div>
+        <div class="question-card" id="question-card">
+          <div class="question-num" id="q-num">Question 1</div>
+          <div class="question-text" id="q-text"></div>
+          <div class="answers-grid" id="answers-grid"></div>
+        </div>
+      </div>
+
+      <!-- RESULT SCREEN -->
+      <div id="screen-result" class="screen">
+        <div class="result-wrap">
+          <div class="result-card" id="result-card">
+            <div class="result-glow-bar" id="result-glow"></div>
+            <div class="result-label">The Chaos Star Has Spoken</div>
+            <div class="result-house-name" id="result-name"></div>
+            <div class="result-keyword" id="result-keyword"></div>
+            <div class="result-divider" id="result-divider"></div>
+            <p class="result-desc" id="result-desc"></p>
+            <div class="result-traits" id="result-traits"></div>
+            <div class="result-quote" id="result-quote"></div>
+            <p class="result-pair" id="result-pair"></p>
+            <div class="result-actions">
+              <button class="btn-retake" onclick="resetQuiz()">↺ &nbsp; Walk the Star Again</button>
+              <button class="btn-go-atlas" onclick="goToSection('houses')">✸ &nbsp; Explore the Houses</button>
+            </div>
+          </div>
+          <div class="all-results" id="all-results">
+            <div class="all-results-title">Your Full House Resonance</div>
+            <div class="score-bars" id="score-bars"></div>
+          </div>
+
+          <div class="pdf-callout" id="pdf-callout">
+            <div class="pdf-callout-star">✸</div>
+            <div class="pdf-callout-title">Go Deeper Into Your House</div>
+            <p class="pdf-callout-text">The quiz showed you the threshold. The free guide takes you through it — your House's full identity, affirmation, journal prompt, and where you stand in the Chaos Star.</p>
+            <p class="pdf-callout-hook" id="pdf-hook"></p>
+            <div class="pdf-callout-form">
+              <input type="email" id="email-input" class="email-input" placeholder="Enter your email address" />
+              <button class="btn-pdf" onclick="handleEmailSubmit()">✸ &nbsp; Send Me the Free Guide</button>
+            </div>
+            <div class="pdf-success" id="pdf-success" style="display:none;">
+              <span style="color:var(--gold-bright);">✸</span> &nbsp; You're through the gate. Check your inbox for <em>Enter the Chaos Star</em>.
+            </div>
+            <p class="pdf-callout-note">Free. No spam. Just The Realm.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 <footer>
@@ -560,6 +727,143 @@
   }
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── QUIZ ─────────────────────────────────────────────────────────────────
+
+  function goToSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const btn = document.querySelector(`.nav-btn[onclick="showSection('${id}')"]`);
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  const HOUSES = {
+    luminarc: { name: 'House Luminarc', color: '#f0f0ff', rgb: '240,240,255', keyword: 'Clarity · White · Illumination', desc: 'You carry light as a way of being — not a tool, not a performance, simply what you are. You are drawn to truth and clear sight, and you make the path visible for others even when the cost to yourself is steep. Your word means something. Oaths feel sacred to you because you understand that what you promise, you become. You illuminate what others avoid looking at, not to expose anyone, but because you cannot look away from what needs to be seen. Natural guides and protectors, Luminarc people sometimes forget that not everyone wants to see what they\'re showing them — but they show it anyway, because truth is a form of love.', traits: ['Illumination', 'Guidance', 'Protection', 'Oaths', 'Clarity'], quote: '"Only in darkness can light be seen. Only through light can shadow be shaped."', pair: 'Your sacred pair is <strong>House Umbraweld</strong> — Shadow and Light. The Void gives your brilliance meaning. Your brilliance gives the Void edges it can trace. You cannot exist without each other, and somewhere deep down, you already know this.', hook: 'There is a shadow expression of Luminarc that most light-bringers never see coming — and a journal prompt in the free guide designed specifically for the ones who carry too much for too long.' },
+    umbraweld: { name: 'House Umbraweld', color: '#8a8aaa', rgb: '138,138,170', keyword: 'Containment · Black · Void', desc: 'You are not the absence of light. You are what holds space so that light has somewhere to land. Umbraweld protects through silence, through concealment, through knowing when not to be seen — and understanding that this restraint is its own form of power. You are a keeper of things: secrets, truths, people, grief. Not for deception, but for protection. You understand at a cellular level that not everything should be visible. Your loyalty, once given, is absolute and total. You do not explain yourself. You have never needed to.', traits: ['Void', 'Concealment', 'Depth', 'Silence', 'Containment'], quote: '"Only in darkness can light be seen. Only through light can shadow be shaped."', pair: 'Your sacred pair is <strong>House Luminarc</strong> — Shadow and Light. Their brilliance needs your darkness to be visible. You are not opposites. You are the same truth seen from different thresholds — and the distance between you is smaller than either of you admits.', hook: 'The free guide goes into what Umbraweld carries in its shadow that it rarely names — and the question at the end of your House page is one most Umbraweld people have been quietly waiting for someone to ask.' },
+    emberwake: { name: 'House Emberwake', color: '#cc3333', rgb: '204,51,51', keyword: 'Impulse · Red · Sacred Fire', desc: 'You feel everything at full volume. Emberwake people do not simmer — they ignite. The Red does not ask permission; it recognizes when something must be done and moves before doubt can take root. This is not recklessness. This is a different relationship with certainty. Your fire is sacred: it burns away what isn\'t real, what doesn\'t belong, what has been pretending. You argue because you care. You charge in when others hesitate because you cannot watch something that matters go undefended. Your anger and your love are the same fire — and you will absolutely fight for the people you love.', traits: ['Passion', 'Conflict', 'Sacred Fire', 'Impulse', 'Courage'], quote: '"Strike true. Burn bright. Begin again."', pair: 'Your sacred pair is <strong>House Verdanta</strong> — Fire and Growth. What you burn, Verdanta regrows. Your endings are their beginnings. The cycle between you is not destruction — it is the oldest form of renewal The Realm knows.', hook: 'The free guide explores what happens when Emberwake\'s fire turns inward — and includes the one journal prompt that helps you tell the difference between sacred fire and self-burning.' },
+    verdanta: { name: 'House Verdanta', color: '#3a8a4a', rgb: '58,138,74', keyword: 'Restoration · Green · Renewal', desc: 'You are patient in ways that feel almost supernatural — because you understand something most people spend their whole lives resisting: that nothing truly ends. It only changes form. You nurture, restore, and grow things slowly on purpose. You are deeply connected to cycles — death and regrowth are the same process to you, and this gives you a peace others find uncanny. Do not mistake that peace for softness. Verdanta people are deep-rooted. Cross them and discover that the gentlest things in The Realm are also the most persistent. They outlast everything. Everything.', traits: ['Renewal', 'Healing', 'Patience', 'Fertility', 'Depth'], quote: '"Grow slow. Mend deep. Remember the root."', pair: 'Your sacred pair is <strong>House Emberwake</strong> — Growth and Fire. What burns creates the ash that feeds what blooms. You do not fear the Red — you wait for it, knowing what comes after is yours to tend.', hook: 'The free guide holds a Verdanta journal prompt about what you have been tending in silence — and an affirmation for the ones who give everything to things that grow, and forget to tend themselves.' },
+    cirulholde: { name: 'House Cirulholde', color: '#2266cc', rgb: '34,102,204', keyword: 'Stability · Blue · Law', desc: 'You hold the line. Not because you were told to — because you understand what happens when no one does. Structure is not a cage to you; it is the container that makes freedom possible. Without the riverbank, the water floods. Without law, there is no protection — only whoever happens to be strongest. Cirulholde people are the steadfast spine when everything else is bending. You are the one who remains when others have long since left. Rule-keeper, oath-holder, the presence others depend on without realizing it. You are not rigid. You are reliable. There is a profound difference, and you feel it every time someone mistakes one for the other.', traits: ['Law', 'Order', 'Structure', 'Steadfastness', 'Authority'], quote: '"Only the absurd can reveal the rigid. Only the rigid can withstand the absurd."', pair: 'Your sacred pair is <strong>House Cinderholde</strong> — Order and Disruption. The Trickster reveals where your structures have become cages. Without the Orange, the Blue calcifies. You need each other, even when it is deeply uncomfortable — especially then.', hook: 'The free guide explores the shadow side of Cirulholde — when holding the line becomes holding yourself hostage — and the journal prompt designed to help you find the difference.' },
+    cinderholde: { name: 'House Cinderholde', color: '#cc6600', rgb: '204,102,0', keyword: 'Disruption · Orange · Trickster', desc: 'You see the cracks in things. Not to break them further — to show everyone else where the break already was. Cinderholde is the sacred jester, the ash dancer, the one who laughs in the face of certainty not because they are careless, but because they understand that nothing is as fixed as it pretends to be. You appear chaotic on the surface and are surprisingly principled underneath — because the joke is never random. There is always a point. You disrupt what has stopped being real so that something true can take its place. That is not mischief. That is a calling.', traits: ['Disruption', 'Laughter', 'Trickster Energy', 'Paradox', 'Freedom'], quote: '"He Means Well. Probably."', pair: 'Your sacred pair is <strong>House Cirulholde</strong> — Disruption and Order. The Blue needs you to show it where it has gone rigid. You need the Blue to give your disruption somewhere to land. Chaos without structure is just noise — and you know it, even if you\'d never admit it first.', hook: 'The free guide goes into what Cinderholde looks like when the disruption turns inward — and asks the one question the Trickster never thinks to ask themselves.' },
+    auricreign: { name: 'House Auricreign', color: '#ccaa00', rgb: '204,170,0', keyword: 'Discernment · Yellow · Intellect', desc: 'You are always three moves ahead. Not because you are cold — because your mind moves in patterns others don\'t perceive, and you learned long ago to trust it. Auricreign is strategy made beautiful: the crown of cunning, the pattern behind the pattern, the elegant solution that was invisible to everyone except the person who designed it. You use wit like a precision tool. You notice what everyone else missed and let them miss it — because the information is more valuable when they don\'t know you have it. Underestimating an Auricreign person is a mistake they will let you make. Once.', traits: ['Intellect', 'Strategy', 'Trickery', 'Discernment', 'Pattern'], quote: '"To see clearly, one must think beyond. To think beyond, one must see within."', pair: 'Your sacred pair is <strong>House Noctivara</strong> — Mind and Mystery. Where you calculate, Noctivara dreams. Where they intuit, you verify. The Yellow and the Purple arrive at the same truth by different roads — and together, they are very nearly unstoppable.', hook: 'The free guide explores what Auricreign misses when it only trusts what it can calculate — and includes a journal prompt specifically for the ones who think their way around everything, including themselves.' },
+    noctivara: { name: 'House Noctivara', color: '#8833cc', rgb: '136,51,204', keyword: 'Knowing · Purple · Dream', desc: 'You know things you cannot explain. This is not a malfunction. It is a gift — strange and sometimes heavy, but yours. You receive information in ways you can\'t always account for: a feeling that arrives before any evidence, a dream that turns out to be true, a knowing that simply is. You don\'t need proof. You need resonance. Deeply intuitive, drawn to mystery, comfortable in the symbolic and the strange — you have always moved a little sideways from certainty. Others find you uncanny. You find others charmingly literal. You have known for a long time that something was different about you. The Realm just gave it a name.', traits: ['Intuition', 'Mystery', 'Dream', 'Prophecy', 'Knowing'], quote: '"To see clearly, one must think beyond. To think beyond, one must see within."', pair: 'Your sacred pair is <strong>House Auricreign</strong> — Dream and Discernment. The Yellow shows you the clockwork. You show the Yellow the soul inside the machine. Neither is complete without the other, and both are more powerful for the meeting.', hook: 'The free guide holds a Noctivara journal prompt about what you have known for a long time but haven\'t yet given yourself permission to trust — and an affirmation for the ones who have always been told they feel too much.' }
+  };
+
+  const QUESTIONS = [
+    { text: "When you walk into a room full of strangers, what are you most aware of?", answers: [ { text: "Who needs help, and who is pretending they don't", house: 'luminarc' }, { text: "The exits, the shadows, and who is watching", house: 'umbraweld' }, { text: "The energy — whether it's alive or dead in here", house: 'emberwake' }, { text: "The quiet ones. They're always the most interesting", house: 'verdanta' }, { text: "Whether there's order or chaos running the space", house: 'cirulholde' }, { text: "Every unwritten rule you're already planning to break", house: 'cinderholde' }, { text: "The patterns — social dynamics, power structures, hierarchies", house: 'auricreign' }, { text: "What the room is feeling beneath what people are saying", house: 'noctivara' } ] },
+    { text: "Something you built — a relationship, a project, a plan — begins to fall apart. What is your first instinct?", answers: [ { text: "Find what can still be salvaged and protect it", house: 'luminarc' }, { text: "Withdraw and assess from a distance before acting", house: 'umbraweld' }, { text: "Make a decision immediately. Hesitation makes it worse", house: 'emberwake' }, { text: "Tend to what can still grow from the wreckage", house: 'verdanta' }, { text: "Identify the point of failure and prevent it from spreading", house: 'cirulholde' }, { text: "Let it fall. If it can't survive disruption, it wasn't built right", house: 'cinderholde' }, { text: "Reconstruct the sequence of events to understand exactly what happened", house: 'auricreign' }, { text: "You already felt this coming. You begin to grieve and to listen", house: 'noctivara' } ] },
+    { text: "What does honesty mean to you?", answers: [ { text: "A covenant. You give your word once and it holds", house: 'luminarc' }, { text: "Selective. Some truths are too dangerous to simply release", house: 'umbraweld' }, { text: "Everything. Anything less is a form of cowardice", house: 'emberwake' }, { text: "It's slow and tender. Real honesty takes patience to speak correctly", house: 'verdanta' }, { text: "The foundation of everything. Without it nothing holds", house: 'cirulholde' }, { text: "The funniest and most disruptive thing you can offer", house: 'cinderholde' }, { text: "Accuracy. Feelings are real, but so are facts", house: 'auricreign' }, { text: "Complicated. You can feel the truth before you can name it", house: 'noctivara' } ] },
+    { text: "Which landscape do you feel most at home in?", answers: [ { text: "A high bright place with long sightlines — you want to see what's coming", house: 'luminarc' }, { text: "Deep in shadow. A library at 3am. The kind of place that keeps its secrets", house: 'umbraweld' }, { text: "Somewhere fire has been — a forge, a bonfire, scorched earth that still smells alive", house: 'emberwake' }, { text: "Old growth forest. Somewhere that has been growing longer than anyone remembers", house: 'verdanta' }, { text: "A city that runs well. Structure, systems, the satisfaction of things in their place", house: 'cirulholde' }, { text: "A carnival after midnight. The moment when the rules stop applying", house: 'cinderholde' }, { text: "Somewhere elevated with a view. You think better when you can see the whole board", house: 'auricreign' }, { text: "Fog. Liminal spaces. The hour between night and morning that belongs to neither", house: 'noctivara' } ] },
+    { text: "What is the most dangerous thing about you?", answers: [ { text: "You will sacrifice yourself for someone else's safety without a second thought", house: 'luminarc' }, { text: "No one knows how much you've already seen and chosen not to say", house: 'umbraweld' }, { text: "Once you've made a decision, almost nothing will stop you", house: 'emberwake' }, { text: "You are patient enough to wait for exactly the right moment", house: 'verdanta' }, { text: "You know the law, and you know exactly how to use it", house: 'cirulholde' }, { text: "You can convince someone to question everything they thought was fixed", house: 'cinderholde' }, { text: "You have already thought of seventeen outcomes and prepared for most of them", house: 'auricreign' }, { text: "You knew what was going to happen. You usually do", house: 'noctivara' } ] },
+    { text: "Someone you love is making a choice you know will hurt them. What do you do?", answers: [ { text: "Speak truth. Gently, but completely. Then respect their choice", house: 'luminarc' }, { text: "Watch carefully and say nothing until they ask. Then be very honest", house: 'umbraweld' }, { text: "Tell them directly. You don't dress difficult things in soft language", house: 'emberwake' }, { text: "Stay close. Be there for the growing-back-together after", house: 'verdanta' }, { text: "Lay out the consequences clearly and offer a better path", house: 'cirulholde' }, { text: "Ask a question that makes them see it themselves. That way it's real", house: 'cinderholde' }, { text: "Present the data. You've already mapped the probable outcomes", house: 'auricreign' }, { text: "You already grieve what's coming. You hold them anyway", house: 'noctivara' } ] },
+    { text: "When you are at your most powerful, what does it feel like?", answers: [ { text: "Clear. Lit from within. You know exactly what you're here to do", house: 'luminarc' }, { text: "Invisible and present at once. You see everything. Nothing sees you", house: 'umbraweld' }, { text: "Like fire. You are entirely yourself and you are moving", house: 'emberwake' }, { text: "Slow and certain. Like roots. Like something that cannot be rushed or broken", house: 'verdanta' }, { text: "Steady. Every piece in its place. The satisfaction of a system holding", house: 'cirulholde' }, { text: "Like electricity. Like the moment before the punchline when everything shifts", house: 'cinderholde' }, { text: "Like a very quiet engine. Precise, invisible, and entirely in motion", house: 'auricreign' }, { text: "Like water. You don't force anything. You simply know where to flow", house: 'noctivara' } ] },
+    { text: "What do you do with things you cannot fix?", answers: [ { text: "Witness them. Carry the light anyway, even when it can't reach far enough", house: 'luminarc' }, { text: "Hold them in the dark, where at least they won't cause more damage", house: 'umbraweld' }, { text: "Release them violently and completely, then begin again", house: 'emberwake' }, { text: "Let them compost into something else. Nothing is truly unfixable — only not yet", house: 'verdanta' }, { text: "Document them. Name what failed. Prevent the next one", house: 'cirulholde' }, { text: "Laugh at them until they lose their power and reveal their absurdity", house: 'cinderholde' }, { text: "Analyze until you understand why. Then close the file", house: 'auricreign' }, { text: "Sit with them in silence until they tell you what they need", house: 'noctivara' } ] },
+    { text: "Which of these feels most true about you?", answers: [ { text: "I show up when people need me, even when it costs me something", house: 'luminarc' }, { text: "I notice far more than I say. That's intentional", house: 'umbraweld' }, { text: "I would rather be honest and uncomfortable than gentle and dishonest", house: 'emberwake' }, { text: "I take care of things slowly, thoroughly, and permanently", house: 'verdanta' }, { text: "I believe in systems. A good structure protects everyone inside it", house: 'cirulholde' }, { text: "I find the humor in the horror. That is not avoidance — that is survival", house: 'cinderholde' }, { text: "I understand things by seeing the pattern, not just the piece", house: 'auricreign' }, { text: "I have always known things I couldn't explain. I've stopped trying to explain them", house: 'noctivara' } ] },
+    { text: "A door appears in a place where no door should be. What do you do?", answers: [ { text: "Check if anyone needs protecting first. Then decide", house: 'luminarc' }, { text: "Observe it from every angle before touching anything", house: 'umbraweld' }, { text: "Open it. Obviously", house: 'emberwake' }, { text: "Listen to it. Doors that appear have roots. You'd like to know its name", house: 'verdanta' }, { text: "Catalogue it. Report it. Determine what the protocol should be", house: 'cirulholde' }, { text: "Walk through laughing. If you die, at least it was interesting", house: 'cinderholde' }, { text: "Examine every surface. Map the probabilities. Then open it", house: 'auricreign' }, { text: "You've been expecting this door for a while now", house: 'noctivara' } ] },
+    { text: "What is chaos, to you?", answers: [ { text: "The place where light is most needed", house: 'luminarc' }, { text: "An environment you can navigate better than most", house: 'umbraweld' }, { text: "Fuel", house: 'emberwake' }, { text: "Fertile ground. Chaos is how things begin again", house: 'verdanta' }, { text: "A problem to be structured into order as quickly as possible", house: 'cirulholde' }, { text: "Home", house: 'cinderholde' }, { text: "A complex system that looks random because you haven't found the pattern yet", house: 'auricreign' }, { text: "Familiar. You have always lived a little sideways from certainty", house: 'noctivara' } ] },
+    { text: "The Chaos Star has eight points. Which calls to you?", answers: [ { text: "The point that shines so brightly it cannot be looked at directly", house: 'luminarc' }, { text: "The point you cannot find until you stop looking for it", house: 'umbraweld' }, { text: "The point that burns hot enough to leave a mark on you", house: 'emberwake' }, { text: "The point that is slowly, quietly, growing toward you", house: 'verdanta' }, { text: "The point that holds the whole star in alignment", house: 'cirulholde' }, { text: "The point that keeps changing position when you look away", house: 'cinderholde' }, { text: "The point you already calculated the coordinates for", house: 'auricreign' }, { text: "The point that found you first", house: 'noctivara' } ] }
+  ];
+
+  let quizScores = {};
+  let currentQ = 0;
+
+  function initScores() { quizScores = {}; Object.keys(HOUSES).forEach(h => quizScores[h] = 0); }
+
+  function startQuiz() {
+    initScores(); currentQ = 0;
+    showQuizScreen('screen-quiz');
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentQ];
+    document.getElementById('q-num').textContent = `Question ${currentQ + 1}`;
+    document.getElementById('q-text').textContent = q.text;
+    document.getElementById('progress-label').textContent = `Question ${currentQ + 1} of ${QUESTIONS.length}`;
+    document.getElementById('progress-fill').style.width = `${(currentQ / QUESTIONS.length) * 100}%`;
+    const shuffled = [...q.answers].sort(() => Math.random() - 0.5);
+    const grid = document.getElementById('answers-grid');
+    grid.innerHTML = '';
+    shuffled.forEach(ans => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.textContent = ans.text;
+      btn.onclick = () => selectAnswer(ans.house, btn);
+      grid.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(house, btn) {
+    document.querySelectorAll('.answer-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    quizScores[house]++;
+    setTimeout(() => {
+      currentQ++;
+      if (currentQ < QUESTIONS.length) {
+        const card = document.getElementById('question-card');
+        card.style.opacity = '0'; card.style.transform = 'translateX(-12px)';
+        setTimeout(() => {
+          card.style.transition = 'none'; card.style.opacity = '1'; card.style.transform = 'translateX(0)';
+          renderQuestion();
+          setTimeout(() => { card.style.transition = ''; }, 50);
+        }, 200);
+      } else { showQuizResult(); }
+    }, 280);
+  }
+
+  function showQuizResult() {
+    document.getElementById('progress-fill').style.width = '100%';
+    const winner = Object.entries(quizScores).sort((a, b) => b[1] - a[1])[0][0];
+    const house = HOUSES[winner];
+    const card = document.getElementById('result-card');
+    card.style.borderColor = house.color;
+    card.style.setProperty('--house-rgb', house.rgb);
+    card.style.boxShadow = `0 0 60px rgba(${house.rgb}, 0.15), inset 0 0 80px rgba(${house.rgb}, 0.04)`;
+    const glow = document.getElementById('result-glow');
+    glow.style.background = house.color; glow.style.boxShadow = `0 0 20px ${house.color}`;
+    document.getElementById('result-name').textContent = house.name;
+    document.getElementById('result-name').style.color = house.color;
+    document.getElementById('result-keyword').textContent = house.keyword;
+    document.getElementById('result-divider').style.background = `linear-gradient(90deg, transparent, ${house.color}, transparent)`;
+    document.getElementById('result-desc').textContent = house.desc;
+    document.getElementById('result-quote').textContent = house.quote;
+    document.getElementById('result-pair').innerHTML = house.pair;
+    const traits = document.getElementById('result-traits');
+    traits.innerHTML = house.traits.map(t => `<span class="result-trait" style="color:${house.color}; border-color:${house.color}44;">${t}</span>`).join('');
+    const total = Object.values(quizScores).reduce((a,b) => a+b, 0);
+    const sorted = Object.entries(quizScores).sort((a,b) => b[1]-a[1]);
+    document.getElementById('score-bars').innerHTML = sorted.map(([h, s]) => {
+      const hd = HOUSES[h]; const pct = total > 0 ? Math.round((s / total) * 100) : 0;
+      return `<div class="score-row"><div class="score-house-label" style="color:${hd.color}">${hd.name.replace('House ','')}</div><div class="score-track"><div class="score-fill" style="background:${hd.color}; width:${pct}%"></div></div><div class="score-num">${pct}%</div></div>`;
+    }).join('');
+    // PDF callout
+    document.getElementById('pdf-hook').textContent = house.hook;
+    document.getElementById('email-input').value = '';
+    document.getElementById('pdf-success').style.display = 'none';
+    document.getElementById('pdf-callout').querySelector('.pdf-callout-form').style.display = 'flex';
+    showQuizScreen('screen-result');
+  }
+
+  function handleEmailSubmit() {
+    const email = document.getElementById('email-input').value.trim();
+    if (!email || !email.includes('@')) {
+      document.getElementById('email-input').style.borderColor = 'rgba(204,51,51,0.6)';
+      setTimeout(() => { document.getElementById('email-input').style.borderColor = ''; }, 1500);
+      return;
+    }
+    // TODO: Connect to email platform (Mailchimp/Kit/Beehiiv)
+    document.getElementById('pdf-callout').querySelector('.pdf-callout-form').style.display = 'none';
+    document.getElementById('pdf-success').style.display = 'block';
+  }
+
+  function resetQuiz() { initScores(); currentQ = 0; showQuizScreen('screen-intro'); }
+
+  function showQuizScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 </script>
 </body>
 </html>
