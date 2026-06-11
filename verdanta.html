@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Verdanta">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#020408">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Guild Hall · Verdanta Quest Log</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #020408; --deep: #06090f; --surface: #0a0f1a; --panel: #0d1422; --panel-2: #101b29;
+    --border: #18301f; --border-soft: #14233a;
+    /* Verdanta is the hero */
+    --ver: #3a8a4a; --ver-bright: #5fb86f; --ver-glow: #8fe6a0; --ver-dim: #234d2c;
+    --gold: #c9a84c; --gold-bright: #f0c060; --gold-dim: #6f5a2a;
+    --purple-glow: #d4a0ff;
+    --white-soft: #e8eef0; --text-dim: #6a8a76; --text-faint: #46604f;
+    --good: #5fb86f; --rest: #6a8a76;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; }
+  body {
+    background: var(--void); color: var(--white-soft);
+    font-family: 'Raleway', sans-serif; line-height: 1.6;
+    min-height: 100vh; overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(143,230,160,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 32% 62%, rgba(143,230,160,0.22) 0%, transparent 100%),
+      radial-gradient(1px 1px at 52% 12%, rgba(255,220,150,0.22) 0%, transparent 100%),
+      radial-gradient(1px 1px at 72% 82%, rgba(143,230,160,0.30) 0%, transparent 100%),
+      radial-gradient(1px 1px at 88% 38%, rgba(212,160,255,0.18) 0%, transparent 100%);
+  }
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 50% at 25% 12%, rgba(58,138,74,0.10) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 60% at 80% 90%, rgba(58,138,74,0.07) 0%, transparent 70%);
+  }
+
+  .app { position: relative; z-index: 1; max-width: 460px; margin: 0 auto; padding: 0 18px calc(96px + env(safe-area-inset-bottom)); }
+
+  /* HEADER */
+  header { text-align: center; padding: 30px 12px 18px; position: relative; }
+  .star { font-size: 1.8rem; display: inline-block; filter: drop-shadow(0 0 10px var(--ver)); animation: spin 30s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .wordmark { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--text-dim); margin: 8px 0 2px; }
+  .title { font-family: 'Cinzel Decorative', serif; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.04em;
+    background: linear-gradient(135deg, var(--ver-glow), var(--gold-bright)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .header-rule { height: 1px; max-width: 220px; margin: 12px auto 0; background: linear-gradient(90deg, transparent, var(--ver-dim), var(--gold-dim), transparent); }
+
+  /* SCREENS */
+  .screen { display: none; animation: rise 0.4s ease; }
+  .screen.active { display: block; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .screen-head { text-align: center; margin: 6px 0 22px; }
+  .screen-eyebrow { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); }
+  .screen-title { font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--white-soft); margin-top: 2px; }
+  .today-date { color: var(--text-dim); font-size: 0.78rem; letter-spacing: 0.05em; margin-top: 4px; }
+
+  /* SIGIL / PROGRESS RING */
+  .sigil-wrap { display: flex; flex-direction: column; align-items: center; margin: 4px 0 26px; }
+  .sigil { position: relative; width: 168px; height: 168px; }
+  .sigil svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .ring-track { fill: none; stroke: var(--border); stroke-width: 9; }
+  .ring-fill { fill: none; stroke: url(#verGrad); stroke-width: 9; stroke-linecap: round; transition: stroke-dashoffset 0.9s cubic-bezier(.22,1,.36,1); filter: drop-shadow(0 0 6px rgba(95,184,111,0.55)); }
+  .sigil-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .sigil-star { font-size: 1.3rem; color: var(--ver-glow); filter: drop-shadow(0 0 8px var(--ver)); }
+  .sigil-points { font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 1.7rem; color: var(--white-soft); line-height: 1; margin-top: 4px; }
+  .sigil-points small { font-size: 0.85rem; color: var(--text-dim); font-family: 'Cinzel', serif; }
+  .sigil-tier { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 4px; color: var(--ver-bright); }
+  .encouragement { text-align: center; max-width: 320px; margin: 0 auto; font-style: italic; color: var(--purple-glow); font-size: 0.9rem; line-height: 1.7; opacity: 0.9; min-height: 2.6em; }
+
+  /* QUEST CARDS */
+  .quests { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+  .quest {
+    display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+    background: var(--panel); border: 1px solid var(--border-soft); padding: 16px 16px;
+    cursor: pointer; position: relative; overflow: hidden; transition: border-color .25s, transform .12s, background .25s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .quest::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--border); transition: background .25s, box-shadow .25s; }
+  .quest:active { transform: scale(0.99); }
+  .quest:hover { border-color: var(--ver-dim); }
+  .quest.done { background: var(--panel-2); border-color: var(--ver-dim); }
+  .quest.done::before { background: var(--ver-bright); box-shadow: 0 0 14px var(--ver); }
+  .check { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--text-faint); display: flex; align-items: center; justify-content: center; transition: all .25s; font-size: 1rem; color: transparent; }
+  .quest.done .check { border-color: var(--ver-bright); background: rgba(95,184,111,0.14); color: var(--ver-glow); box-shadow: 0 0 14px rgba(95,184,111,0.35); }
+  .quest-body { flex: 1; min-width: 0; }
+  .quest-name { font-family: 'Cinzel', serif; font-size: 0.92rem; color: var(--white-soft); letter-spacing: 0.02em; }
+  .quest.done .quest-name { color: var(--ver-glow); }
+  .quest-note { font-size: 0.74rem; color: var(--text-dim); margin-top: 2px; line-height: 1.45; }
+  .quest-badge { flex-shrink: 0; font-family: 'Cinzel', serif; font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dim); border: 1px solid var(--gold-dim); padding: 2px 7px; }
+
+  .footnote { text-align: center; font-style: italic; color: var(--text-faint); font-size: 0.78rem; margin-top: 24px; line-height: 1.7; padding: 0 8px; }
+
+  /* WEEK */
+  .week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; margin-bottom: 24px; }
+  .day-col { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .day-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+  .day-col.today .day-label { color: var(--gold-bright); }
+  .day-bar { width: 100%; height: 96px; background: var(--panel); border: 1px solid var(--border-soft); border-radius: 4px; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+  .day-fill { width: 100%; background: linear-gradient(180deg, var(--ver-bright), var(--ver)); transition: height .6s cubic-bezier(.22,1,.36,1); box-shadow: 0 0 12px rgba(95,184,111,0.4); }
+  .day-col.today .day-bar { border-color: var(--gold-dim); }
+  .day-pts { font-size: 0.66rem; color: var(--text-dim); font-family: 'Cinzel', serif; }
+  .day-pts.has { color: var(--ver-bright); }
+  .guild-bonus { text-align: center; border: 1px solid var(--gold-dim); background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(58,138,74,0.08)); padding: 16px; margin-bottom: 22px; }
+  .guild-bonus .gb-title { font-family: 'Cinzel Decorative', serif; color: var(--gold-bright); font-size: 0.95rem; letter-spacing: 0.05em; }
+  .guild-bonus .gb-sub { font-style: italic; color: var(--purple-glow); font-size: 0.82rem; margin-top: 4px; }
+  .week-note { text-align: center; font-style: italic; color: var(--text-faint); font-size: 0.8rem; line-height: 1.7; padding: 0 6px; }
+
+  /* PROGRESS / STATS */
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+  .stat { background: var(--panel); border: 1px solid var(--border-soft); padding: 18px 14px; text-align: center; position: relative; overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+  .stat-num { font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 1.7rem; color: var(--ver-glow); line-height: 1; }
+  .stat-num.gold { color: var(--gold-bright); }
+  .stat-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--border-soft); padding: 22px 18px; margin-bottom: 18px; position: relative; }
+  .panel-top { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--ver), transparent); }
+  .panel-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .panel-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--ver-dim), transparent); }
+  .panel-hint { font-size: 0.78rem; color: var(--text-dim); font-style: italic; margin-bottom: 16px; line-height: 1.6; }
+
+  .weigh-row { display: flex; gap: 10px; align-items: stretch; }
+  .weigh-input { flex: 1; background: var(--surface); border: 1px solid var(--border-soft); color: var(--white-soft); font-family: 'Raleway', sans-serif; font-size: 1rem; padding: 12px 14px; outline: none; transition: border-color .2s; }
+  .weigh-input:focus { border-color: var(--ver); }
+  .btn { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 12px 18px; background: transparent; border: 1px solid var(--ver-dim); color: var(--ver-glow); cursor: pointer; transition: all .25s; white-space: nowrap; }
+  .btn:hover { border-color: var(--ver-bright); box-shadow: 0 0 18px rgba(95,184,111,0.18); }
+  .btn:active { transform: scale(0.98); }
+  .last-weigh { margin-top: 14px; font-size: 0.82rem; color: var(--text-dim); }
+  .last-weigh strong { color: var(--white-soft); font-weight: 600; }
+  .trend { font-size: 0.78rem; margin-top: 6px; color: var(--text-dim); }
+  .trend.down { color: var(--ver-bright); }
+  .trend.up { color: var(--gold-dim); }
+  .weight-list { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; max-height: 180px; overflow-y: auto; }
+  .weight-item { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-dim); padding: 6px 0; border-bottom: 1px solid var(--border-soft); }
+  .weight-item span:last-child { color: var(--white-soft); }
+
+  /* SETTINGS */
+  .field { margin-bottom: 20px; }
+  .field-label { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px; display: block; }
+  .day-toggles { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .day-toggle { font-family: 'Cinzel', serif; font-size: 0.62rem; padding: 10px 0; text-align: center; border: 1px solid var(--border-soft); color: var(--text-dim); background: var(--surface); cursor: pointer; transition: all .2s; }
+  .day-toggle.on { border-color: var(--ver-bright); color: var(--ver-glow); background: rgba(58,138,74,0.12); box-shadow: inset 0 0 12px rgba(95,184,111,0.1); }
+  .num-row { display: flex; align-items: center; gap: 12px; }
+  .num-input { width: 90px; background: var(--surface); border: 1px solid var(--border-soft); color: var(--white-soft); font-family: 'Raleway'; font-size: 1rem; padding: 10px 12px; outline: none; }
+  .num-input:focus { border-color: var(--ver); }
+  .num-suffix { font-size: 0.82rem; color: var(--text-dim); }
+  .settings-saved { text-align: center; font-style: italic; color: var(--ver-bright); font-size: 0.8rem; min-height: 1.4em; transition: opacity .3s; opacity: 0; }
+  .settings-saved.show { opacity: 1; }
+  .danger-row { margin-top: 8px; text-align: center; }
+  .link-btn { background: none; border: none; color: var(--text-faint); font-size: 0.74rem; text-decoration: underline; cursor: pointer; font-family: 'Raleway'; }
+  .link-btn:hover { color: var(--gold-dim); }
+
+  /* BOTTOM NAV */
+  nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    background: rgba(4,7,11,0.94); backdrop-filter: blur(14px); border-top: 1px solid var(--border-soft);
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom)); }
+  .nav-inner { max-width: 460px; margin: 0 auto; display: flex; }
+  .nav-btn { flex: 1; background: none; border: none; cursor: pointer; padding: 6px 0; display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--text-faint); transition: color .2s; }
+  .nav-btn .nico { font-size: 1.15rem; line-height: 1; }
+  .nav-btn .nlabel { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .nav-btn.active { color: var(--ver-glow); }
+  .nav-btn.active .nico { filter: drop-shadow(0 0 8px var(--ver)); }
+
+  :focus-visible { outline: 2px solid var(--ver-bright); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .star { animation: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <span class="star">✸</span>
+    <div class="wordmark">Guild Hall</div>
+    <h1 class="title">Verdanta Quest Log</h1>
+    <div class="header-rule"></div>
+  </header>
+
+  <!-- ===================== QUESTS / HOME ===================== -->
+  <section id="screen-quests" class="screen active">
+    <div class="screen-head">
+      <div class="screen-eyebrow">Today's Quest Board</div>
+      <div class="today-date" id="todayDate">—</div>
+    </div>
+
+    <div class="sigil-wrap">
+      <div class="sigil">
+        <svg viewBox="0 0 168 168">
+          <defs>
+            <linearGradient id="verGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8fe6a0"/>
+              <stop offset="100%" stop-color="#3a8a4a"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="84" cy="84" r="74"></circle>
+          <circle class="ring-fill" id="ringFill" cx="84" cy="84" r="74"></circle>
+        </svg>
+        <div class="sigil-center">
+          <div class="sigil-star">✦</div>
+          <div class="sigil-points"><span id="ptsNow">0</span><small id="ptsMax">/4</small></div>
+          <div class="sigil-tier" id="tierWord">Begin</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="encouragement" id="encourage">—</p>
+
+    <div class="quests" id="questList"></div>
+
+    <p class="footnote">You do not have to become someone else.<br>You only have to return tomorrow.</p>
+  </section>
+
+  <!-- ===================== WEEK ===================== -->
+  <section id="screen-week" class="screen">
+    <div class="screen-head">
+      <div class="screen-eyebrow">The Forest Remembers</div>
+      <div class="screen-title">This Week</div>
+    </div>
+    <div id="guildBonus"></div>
+    <div class="week-grid" id="weekGrid"></div>
+    <p class="week-note">Every column you fill is a day you showed up.<br>The empty ones are not failures — only days the forest waited.</p>
+  </section>
+
+  <!-- ===================== PROGRESS ===================== -->
+  <section id="screen-progress" class="screen">
+    <div class="screen-head">
+      <div class="screen-eyebrow">The Long Path</div>
+      <div class="screen-title">Your Progress</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-num" id="statStreak">0</div><div class="stat-label">Return Streak</div></div>
+      <div class="stat"><div class="stat-num" id="statWalks">0</div><div class="stat-label">Verdanta Walks</div></div>
+      <div class="stat"><div class="stat-num gold" id="statPoints">0</div><div class="stat-label">Quest Points</div></div>
+      <div class="stat"><div class="stat-num gold" id="statDays">0</div><div class="stat-label">Days Shown Up</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-top"></div>
+      <div class="panel-title">Weekly Weigh-In</div>
+      <p class="panel-hint">Once a week, same day, same time. Log it, then let it go. The scale is a side effect, not the quest.</p>
+      <div class="weigh-row">
+        <input class="weigh-input" id="weighInput" type="number" inputmode="decimal" placeholder="lbs" step="0.1">
+        <button class="btn" id="weighBtn">Log Weight</button>
+      </div>
+      <div class="last-weigh" id="lastWeigh"></div>
+      <div class="trend" id="weighTrend"></div>
+      <div class="weight-list" id="weightList"></div>
+    </div>
+  </section>
+
+  <!-- ===================== SETTINGS ===================== -->
+  <section id="screen-settings" class="screen">
+    <div class="screen-head">
+      <div class="screen-eyebrow">Attune the Path</div>
+      <div class="screen-title">Settings</div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-top"></div>
+      <div class="panel-title">Strength Quest Days</div>
+      <p class="panel-hint">Squats, wall pushups, knee raises. The Strength Quest only appears on these days.</p>
+      <div class="day-toggles" id="dayToggles"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-top"></div>
+      <div class="panel-title">Verdanta Walk Goal</div>
+      <div class="num-row">
+        <input class="num-input" id="walkMin" type="number" inputmode="numeric" min="5" step="5">
+        <span class="num-suffix">minutes a day</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-top"></div>
+      <div class="panel-title">The Long Goal</div>
+      <p class="panel-hint">For your own reference only. There are no deadlines in the Realm.</p>
+      <div class="field">
+        <label class="field-label" for="startW">Starting weight (optional)</label>
+        <div class="num-row"><input class="num-input" id="startW" type="number" inputmode="decimal" step="0.1"><span class="num-suffix">lbs</span></div>
+      </div>
+      <div class="field" style="margin-bottom:0;">
+        <label class="field-label" for="goalW">Goal weight (optional)</label>
+        <div class="num-row"><input class="num-input" id="goalW" type="number" inputmode="decimal" step="0.1"><span class="num-suffix">lbs</span></div>
+      </div>
+    </div>
+
+    <button class="btn" id="saveSettings" style="width:100%;">Save Settings</button>
+    <p class="settings-saved" id="savedMsg">The path is attuned.</p>
+    <div class="danger-row">
+      <button class="link-btn" id="resetBtn">Reset all data</button>
+    </div>
+  </section>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-screen="quests"><span class="nico">✸</span><span class="nlabel">Quests</span></button>
+    <button class="nav-btn" data-screen="week"><span class="nico">❖</span><span class="nlabel">Week</span></button>
+    <button class="nav-btn" data-screen="progress"><span class="nico">↟</span><span class="nlabel">Path</span></button>
+    <button class="nav-btn" data-screen="settings"><span class="nico">✦</span><span class="nlabel">Attune</span></button>
+  </div>
+</nav>
+
+<script>
+/* ============================================================
+   Guild Hall: Verdanta Quest Log
+   Data persists between sessions via window.storage,
+   with an in-memory fallback so the app never breaks.
+   ============================================================ */
+
+// ---- storage layer ----
+// Standalone build: prefers localStorage so data persists on your phone.
+// Falls back to Claude's window.storage, then to in-memory if neither exists.
+const mem = {};
+let LS = null;
+try { const t='__vql_test__'; window.localStorage.setItem(t,'1'); window.localStorage.removeItem(t); LS = window.localStorage; } catch(e) { LS = null; }
+const hasCloud = (typeof window !== 'undefined' && window.storage && typeof window.storage.get === 'function');
+
+async function sget(key) {
+  if (LS) { try { const v = LS.getItem(key); return v === null ? null : v; } catch(e){} }
+  if (hasCloud) { try { const r = await window.storage.get(key); return r ? r.value : null; } catch (e) {} }
+  return (key in mem) ? mem[key] : null;
+}
+async function sset(key, val) {
+  const v = (typeof val === 'string') ? val : JSON.stringify(val);
+  mem[key] = v;
+  if (LS) { try { LS.setItem(key, v); return; } catch(e){} }
+  if (hasCloud) { try { await window.storage.set(key, v); } catch (e) {} }
+}
+async function sdel(key) {
+  delete mem[key];
+  if (LS) { try { LS.removeItem(key); } catch(e){} }
+  if (hasCloud) { try { await window.storage.delete(key); } catch (e) {} }
+}
+
+const K_DAYS = 'vql:days', K_SETTINGS = 'vql:settings', K_WEIGHTS = 'vql:weights';
+
+// ---- quest definitions ----
+const QUESTS = [
+  { id: 'protein', name: 'Protein First',       note: 'Where is the protein? Lead every meal with it.' },
+  { id: 'drinks',  name: 'No Drinking Calories', note: 'Water, sparkling, unsweet tea, black coffee.' },
+  { id: 'walk',    name: 'Verdanta Walk',        note: 'Move with the cycle. A walk, not a workout.' },
+  { id: 'water',   name: 'Water Ward',           note: 'Stay watered through the day.' },
+  { id: 'strength',name: 'Strength Quest',       note: 'Squats · wall pushups · knee raises. 2–3 rounds.', strength: true },
+];
+
+const DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+const ENCOURAGE = {
+  rest:   ['The forest is quiet today. The Realm still holds you.',
+           'Rest is part of the cycle. Return tomorrow.',
+           'No quest is owed. You are still rooted here.'],
+  one:    ['One small quest still counts. The root remembers.',
+           'You showed up. That is the whole secret.',
+           'A single step is still movement through the wood.'],
+  some:   ['Quest accepted. You are becoming the one who returns.',
+           'Steady growth. Nothing here is rushed.',
+           'You moved with the cycle today. Good.'],
+  most:   ['Verdanta Victory. The path bends toward you now.',
+           'Deep-rooted and moving. This is how it holds.',
+           'Full bloom. Every quest answered today.'],
+};
+
+// ---- state ----
+let DAYS = {};            // { 'YYYY-MM-DD': {protein:true,...} }
+let SETTINGS = { strengthDays: [1,3,5], walkMin: 10, startW: null, goalW: null };
+let WEIGHTS = [];         // [{date:'YYYY-MM-DD', lbs:number}]
+
+// ---- date helpers ----
+function ymd(d) { const z = n => String(n).padStart(2,'0'); return `${d.getFullYear()}-${z(d.getMonth()+1)}-${z(d.getDate())}`; }
+function todayKey() { return ymd(new Date()); }
+function isStrengthDay(date) { return SETTINGS.strengthDays.includes(date.getDay()); }
+function maxPointsFor(date) { return isStrengthDay(date) ? 5 : 4; }
+
+function dayPoints(rec, date) {
+  if (!rec) return 0;
+  let p = 0;
+  ['protein','drinks','walk','water'].forEach(k => { if (rec[k]) p++; });
+  if (isStrengthDay(date) && rec.strength) p++;
+  return p;
+}
+
+// deterministic pick so the message is stable within a day
+function pick(arr, seedStr) { let h = 0; for (let i=0;i<seedStr.length;i++) h = (h*31 + seedStr.charCodeAt(i)) % 100000; return arr[h % arr.length]; }
+
+// ---- load ----
+async function load() {
+  const d = await sget(K_DAYS);    if (d) try { DAYS = JSON.parse(d); } catch(e){ DAYS = {}; }
+  const s = await sget(K_SETTINGS);if (s) try { SETTINGS = Object.assign(SETTINGS, JSON.parse(s)); } catch(e){}
+  const w = await sget(K_WEIGHTS); if (w) try { WEIGHTS = JSON.parse(w); } catch(e){ WEIGHTS = []; }
+}
+
+// ---- render: today ----
+function renderToday() {
+  const now = new Date();
+  const key = todayKey();
+  const rec = DAYS[key] || {};
+  const strengthToday = isStrengthDay(now);
+  const max = maxPointsFor(now);
+  const pts = dayPoints(rec, now);
+
+  document.getElementById('todayDate').textContent =
+    now.toLocaleDateString(undefined, { weekday:'long', month:'long', day:'numeric' });
+
+  // ring
+  const r = 74, circ = 2 * Math.PI * r;
+  const ring = document.getElementById('ringFill');
+  ring.style.strokeDasharray = circ;
+  ring.style.strokeDashoffset = circ * (1 - (max ? pts/max : 0));
+  document.getElementById('ptsNow').textContent = pts;
+  document.getElementById('ptsMax').textContent = '/' + max;
+
+  // tier + message
+  let tier, bucket;
+  if (pts <= 1) { tier = pts === 0 ? 'The Realm Holds You' : 'Returned'; bucket = pts === 0 ? 'rest' : 'one'; }
+  else if (pts <= 3) { tier = 'Quest Accepted'; bucket = 'some'; }
+  else { tier = 'Verdanta Victory'; bucket = 'most'; }
+  document.getElementById('tierWord').textContent = tier;
+  document.getElementById('encourage').textContent = pick(ENCOURAGE[bucket], key + bucket);
+
+  // quest cards
+  const list = document.getElementById('questList');
+  list.innerHTML = '';
+  QUESTS.forEach(q => {
+    if (q.strength && !strengthToday) return;
+    const done = !!rec[q.id];
+    const card = document.createElement('button');
+    card.className = 'quest' + (done ? ' done' : '');
+    card.setAttribute('aria-pressed', done ? 'true' : 'false');
+    card.innerHTML =
+      `<span class="check">✓</span>
+       <span class="quest-body">
+         <span class="quest-name">${q.name}</span>
+         <span class="quest-note">${q.note}</span>
+       </span>` +
+      (q.strength ? `<span class="quest-badge">3×/wk</span>` : '');
+    card.onclick = () => toggleQuest(q.id);
+    list.appendChild(card);
+  });
+}
+
+async function toggleQuest(id) {
+  const key = todayKey();
+  if (!DAYS[key]) DAYS[key] = {};
+  DAYS[key][id] = !DAYS[key][id];
+  if (!DAYS[key][id]) delete DAYS[key][id];
+  await sset(K_DAYS, DAYS);
+  renderToday();
+}
+
+// ---- render: week ----
+function renderWeek() {
+  const grid = document.getElementById('weekGrid');
+  grid.innerHTML = '';
+  const today = new Date();
+  const start = new Date(today); start.setDate(today.getDate() - today.getDay()); // Sunday
+  let allDaysScored = true;
+
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(start); d.setDate(start.getDate() + i);
+    const key = ymd(d);
+    const rec = DAYS[key];
+    const max = maxPointsFor(d);
+    const pts = dayPoints(rec, d);
+    const isFuture = d > today && key !== todayKey();
+    const isToday = key === todayKey();
+    if (!isFuture && pts < max) allDaysScored = false;
+    if (isFuture) allDaysScored = false;
+
+    const col = document.createElement('div');
+    col.className = 'day-col' + (isToday ? ' today' : '');
+    const fillPct = max ? Math.round((pts/max)*100) : 0;
+    col.innerHTML =
+      `<div class="day-label">${DAY_NAMES[d.getDay()][0]}</div>
+       <div class="day-bar"><div class="day-fill" style="height:${isFuture?0:fillPct}%"></div></div>
+       <div class="day-pts ${pts>0?'has':''}">${isFuture ? '·' : pts}</div>`;
+    grid.appendChild(col);
+  }
+
+  const gb = document.getElementById('guildBonus');
+  gb.innerHTML = allDaysScored
+    ? `<div class="guild-bonus"><div class="gb-title">✸ Guild Bonus ✸</div><div class="gb-sub">A perfect week. The whole guild felt you show up.</div></div>`
+    : '';
+}
+
+// ---- render: progress ----
+function renderProgress() {
+  let totalPts = 0, totalWalks = 0, daysShown = 0;
+  Object.keys(DAYS).forEach(key => {
+    const d = new Date(key + 'T12:00:00');
+    const pts = dayPoints(DAYS[key], d);
+    totalPts += pts;
+    if (DAYS[key].walk) totalWalks++;
+    if (pts > 0) daysShown++;
+  });
+
+  // return streak: consecutive days up to today with >=1 point
+  let streak = 0;
+  const cur = new Date();
+  for (;;) {
+    const key = ymd(cur);
+    const d = new Date(key + 'T12:00:00');
+    const pts = dayPoints(DAYS[key], d);
+    if (pts > 0) { streak++; cur.setDate(cur.getDate() - 1); }
+    else if (key === todayKey()) { cur.setDate(cur.getDate() - 1); } // today not yet started doesn't break streak
+    else break;
+  }
+
+  document.getElementById('statStreak').textContent = streak;
+  document.getElementById('statWalks').textContent = totalWalks;
+  document.getElementById('statPoints').textContent = totalPts;
+  document.getElementById('statDays').textContent = daysShown;
+
+  // weigh-in display
+  const lw = document.getElementById('lastWeigh');
+  const tr = document.getElementById('weighTrend');
+  const listEl = document.getElementById('weightList');
+  if (WEIGHTS.length) {
+    const last = WEIGHTS[WEIGHTS.length - 1];
+    const dt = new Date(last.date + 'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'});
+    lw.innerHTML = `Last entry: <strong>${last.lbs} lbs</strong> · ${dt}`;
+    if (WEIGHTS.length > 1) {
+      const prev = WEIGHTS[WEIGHTS.length - 2];
+      const diff = +(last.lbs - prev.lbs).toFixed(1);
+      if (diff < 0) { tr.className = 'trend down'; tr.textContent = `▼ ${Math.abs(diff)} lbs since last weigh-in`; }
+      else if (diff > 0) { tr.className = 'trend up'; tr.textContent = `▲ ${diff} lbs — the path is not a straight line`; }
+      else { tr.className = 'trend'; tr.textContent = 'Steady since last weigh-in'; }
+    } else { tr.className='trend'; tr.textContent=''; }
+    listEl.innerHTML = [...WEIGHTS].reverse().slice(0,12).map(w => {
+      const dd = new Date(w.date + 'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'});
+      return `<div class="weight-item"><span>${dd}</span><span>${w.lbs} lbs</span></div>`;
+    }).join('');
+  } else {
+    lw.innerHTML = 'No weigh-ins yet — and there is no rush to begin.';
+    tr.textContent = ''; listEl.innerHTML = '';
+  }
+}
+
+async function logWeight() {
+  const input = document.getElementById('weighInput');
+  const val = parseFloat(input.value);
+  if (!val || val <= 0) return;
+  const key = todayKey();
+  const existing = WEIGHTS.findIndex(w => w.date === key);
+  if (existing >= 0) WEIGHTS[existing].lbs = +val.toFixed(1);
+  else WEIGHTS.push({ date: key, lbs: +val.toFixed(1) });
+  WEIGHTS.sort((a,b) => a.date.localeCompare(b.date));
+  await sset(K_WEIGHTS, WEIGHTS);
+  input.value = '';
+  renderProgress();
+}
+
+// ---- settings ----
+function renderSettings() {
+  const dt = document.getElementById('dayToggles');
+  dt.innerHTML = '';
+  DAY_NAMES.forEach((nm, idx) => {
+    const b = document.createElement('button');
+    b.className = 'day-toggle' + (SETTINGS.strengthDays.includes(idx) ? ' on' : '');
+    b.textContent = nm[0];
+    b.title = nm;
+    b.onclick = () => {
+      const i = SETTINGS.strengthDays.indexOf(idx);
+      if (i >= 0) SETTINGS.strengthDays.splice(i,1); else SETTINGS.strengthDays.push(idx);
+      b.classList.toggle('on');
+    };
+    dt.appendChild(b);
+  });
+  document.getElementById('walkMin').value = SETTINGS.walkMin;
+  document.getElementById('startW').value = SETTINGS.startW ?? '';
+  document.getElementById('goalW').value = SETTINGS.goalW ?? '';
+}
+
+async function saveSettings() {
+  SETTINGS.walkMin = parseInt(document.getElementById('walkMin').value) || 10;
+  const sw = parseFloat(document.getElementById('startW').value); SETTINGS.startW = isNaN(sw) ? null : sw;
+  const gw = parseFloat(document.getElementById('goalW').value); SETTINGS.goalW = isNaN(gw) ? null : gw;
+  SETTINGS.strengthDays.sort((a,b)=>a-b);
+  await sset(K_SETTINGS, SETTINGS);
+  const msg = document.getElementById('savedMsg');
+  msg.classList.add('show');
+  setTimeout(() => msg.classList.remove('show'), 1800);
+  // walk note updates the quest card copy
+  QUESTS.find(q=>q.id==='walk').note = `Move with the cycle. ${SETTINGS.walkMin}-minute walk.`;
+  renderToday();
+}
+
+async function resetAll() {
+  if (!confirm('Reset all quests, weigh-ins, and settings? This cannot be undone.')) return;
+  await sdel(K_DAYS); await sdel(K_SETTINGS); await sdel(K_WEIGHTS);
+  DAYS = {}; WEIGHTS = []; SETTINGS = { strengthDays:[1,3,5], walkMin:10, startW:null, goalW:null };
+  renderToday(); renderWeek(); renderProgress(); renderSettings();
+}
+
+// ---- navigation ----
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.screen === name));
+  if (name === 'week') renderWeek();
+  if (name === 'progress') renderProgress();
+  if (name === 'settings') renderSettings();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ---- init ----
+(async function init() {
+  await load();
+  QUESTS.find(q=>q.id==='walk').note = `Move with the cycle. ${SETTINGS.walkMin}-minute walk.`;
+  renderToday();
+  document.querySelectorAll('.nav-btn').forEach(b => b.onclick = () => showScreen(b.dataset.screen));
+  document.getElementById('weighBtn').onclick = logWeight;
+  document.getElementById('weighInput').addEventListener('keydown', e => { if (e.key === 'Enter') logWeight(); });
+  document.getElementById('saveSettings').onclick = saveSettings;
+  document.getElementById('resetBtn').onclick = resetAll;
+})();
+</script>
+</body>
+</html>
