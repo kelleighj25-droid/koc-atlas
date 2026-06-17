@@ -510,13 +510,13 @@ body.warden-mode .nav-btn.active{color:var(--crown);}
     <div class="sec-head"><div class="sec-eyebrow">A Private, In-Person Moment</div><div class="sec-title">The Secret Quest</div></div>
     <div class="secret-card">
       <div class="sc-title">The GuildWarden's Tribute</div>
-      <p>Find a quiet moment with Papa Coles and tell him — out loud, face to face — one thing you genuinely appreciate about him.</p>
+      <p>Find a quiet moment with Papa Coles and tell him, out loud, face to face, one thing you genuinely appreciate about him.</p>
       <p>Funny, serious, short or long. This is your private moment with him.</p>
       <p class="sc-rule">The only rule: it has to be said in person, and it has to be real.</p>
     </div>
     <button class="btn gold full" id="secretDoneBtn">I completed the Secret Quest</button>
     <p class="ok-msg" id="secretMsg" style="text-align:center;"></p>
-    <p class="footer-note">The Chest is for something different — things he hasn't heard yet. Use it for what's harder to say out loud.</p>
+    <p class="footer-note">The Chest is for something different: things he hasn't heard yet. Use it for what's harder to say out loud.</p>
     <button class="btn ghost full" id="toChestBtn" style="margin-top:6px;">Open the GuildWarden's Chest →</button>
   </div>
 </section>
@@ -586,7 +586,7 @@ body.warden-mode .nav-btn.active{color:var(--crown);}
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
 <script>
 /* =============================================================
-   FATHER'S DAY GUILD FESTIVAL — Final Build v2
+   FATHER'S DAY GUILD FESTIVAL - Final Build v2
    ============================================================= */
 
 /* ▼▼▼  EDIT FREELY  ▼▼▼ */
@@ -773,14 +773,14 @@ const SIDE_QUESTS=[
   'Declare yourself the rightful heir of something silly.',
 ];
 const MENU_DATA=[
-  {dayHead:'Friday — Tavern Dinner',cats:[
+  {dayHead:'Friday: Tavern Dinner',cats:[
     {name:'Flatbreads',items:[{n:'Dragonfire Flatbread'},{n:'Hunter\'s Flatbread'},{n:'Smokewing Flatbread'},{n:'Verdanta Garden Flatbread'}]},
     {name:'',items:[{n:'Moonwheel Spears'},{n:'Assorted Tavern Snacks'},{n:'Tavern Ales'}]},
   ]},
-  {dayHead:'Saturday — Bonfire Feast',cats:[
+  {dayHead:'Saturday: Bonfire Feast',cats:[
     {name:'',items:[{n:'Dragon Dogs'},{n:"Hunter's Sausage"},{n:'Ember Potatoes'},{n:"Dragon's Nest Cones"},{n:'Assorted Bonfire Snacks'}]},
   ]},
-  {dayHead:"Sunday — GuildWarden's Brunch",cats:[
+  {dayHead:"Sunday: GuildWarden's Brunch",cats:[
     {name:'',items:[{n:'To Be Determined',d:'the feast will reveal itself'}]},
   ]},
 ];
@@ -989,14 +989,14 @@ function startListeners(){
     renderWardenScreen();if(qFilter==='relic')renderQuests();
   });
   db.ref(`${EVT}/hoard`).on('value',snap=>{hoardData=snap.val()||{clues:{},current:-1,found:null};if(document.getElementById('screen-hoard')?.classList.contains('active'))renderHoardScreen();});
-  db.ref('.info/connected').on('value',snap=>{isOnline=!!snap.val();document.getElementById('connStatus').innerHTML=isOnline?'<span class="conn-dot"></span> Live · all devices connected':'<span class="conn-dot off"></span> Offline — will sync when reconnected';});
+  db.ref('.info/connected').on('value',snap=>{isOnline=!!snap.val();document.getElementById('connStatus').innerHTML=isOnline?'<span class="conn-dot"></span> Live · all devices connected':'<span class="conn-dot off"></span> Offline. Will sync when reconnected';});
 }
 
 /* ---- join ---- */
 const ROLE_DEFS=[
   {id:'member',ico:'⚔️',name:'Guild Member',desc:'Join the trials and compete for glory'},
-  {id:'warden',ico:'👑',name:'GuildWarden',desc:"The GuildWarden's path — for the one the festival honors"},
-  {id:'host',ico:'🏰',name:'Host',desc:'Mömther keeps the Hall — host and festival keeper'},
+  {id:'warden',ico:'👑',name:'GuildWarden',desc:"The GuildWarden's path, for the one the festival honors"},
+  {id:'host',ico:'🏰',name:'Host',desc:'Mömther keeps the Hall, host and festival keeper'},
 ];
 function renderJoinRoles(){
   const w=document.getElementById('roleOpts');w.innerHTML='';
@@ -1020,17 +1020,17 @@ function renderHub(){
   const ITEMS=[
     {s:'schedule',ico:'🗓️',name:'Schedule',desc:'The order of three days'},
     {s:'profile',ico:'🪪',name:'Guild Member',desc:'Your class, title, badges & duel record'},
-    {s:'guide',ico:'📖',name:'Event Guide',desc:'How everything works — rules & descriptions'},
+    {s:'guide',ico:'📖',name:'Event Guide',desc:'How everything works: rules & descriptions'},
     {s:'quests',ico:'📜',name:'Quest Board',desc:'Trials, treasure & tavern tasks'},
     {s:'leaderboard',ico:'🏆',name:'Leaderboard',desc:'Live rankings across all devices'},
-    {s:'hoard',ico:'🐉',name:"Dragon's Hoard Hunt",desc:'Follow the clues — Saturday ~5pm',cls:'dragon'},
-    {s:'scavenger',ico:'📷',name:'Scavenger Hunt',desc:'Photo prompts — explore all weekend',cls:'scav'},
+    {s:'hoard',ico:'🐉',name:"Dragon's Hoard Hunt",desc:'Follow the clues. Saturday ~5pm',cls:'dragon'},
+    {s:'scavenger',ico:'📷',name:'Scavenger Hunt',desc:'Photo prompts. Explore all weekend',cls:'scav'},
     {s:'registry',ico:'📋',name:'Guild Registry',desc:'Everyone who entered the Hall'},
     {s:'menu',ico:'🍖',name:'Tavern Menu',desc:'The weekend feast + Potion Lab'},
     {s:'awards',ico:'🎖️',name:'Awards',desc:'The closing ceremony'},
     ...(myRole!=='warden'?[{s:'secret',ico:'🕯️',name:'Secret Quest',desc:'A private moment with Papa Coles',cls:'secret'}]:[]),
     ...(myRole==='warden'?[{s:'warden',ico:'🔥',name:"Warden's Hall",desc:'Duties, Ember & Legend Relics',cls:'fire'}]:[]),
-    {s:'chest',ico:'🗝️',name:"GuildWarden's Chest",desc:myRole==='warden'?'Something awaits the ceremony':'Write what you haven\'t said — read aloud at the ceremony',cls:'wide',wide:true},
+    {s:'chest',ico:'🗝️',name:"GuildWarden's Chest",desc:myRole==='warden'?'Something awaits the ceremony':'Write what you haven\'t said, read aloud at the ceremony',cls:'wide',wide:true},
   ];
   ITEMS.forEach(h=>{const b=document.createElement('button');
     b.className='hub-card '+(h.cls||'')+(h.wide?' wide':'');
@@ -1209,7 +1209,7 @@ function renderQuests(){
         const claimed=relicsFound[r.id];const isMine=!!(myQuests&&myQuests['relic_'+r.id]);const isClaiming=claimingRelic===r.id;
         const item=document.createElement('div');item.className='relic-item'+(claimed?' claimed':'')+(isClaiming?' claiming':'');
         if(isClaiming){
-          item.innerHTML=`<span class="relic-ico">${r.ico}</span><span class="relic-body" style="flex:1;"><span class="relic-name">You found the ${r.name}!</span><div class="claim-panel"><p>Photograph it to unlock its lore — or claim without a photo.</p><div class="claim-btns"><button class="btn gold sm" id="rPhoto_${r.id}">📷 Photograph &amp; Claim</button><button class="btn ghost sm" id="rSkip_${r.id}">Claim Without Photo</button><button class="btn ghost sm" id="rCancel_${r.id}" style="color:var(--wax-line);">Cancel</button></div><input type="file" accept="image/*" capture="environment" id="rFile_${r.id}" style="display:none;"></div></span>`;
+          item.innerHTML=`<span class="relic-ico">${r.ico}</span><span class="relic-body" style="flex:1;"><span class="relic-name">You found the ${r.name}!</span><div class="claim-panel"><p>Photograph it to unlock its lore, or claim without a photo.</p><div class="claim-btns"><button class="btn gold sm" id="rPhoto_${r.id}">📷 Photograph &amp; Claim</button><button class="btn ghost sm" id="rSkip_${r.id}">Claim Without Photo</button><button class="btn ghost sm" id="rCancel_${r.id}" style="color:var(--wax-line);">Cancel</button></div><input type="file" accept="image/*" capture="environment" id="rFile_${r.id}" style="display:none;"></div></span>`;
           sec.appendChild(item);
           setTimeout(()=>{
             document.getElementById(`rPhoto_${r.id}`)?.addEventListener('click',()=>document.getElementById(`rFile_${r.id}`)?.click());
@@ -1277,20 +1277,20 @@ function renderEventGuide(){
   const w=document.getElementById('guideBody');if(!w)return;w.innerHTML='';
   const sections=[];
   if(myRole==='warden'){
-    sections.push({head:"🌅 The GuildWarden's Vigil",body:`<p>Your private morning begins after you return home from the morning drive. The Hall is quiet. The guild hasn't woken yet. This is your time.</p><p>Open your Warden's Duties and move through them at your own pace — explore the grounds, find what's been hidden, and issue your first Decree before the festival opens in full.</p><p>The vigil is yours alone. It sets the tone for everything that follows.</p>`});
+    sections.push({head:"🌅 The GuildWarden's Vigil",body:`<p>Your private morning begins after you return home from the morning drive. The Hall is quiet. The guild hasn't woken yet. This is your time.</p><p>Open your Warden's Duties and move through them at your own pace. Explore the grounds, find what's been hidden, and issue your first Decree before the festival opens in full.</p><p>The vigil is yours alone. It sets the tone for everything that follows.</p>`});
   }
   sections.push({head:"⚔️ The Trials (Saturday ~4pm)",body:`<p>The Trials open at approximately 4pm Saturday when the Host returns. This is when formal competition begins and scores officially count.</p><p>Individual scoring is tracked through the app. Complete skill quests to earn points, badges, and bragging rights.</p>`});
-  sections.push({head:"🏹 Archery Competition",body:`<div class="guide-rule">Each player gets 3 shots. Points awarded by accuracy. Participation earns <strong>10 points</strong>. Top 3 scorers earn bonus points. A bullseye earns the Bullseye badge.</div><p><strong>Friendly Duels:</strong> Challenge any guild member to a head-to-head round — most points in 3 shots wins the duel. Track your wins and losses on your Guild Member screen. Duel wins earn additional points.</p><p><strong>Practice:</strong> During Open Questing (9am-3pm Saturday) you can practice freely. Practice shots don't count toward competition scores.</p>`});
-  sections.push({head:"🪓 Axe Throwing / Target Trial",body:`<div class="guide-rule">Each player gets 5 throws. Score by rings. Participation earns <strong>15 points</strong>. Best overall score earns the Timber Champion award at the ceremony.</div><p>Friendly duels follow the same rules as archery — best score across 5 throws wins.</p>`});
-  sections.push({head:"🐉 Dragon's Hoard Hunt (Saturday ~5pm)",body:`<p>A clue appears on everyone's app at ~5pm. Follow the clues around the property. Some clues have two possible interpretations — one leads to the next clue, the other may lead to a smaller cache of treats.</p><p>The first player to find the main Hoard claims the Dragon Hoard Champion title and first pick of the treasure.</p><div class="guide-rule">Everyone may take 1 large item and 2 small items from the Hoard. The Dragon Hoarder quest earns 15 points.</div>`});
-  sections.push({head:"⚗️ Potion Lab (Sat 9am — Sun 9am)",body:`<p>The Potion Lab is open all day Saturday and through Sunday morning. Create any drink, give it a name, present it to the guild, and dare someone to taste it. The most creative name earns bonus points at the ceremony.</p>`+POTION_LAB_QUESTS.map(q=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--edge-soft);font-size:.96rem;"><span style="color:var(--parch);">${q.name}</span><span style="font-family:'IM Fell English SC',serif;color:var(--gold);">${q.pts}p</span></div>`).join('')+`<p style="margin-top:8px;font-style:italic;color:var(--gold-bright);font-size:.88rem;">Most creative name: +15 bonus points (host's decision)</p>`});
-  sections.push({head:"🔥 Bonfire of Honors (Saturday ~7pm)",body:`<p>The great fire is lit at Ember Court at approximately 7pm Saturday. Gather around the fire for stories, toasts, and the Bard's Circle.</p><p><strong>Bard's Circle:</strong> Anyone who wants to share a story takes a turn. Categories: Funniest Story, Most Unbelievable Story, Best Zach Story. The guild votes for favorites. Winners earn the Golden Bard honor at Sunday's ceremony.</p><div class="guide-rule">Sunday is the Summer Solstice. The Bonfire of Honors is how the Guild marks the longest day of the year — fire, family, and the stories that hold us together.</div>`});
-  sections.push({head:"🌿 Hidden Keepsakes (Explore All Weekend)",body:`<p>Somewhere on the property, a small number of personal family keepsakes and memories have been hidden. These are real things — old, personal, connected to your history together.</p><p>When you find something that feels significant, something that clearly belongs to a memory — you've found it. Tap the "Find a hidden family keepsake" quest to log it.</p><div class="guide-rule">There are only a few of these. They are not guild symbols. You'll know them when you see them.</div>`});
-  // closing ceremony — different for warden
+  sections.push({head:"🏹 Archery Competition",body:`<div class="guide-rule">Each player gets 3 shots. Points awarded by accuracy. Participation earns <strong>10 points</strong>. Top 3 scorers earn bonus points. A bullseye earns the Bullseye badge.</div><p><strong>Friendly Duels:</strong> Challenge any guild member to a head-to-head round. Most points in 3 shots wins the duel. Track your wins and losses on your Guild Member screen. Duel wins earn additional points.</p><p><strong>Practice:</strong> During Open Questing (9am-3pm Saturday) you can practice freely. Practice shots don't count toward competition scores.</p>`});
+  sections.push({head:"🪓 Axe Throwing / Target Trial",body:`<div class="guide-rule">Each player gets 5 throws. Score by rings. Participation earns <strong>15 points</strong>. Best overall score earns the Timber Champion award at the ceremony.</div><p>Friendly duels follow the same rules as archery: best score across 5 throws wins.</p>`});
+  sections.push({head:"🐉 Dragon's Hoard Hunt (Saturday ~5pm)",body:`<p>A clue appears on everyone's app at ~5pm. Follow the clues around the property. Some clues have two possible interpretations: one leads to the next clue, the other may lead to a smaller cache of treats.</p><p>The first player to find the main Hoard claims the Dragon Hoard Champion title and first pick of the treasure.</p><div class="guide-rule">Everyone may take 1 large item and 2 small items from the Hoard. The Dragon Hoarder quest earns 15 points.</div>`});
+  sections.push({head:"⚗️ Potion Lab (Sat 9am to Sun 9am)",body:`<p>The Potion Lab is open all day Saturday and through Sunday morning. Create any drink, give it a name, present it to the guild, and dare someone to taste it. The most creative name earns bonus points at the ceremony.</p>`+POTION_LAB_QUESTS.map(q=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--edge-soft);font-size:.96rem;"><span style="color:var(--parch);">${q.name}</span><span style="font-family:'IM Fell English SC',serif;color:var(--gold);">${q.pts}p</span></div>`).join('')+`<p style="margin-top:8px;font-style:italic;color:var(--gold-bright);font-size:.88rem;">Most creative name: +15 bonus points (host's decision)</p>`});
+  sections.push({head:"🔥 Bonfire of Honors (Saturday ~7pm)",body:`<p>The great fire is lit at Ember Court at approximately 7pm Saturday. Gather around the fire for stories, toasts, and the Bard's Circle.</p><p><strong>Bard's Circle:</strong> Anyone who wants to share a story takes a turn. Categories: Funniest Story, Most Unbelievable Story, Best Zach Story. The guild votes for favorites. Winners earn the Golden Bard honor at Sunday's ceremony.</p><div class="guide-rule">Sunday is the Summer Solstice. The Bonfire of Honors is how the Guild marks the longest day of the year: fire, family, and the stories that hold us together.</div>`});
+  sections.push({head:"🌿 Hidden Keepsakes (Explore All Weekend)",body:`<p>Somewhere on the property, a small number of personal family keepsakes and memories have been hidden. These are real things: old, personal, connected to your history together.</p><p>When you find something that feels significant, something that clearly belongs to a memory. You've found it. Tap the "Find a hidden family keepsake" quest to log it.</p><div class="guide-rule">There are only a few of these. They are not guild symbols. You'll know them when you see them.</div>`});
+  // closing ceremony - different for warden
   if(myRole==='warden'){
-    sections.push({head:'✨ The Closing Ceremony',body:`<p>The festival closes as it began — gathered together.</p><p>The Guild honors the GuildWarden. Come with nothing but your presence. The Hall will do the rest.</p>`});
+    sections.push({head:'✨ The Closing Ceremony',body:`<p>The festival closes as it began, gathered together.</p><p>The Guild honors the GuildWarden. Come with nothing but your presence. The Hall will do the rest.</p>`});
   } else {
-    sections.push({head:'✨ GuildWarden\'s Tribute & Solstice Rite',body:`<p>The festival closes with the GuildWarden Appreciation Ceremony. The Chest is revealed. Notes are read aloud. Gifts are presented.</p><p>The Solstice Rite follows — a moment of acknowledgment for the longest day, the fire we gathered around, and the people we gathered with.</p><div class="guide-rule">This is the emotional center of the weekend. Come ready to celebrate the person the whole festival was built for.</div>`});
+    sections.push({head:'✨ GuildWarden\'s Tribute & Solstice Rite',body:`<p>The festival closes with the GuildWarden Appreciation Ceremony. The Chest is revealed. Notes are read aloud. Gifts are presented.</p><p>The Solstice Rite follows: a moment of acknowledgment for the longest day, the fire we gathered around, and the people we gathered with.</p><div class="guide-rule">This is the emotional center of the weekend. Come ready to celebrate the person the whole festival was built for.</div>`});
   }
   sections.forEach(s=>{const sec=document.createElement('div');sec.className='guide-section';
     sec.innerHTML=`<div class="guide-head">${s.head}</div><div class="guide-body">${s.body}</div>`;w.appendChild(sec);});
@@ -1321,7 +1321,7 @@ function renderChest(){
   head.innerHTML=`<div class="sec-eyebrow">Things He Hasn't Heard Yet</div><div class="sec-title">GuildWarden's Chest</div>`;
   let revealBtn='';
   if(myRole==='host')revealBtn=`<div style="margin-bottom:22px;"><button class="btn gold full" id="revealBtn">🗝️ Reveal the Chest at the Ceremony</button></div>`;
-  body.innerHTML=`<p style="text-align:center;font-style:italic;color:var(--parch-dim);margin-bottom:18px;">Write something Papa Coles hasn't heard yet. A memory he doesn't know you kept, something you've never said out loud, a story, a wish for his future. Everything here is sealed until the ceremony — when it's read aloud, it will all be new to him.</p>${revealBtn}<div class="chest-form"><textarea id="noteText" placeholder="A memory he doesn't know you kept. Something you've never said. A wish for his future…"></textarea><div class="chest-from-row"><input id="noteFrom" placeholder="Signed…"><button class="btn gold" id="addNoteBtn">Place in Chest</button></div></div><div class="chest-count" id="chestCnt"></div><div id="chestNotesList"></div>`;
+  body.innerHTML=`<p style="text-align:center;font-style:italic;color:var(--parch-dim);margin-bottom:18px;">Write something Papa Coles hasn't heard yet. A memory he doesn't know you kept, something you've never said out loud, a story, a wish for his future. Everything here is sealed until the ceremony. When it's read aloud, it will all be new to him.</p>${revealBtn}<div class="chest-form"><textarea id="noteText" placeholder="A memory he doesn't know you kept. Something you've never said. A wish for his future…"></textarea><div class="chest-from-row"><input id="noteFrom" placeholder="Signed…"><button class="btn gold" id="addNoteBtn">Place in Chest</button></div></div><div class="chest-count" id="chestCnt"></div><div id="chestNotesList"></div>`;
   document.getElementById('addNoteBtn').onclick=addNote;
   if(myRole==='host')document.getElementById('revealBtn').onclick=()=>{if(!confirm('Reveal the Chest now? This opens it for Papa Coles on his phone.'))return;db.ref(`${EVT}/chest_revealed`).set(true);};
   document.getElementById('chestCnt').textContent=notes.length?`${notes.length} note${notes.length!==1?'s':''} gathered`:'';
@@ -1347,10 +1347,10 @@ function renderHoardScreen(){
   if(myRole==='host'){
     const hc=document.createElement('details');hc.className='host-clue-section';
     hc.open=(hoardData.current===-1||hoardData.current===undefined||hoardData.current===null);
-    hc.innerHTML=`<summary>🐉 Host Controls — Hoard Setup</summary>`;
+    hc.innerHTML=`<summary>🐉 Host Controls: Hoard Setup</summary>`;
     const inner=document.createElement('div');inner.style.marginTop='12px';
     inner.innerHTML=`<p style="font-size:.82rem;color:var(--parch-faint);font-style:italic;margin-bottom:10px;">Enter up to 8 clues. Clue 1 appears on everyone's app when you tap Start.</p>`;
-    for(let i=0;i<8;i++){const ta=document.createElement('textarea');ta.className='clue-input';ta.rows=2;ta.placeholder=`Clue ${i+1} — leave blank if fewer`;ta.value=hoardData.clues?.[i]||'';ta.dataset.ci=i;inner.appendChild(ta);}
+    for(let i=0;i<8;i++){const ta=document.createElement('textarea');ta.className='clue-input';ta.rows=2;ta.placeholder=`Clue ${i+1}, leave blank if fewer`;ta.value=hoardData.clues?.[i]||'';ta.dataset.ci=i;inner.appendChild(ta);}
     const btnRow=document.createElement('div');btnRow.style.cssText='display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;';
     const saveBtn=document.createElement('button');saveBtn.className='btn ghost sm';saveBtn.textContent='Save Clues';
     saveBtn.onclick=()=>{const clues={};inner.querySelectorAll('.clue-input').forEach(ta=>{if(ta.value.trim())clues[ta.dataset.ci]=ta.value.trim();});db.ref(`${EVT}/hoard/clues`).set(clues);showAnnouncement('Clues saved.');};
@@ -1430,7 +1430,7 @@ function renderMenu(){
       w.appendChild(sec);});});
   // Potion Lab
   const pl=document.createElement('div');pl.className='potion-lab';
-  pl.innerHTML=`<div class="pl-head">⚗️ Tavern Potion Lab</div><div class="pl-hours">Saturday 9am — Sunday 9am</div>`
+  pl.innerHTML=`<div class="pl-head">⚗️ Tavern Potion Lab</div><div class="pl-hours">Saturday 9am to Sunday 9am</div>`
     +POTION_LAB_QUESTS.map(q=>`<div class="pl-quest"><span class="pl-name">${q.name}</span><span class="pl-pts">${q.pts}p</span></div>`).join('')
     +`<div class="pl-bonus">✦ Most creative name · +15 bonus points</div>`;
   w.appendChild(pl);
