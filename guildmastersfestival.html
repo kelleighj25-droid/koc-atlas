@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Guildmaster's Day">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a120b">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Guildmaster's Day · The Trials of the Guildmaster</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bark:#1a120b;--bark-2:#211610;--panel:#26190f;--panel-2:#2e2013;
+  --edge:#473521;--edge-soft:#382818;
+  --parch:#ecdcb0;--parch-dim:#c9b48a;--parch-faint:#9b8763;
+  --gold:#c9a24c;--gold-bright:#e8c267;--gold-deep:#8a6f31;
+  --wax:#9c3b2e;--wax-line:#b8503e;
+  --moss:#7a934f;--moss-bright:#9bb56a;
+  --candle:#ffca70;--ink:#3a2a17;
+  --crown:#ffd700;
+}
+body.warden-mode{
+  --panel:#2e1f0a;--panel-2:#382613;--edge:#5a4020;--edge-soft:#4a3218;
+  --gold:#d4aa50;--gold-bright:#f0cc70;--gold-deep:#a07830;
+}
+body.warden-mode::after{
+  background:radial-gradient(ellipse 80% 50% at 50% -5%, rgba(255,200,80,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 60% at 80% 105%, rgba(180,100,40,0.12) 0%, transparent 70%) !important;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{background:var(--bark);color:var(--parch);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.6;min-height:100vh;overflow-x:hidden;
+  background-image:radial-gradient(ellipse 90% 55% at 50% -5%, rgba(255,170,70,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 105%, rgba(122,42,32,0.16) 0%, transparent 65%);
+  background-attachment:fixed;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.45;
+  background-image:repeating-linear-gradient(92deg,rgba(0,0,0,0.10) 0px,rgba(0,0,0,0) 3px,rgba(255,200,120,0.012) 6px,rgba(0,0,0,0.08) 11px);}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 90% 55% at 50% -5%, rgba(255,170,70,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 80% 105%, rgba(122,42,32,0.12) 0%, transparent 65%);}
+#embers{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.app{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:0 18px calc(96px + env(safe-area-inset-bottom));}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;padding:12px 2px 10px;background:linear-gradient(180deg,var(--bark) 65%,transparent);}
+.back-btn{font-family:'IM Fell English SC',serif;font-size:0.82rem;letter-spacing:0.04em;background:transparent;border:1px solid var(--edge-soft);color:var(--gold);padding:7px 13px;cursor:pointer;transition:all .2s;border-radius:2px;}
+.back-btn:hover{border-color:var(--gold-deep);color:var(--gold-bright);}
+.whoami{margin-left:auto;text-align:right;line-height:1.25;}
+.wa-name{font-family:'IM Fell English SC',serif;font-size:0.92rem;color:var(--parch);}
+.wa-class{font-size:0.74rem;color:var(--gold);font-style:italic;}
+.sound-btn{background:transparent;border:1px solid var(--edge-soft);color:var(--parch-faint);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:0.9rem;flex-shrink:0;}
+.sound-btn.on{color:var(--gold-bright);border-color:var(--gold-deep);}
+
+/* screens */
+.screen{display:none;animation:fade .4s ease;}
+.screen.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* hero */
+.hero{text-align:center;padding:14px 0 8px;}
+.seal{width:112px;height:112px;margin:0 auto 6px;filter:drop-shadow(0 6px 14px rgba(0,0,0,0.5));}
+.seal svg{width:100%;height:100%;}
+body.warden-mode .seal{filter:drop-shadow(0 6px 24px rgba(255,200,80,0.35));}
+.presents{font-family:'IM Fell English SC',serif;font-size:0.7rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--parch-faint);}
+.event-title{font-family:'IM Fell English SC',serif;font-size:2.5rem;line-height:1.02;color:var(--gold-bright);text-shadow:0 2px 0 rgba(0,0,0,0.4),0 0 24px rgba(232,194,103,0.18);margin:4px 0 2px;}
+body.warden-mode .event-title{text-shadow:0 2px 0 rgba(0,0,0,0.4),0 0 32px rgba(255,200,80,0.35);}
+.event-sub{font-style:italic;font-size:1.02rem;color:var(--parch-dim);}
+.event-sub b{color:var(--parch);font-style:normal;font-weight:600;}
+.rule{height:1px;margin:16px auto;max-width:300px;background:linear-gradient(90deg,transparent,var(--gold-deep),var(--wax-line),var(--gold-deep),transparent);}
+.scroll-intro{background:linear-gradient(160deg,rgba(236,220,176,0.06),rgba(122,42,32,0.04));border:1px solid var(--edge-soft);border-radius:3px;padding:18px 20px;margin:6px 0 20px;font-size:1.04rem;line-height:1.7;}
+.scroll-intro p{margin-bottom:10px;}
+.scroll-intro p:last-child{margin-bottom:0;}
+.scroll-intro .may{font-style:italic;color:var(--gold);text-align:center;margin-top:14px;}
+.warden-banner{background:linear-gradient(135deg,rgba(212,170,80,0.18),rgba(160,120,48,0.08));border:1px solid var(--gold-deep);border-radius:3px;padding:18px 20px;margin:6px 0 20px;text-align:center;}
+.wb-crown{font-size:2rem;margin-bottom:4px;}
+.wb-title{font-family:'IM Fell English SC',serif;font-size:1.45rem;color:var(--gold-bright);margin-bottom:4px;}
+.wb-sub{font-style:italic;color:var(--parch-dim);font-size:0.96rem;line-height:1.65;}
+.twoday{display:flex;gap:12px;margin-bottom:22px;}
+.day-pill{flex:1;text-align:center;border:1px solid var(--edge-soft);padding:13px 8px;border-radius:3px;background:var(--panel);}
+.day-pill .dp-day{font-family:'IM Fell English SC',serif;font-size:0.7rem;letter-spacing:0.16em;color:var(--gold);}
+.day-pill .dp-name{font-style:italic;color:var(--parch-dim);font-size:0.92rem;margin-top:2px;}
+
+/* hub */
+.hub-title{font-family:'IM Fell English SC',serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--parch-faint);text-align:center;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.hub-title::before,.hub-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--edge));}
+.hub-title::after{background:linear-gradient(90deg,var(--edge),transparent);}
+.hub{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hub-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;padding:16px 15px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.hub-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold-deep);opacity:0.55;transition:opacity .2s;}
+body.warden-mode .hub-card{border-color:var(--edge);}
+body.warden-mode .hub-card::after{opacity:0.9;}
+.hub-card:hover{border-color:var(--gold-deep);transform:translateY(-2px);}
+.hub-card:hover::after{opacity:1;}
+.hub-card.wide{grid-column:1/-1;flex-direction:row;align-items:center;}
+.hub-ico{font-size:1.5rem;line-height:1;}
+.hub-card.wide .hub-ico{font-size:1.7rem;margin-right:6px;}
+.hub-name{font-family:'IM Fell English SC',serif;font-size:1.04rem;color:var(--parch);line-height:1.1;}
+.hub-desc{font-size:0.8rem;color:var(--parch-faint);font-style:italic;line-height:1.35;}
+.hub-card.special::after{background:var(--gold);}
+.hub-card.secret::after{background:var(--wax-line);}
+
+/* sec heads */
+.sec-head{text-align:center;margin:6px 0 20px;}
+.sec-eyebrow{font-family:'IM Fell English SC',serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--parch-faint);}
+.sec-title{font-family:'IM Fell English SC',serif;font-size:1.85rem;color:var(--gold-bright);line-height:1.05;margin-top:2px;}
+.sec-blurb{font-style:italic;color:var(--parch-dim);font-size:0.96rem;max-width:380px;margin:6px auto 0;}
+
+/* join screen */
+.join-wrap{text-align:center;padding:10px 0;}
+.join-card{background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;padding:22px 20px;margin-bottom:16px;text-align:left;}
+.join-card h3{font-family:'IM Fell English SC',serif;font-size:1.15rem;color:var(--gold-bright);margin-bottom:8px;}
+.join-card p{font-size:0.96rem;color:var(--parch-dim);margin-bottom:14px;line-height:1.65;font-style:italic;}
+.role-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+.role-opt{display:flex;align-items:center;gap:12px;background:var(--bark-2,#211610);border:1px solid var(--edge-soft);border-radius:3px;padding:13px 14px;cursor:pointer;transition:all .2s;}
+.role-opt .ro-ico{font-size:1.4rem;}
+.role-opt .ro-body .ro-name{font-family:'IM Fell English SC',serif;font-size:1rem;color:var(--parch);}
+.role-opt .ro-body .ro-desc{font-size:0.78rem;color:var(--parch-faint);font-style:italic;}
+.role-opt.sel{border-color:var(--gold);background:rgba(201,162,76,0.1);}
+.code-row{display:flex;gap:10px;margin-top:12px;}
+
+/* forms / inputs */
+.flabel{font-family:'IM Fell English SC',serif;font-size:0.78rem;letter-spacing:0.1em;color:var(--gold);display:block;margin-bottom:8px;}
+.finput{width:100%;background:#211610;border:1px solid var(--edge-soft);color:var(--parch);font-family:'EB Garamond',serif;font-size:1.05rem;padding:12px 14px;border-radius:3px;outline:none;}
+.finput:focus{border-color:var(--gold-deep);}
+.finput::placeholder{color:var(--parch-faint);font-style:italic;}
+.field{margin-bottom:18px;}
+
+/* buttons */
+.btn{font-family:'IM Fell English SC',serif;font-size:0.92rem;letter-spacing:0.06em;padding:13px 20px;background:var(--wax);border:1px solid var(--wax-line);color:var(--parch);cursor:pointer;border-radius:3px;transition:all .2s;}
+.btn:hover{background:var(--wax-line);box-shadow:0 0 18px rgba(196,84,65,0.25);}
+.btn:active{transform:scale(0.99);}
+.btn.ghost{background:transparent;border-color:var(--edge-soft);color:var(--gold);}
+.btn.ghost:hover{border-color:var(--gold-deep);background:rgba(201,162,76,0.06);box-shadow:none;}
+.btn.gold{background:var(--gold-deep);border-color:var(--gold);}
+.btn.gold:hover{background:var(--gold);color:var(--ink);box-shadow:0 0 18px rgba(232,194,103,0.3);}
+.btn.full{width:100%;}
+.btn.sm{font-size:0.78rem;padding:9px 14px;}
+
+/* schedule */
+.timeline-day{margin-bottom:24px;}
+.tl-daytitle{font-family:'IM Fell English SC',serif;font-size:1.2rem;color:var(--gold);margin-bottom:2px;}
+.tl-daysub{font-style:italic;color:var(--parch-faint);font-size:0.9rem;margin-bottom:14px;}
+.tl-item{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--edge-soft);}
+.tl-item:last-child{border-bottom:none;}
+.tl-time{flex-shrink:0;width:76px;font-family:'IM Fell English SC',serif;font-size:0.82rem;color:var(--gold);padding-top:2px;}
+.tl-name{color:var(--parch);font-size:1.02rem;}
+.tl-note{font-size:0.82rem;color:var(--parch-faint);font-style:italic;}
+
+/* profile */
+.class-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.class-opt{display:flex;align-items:center;gap:9px;background:#211610;border:1px solid var(--edge-soft);border-radius:3px;padding:11px 12px;cursor:pointer;transition:all .18s;}
+.class-opt .co-ico{font-size:1.15rem;}
+.class-opt .co-name{font-family:'IM Fell English SC',serif;font-size:0.86rem;color:var(--parch);}
+.class-opt.sel{border-color:var(--gold);background:rgba(201,162,76,0.12);}
+.class-desc{font-size:0.78rem;color:var(--parch-faint);font-style:italic;min-height:1.3em;margin:10px 2px 0;text-align:center;}
+.drawn-title{font-family:'IM Fell English SC',serif;color:var(--gold-bright);font-size:1.1rem;min-height:1.4em;margin-bottom:8px;text-align:center;}
+.badge-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--gold-deep);border-radius:20px;padding:5px 12px;font-size:0.8rem;color:var(--gold-bright);background:rgba(201,162,76,0.08);}
+.no-badges{color:var(--parch-faint);font-style:italic;font-size:0.9rem;margin-top:8px;}
+.pts-line{margin-top:6px;font-family:'IM Fell English SC',serif;color:var(--gold);font-size:0.95rem;}
+
+/* leaderboard */
+.lb-status{text-align:center;font-size:0.82rem;color:var(--parch-faint);font-style:italic;margin-bottom:14px;}
+.lb-status span{color:var(--moss-bright);}
+.lb-row{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;padding:13px 14px;margin-bottom:9px;transition:border-color .2s;}
+.lb-row.me{border-color:var(--gold-deep);}
+.lb-row.warden-row{border-color:var(--crown);background:linear-gradient(135deg,rgba(255,215,0,0.08),rgba(38,25,15,0.6));}
+.lb-rank{font-family:'IM Fell English SC',serif;font-size:1.2rem;color:var(--parch-faint);width:28px;flex-shrink:0;text-align:center;}
+.lb-crown{font-size:1.1rem;width:28px;flex-shrink:0;text-align:center;}
+.lb-body{flex:1;min-width:0;}
+.lb-name{font-family:'IM Fell English SC',serif;font-size:1rem;color:var(--parch);}
+.lb-name .me-tag{font-size:0.72rem;color:var(--gold);font-style:italic;font-family:'EB Garamond',serif;}
+.lb-class{font-size:0.78rem;color:var(--parch-faint);font-style:italic;}
+.lb-right{text-align:right;flex-shrink:0;}
+.lb-pts{font-family:'IM Fell English SC',serif;font-size:1.1rem;color:var(--gold-bright);}
+.lb-quests{font-size:0.72rem;color:var(--parch-faint);}
+.lb-empty{text-align:center;color:var(--parch-faint);font-style:italic;padding:30px 10px;}
+
+/* quests */
+.qfilter{display:flex;gap:7px;overflow-x:auto;padding-bottom:12px;margin-bottom:6px;scrollbar-width:none;}
+.qfilter::-webkit-scrollbar{display:none;}
+.qfilter button{flex-shrink:0;font-family:'IM Fell English SC',serif;font-size:0.74rem;letter-spacing:0.04em;background:var(--panel);border:1px solid var(--edge-soft);color:var(--parch-dim);padding:8px 13px;border-radius:20px;cursor:pointer;transition:all .18s;}
+.qfilter button.on{background:var(--gold-deep);border-color:var(--gold);color:var(--parch);}
+.decree-card{background:linear-gradient(135deg,rgba(212,170,80,0.14),rgba(38,25,15,0.7));border:1px solid var(--gold);border-radius:4px;padding:16px 16px;margin-bottom:18px;}
+.decree-label{font-family:'IM Fell English SC',serif;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.decree-text{color:var(--parch);font-size:1.06rem;line-height:1.55;margin-bottom:10px;}
+.decree-from{font-size:0.8rem;color:var(--gold-deep);font-style:italic;margin-bottom:10px;}
+.qcat{margin-bottom:22px;}
+.qcat-head{font-family:'IM Fell English SC',serif;font-size:1.05rem;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.qcat-head::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--edge),transparent);}
+.quest{display:flex;align-items:flex-start;gap:13px;width:100%;text-align:left;background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;padding:14px;cursor:pointer;margin-bottom:9px;transition:all .18s;position:relative;}
+.quest:hover{border-color:var(--gold-deep);}
+.qcheck{flex-shrink:0;width:30px;height:30px;border:2px solid var(--parch-faint);border-radius:4px;display:flex;align-items:center;justify-content:center;color:transparent;font-size:1rem;transition:all .2s;margin-top:1px;}
+.qbody{flex:1;min-width:0;}
+.qname{color:var(--parch);font-size:1.02rem;line-height:1.3;}
+.qhint{font-size:0.74rem;color:var(--gold-deep);font-style:italic;margin-top:3px;}
+.qpts{flex-shrink:0;font-family:'IM Fell English SC',serif;font-size:0.78rem;color:var(--gold-deep);padding-top:3px;}
+.quest.done{border-color:var(--moss);}
+.quest.done .qcheck{border-color:var(--moss-bright);background:rgba(122,147,79,0.18);color:var(--moss-bright);box-shadow:0 0 12px rgba(155,181,106,0.25);}
+.quest.done .qname{color:var(--parch-faint);text-decoration:line-through;text-decoration-color:var(--moss);}
+.sq-card{margin-top:12px;background:var(--panel);border:1px solid var(--wax-line);border-left:3px solid var(--wax-line);border-radius:3px;padding:15px 16px;display:none;}
+.sq-card.show{display:block;animation:fade .3s ease;}
+.sq-label{font-family:'IM Fell English SC',serif;font-size:0.72rem;letter-spacing:0.14em;color:var(--wax-line);margin-bottom:5px;}
+
+/* decree posting (warden only) */
+.decree-post{background:linear-gradient(135deg,rgba(212,170,80,0.1),var(--panel));border:1px solid var(--gold-deep);border-radius:4px;padding:16px;margin-bottom:18px;}
+.decree-post-label{font-family:'IM Fell English SC',serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.decree-textarea{width:100%;background:#211610;border:1px solid var(--edge-soft);color:var(--parch);font-family:'EB Garamond',serif;font-size:1rem;padding:10px 12px;border-radius:3px;outline:none;resize:none;min-height:70px;line-height:1.5;}
+.decree-textarea:focus{border-color:var(--gold-deep);}
+.decree-row{display:flex;gap:8px;margin-top:8px;}
+
+/* secret */
+.secret-wrap{text-align:center;padding:6px 0;}
+.secret-seal{font-size:2.6rem;margin-bottom:6px;}
+.secret-card{background:linear-gradient(165deg,rgba(122,42,32,0.18),rgba(38,25,15,0.6));border:1px solid var(--wax-line);border-radius:4px;padding:24px 22px;margin:10px 0;}
+.sc-title{font-family:'IM Fell English SC',serif;font-size:1.4rem;color:var(--gold-bright);margin-bottom:12px;}
+.sc-rule{font-style:italic;color:var(--gold);font-size:1.06rem;margin-top:14px;}
+.ok-msg{font-style:italic;color:var(--moss-bright);margin-top:12px;min-height:1.4em;}
+
+/* chest */
+.chest-wrap{text-align:center;}
+.sealed-chest{padding:30px 20px;background:linear-gradient(165deg,rgba(60,30,15,0.6),rgba(30,15,5,0.8));border:1px solid var(--gold-deep);border-radius:4px;margin-bottom:20px;}
+.sc-ico{font-size:3.5rem;margin-bottom:10px;display:block;}
+.sc-sealed-title{font-family:'IM Fell English SC',serif;font-size:1.4rem;color:var(--gold-bright);margin-bottom:8px;}
+.sc-sealed-sub{font-size:1rem;color:var(--parch-dim);font-style:italic;line-height:1.65;margin-bottom:14px;}
+.sc-scroll-count{font-family:'IM Fell English SC',serif;font-size:1.1rem;color:var(--gold);margin-bottom:6px;}
+.sc-hint{font-size:0.84rem;color:var(--parch-faint);font-style:italic;}
+.chest-revealed-header{text-align:center;background:linear-gradient(135deg,rgba(212,170,80,0.2),rgba(122,42,32,0.1));border:1px solid var(--gold);border-radius:4px;padding:22px 18px;margin-bottom:20px;}
+.cr-ico{font-size:2.8rem;margin-bottom:6px;}
+.cr-title{font-family:'IM Fell English SC',serif;font-size:1.5rem;color:var(--gold-bright);margin-bottom:4px;}
+.cr-sub{font-style:italic;color:var(--parch-dim);}
+.chest-form{background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;padding:16px;margin-bottom:20px;}
+.chest-form textarea{width:100%;background:#211610;border:1px solid var(--edge-soft);color:var(--parch);font-family:'EB Garamond',serif;font-size:1.04rem;padding:12px 14px;border-radius:3px;outline:none;resize:vertical;min-height:90px;line-height:1.6;}
+.chest-form textarea:focus{border-color:var(--gold-deep);}
+.chest-from-row{margin-top:10px;display:flex;gap:10px;align-items:center;}
+.chest-from-row input{flex:1;background:#211610;border:1px solid var(--edge-soft);color:var(--parch);font-family:'EB Garamond',serif;font-size:0.98rem;padding:10px 12px;border-radius:3px;outline:none;}
+.note-scroll{background:linear-gradient(165deg,rgba(236,220,176,0.07),rgba(122,42,32,0.03));border:1px solid var(--edge-soft);border-left:3px solid var(--gold-deep);border-radius:3px;padding:14px 16px;margin-bottom:11px;}
+.note-text{font-size:1.04rem;line-height:1.6;color:var(--parch);}
+.note-from{font-family:'IM Fell English SC',serif;font-size:0.82rem;color:var(--gold);margin-top:7px;text-align:right;}
+.chest-count{font-family:'IM Fell English SC',serif;color:var(--gold);text-align:center;font-size:0.86rem;letter-spacing:0.08em;margin-bottom:14px;}
+.chest-empty{text-align:center;color:var(--parch-faint);font-style:italic;padding:24px 10px;line-height:1.7;}
+.reveal-btn-wrap{margin-bottom:22px;}
+
+/* honor (warden) */
+.honor-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.h-stat{background:linear-gradient(135deg,rgba(212,170,80,0.12),var(--panel));border:1px solid var(--gold-deep);border-radius:4px;padding:18px 14px;text-align:center;}
+.h-stat-num{font-family:'IM Fell English SC',serif;font-size:1.9rem;color:var(--gold-bright);line-height:1;}
+.h-stat-label{font-family:'IM Fell English SC',serif;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--parch-faint);margin-top:7px;}
+.honor-members{margin-bottom:20px;}
+.hm-row{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--edge-soft);}
+.hm-name{font-family:'IM Fell English SC',serif;font-size:0.94rem;color:var(--parch);flex:1;}
+.hm-bar-wrap{flex:2;height:8px;background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;overflow:hidden;}
+.hm-bar{height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright));border-radius:4px;transition:width .8s ease;}
+.hm-pts{font-family:'IM Fell English SC',serif;font-size:0.82rem;color:var(--gold);width:40px;text-align:right;flex-shrink:0;}
+.honor-note{background:linear-gradient(135deg,rgba(212,170,80,0.1),var(--panel));border:1px solid var(--gold-deep);border-radius:4px;padding:18px;text-align:center;font-style:italic;color:var(--parch-dim);line-height:1.7;font-size:1.02rem;}
+
+/* menu */
+.menu-cat{margin-bottom:22px;}
+.menu-cat-head{font-family:'IM Fell English SC',serif;font-size:1.1rem;color:var(--gold);text-align:center;margin-bottom:4px;}
+.menu-rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep),transparent);margin-bottom:12px;}
+.menu-item{display:flex;align-items:baseline;gap:10px;padding:7px 0;}
+.menu-name{color:var(--parch);font-size:1.06rem;}
+.menu-dots{flex:1;border-bottom:1px dotted var(--edge);margin-bottom:5px;min-width:14px;}
+.menu-desc{font-size:0.8rem;color:var(--parch-faint);font-style:italic;text-align:right;max-width:46%;}
+
+/* awards */
+.award-row{background:var(--panel);border:1px solid var(--edge-soft);border-radius:4px;padding:13px 15px;margin-bottom:10px;}
+.award-name{font-family:'IM Fell English SC',serif;font-size:1.02rem;color:var(--gold-bright);margin-bottom:7px;}
+.award-input{width:100%;background:#211610;border:1px solid var(--edge-soft);color:var(--parch);font-family:'EB Garamond',serif;font-size:1rem;padding:9px 12px;border-radius:3px;outline:none;}
+.award-input:focus{border-color:var(--gold-deep);}
+.award-input::placeholder{color:var(--parch-faint);font-style:italic;}
+
+/* connection */
+.conn-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--moss-bright);margin-right:5px;vertical-align:middle;}
+.conn-dot.offline{background:var(--wax-line);}
+
+/* nav */
+nav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(20,13,7,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--edge-soft);padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.nav-inner{max-width:520px;margin:0 auto;display:flex;}
+.nav-btn{flex:1;background:none;border:none;cursor:pointer;padding:5px 0;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--parch-faint);transition:color .2s;}
+.nav-btn .nico{font-size:1.15rem;line-height:1;}
+.nav-btn .nlabel{font-family:'IM Fell English SC',serif;font-size:0.6rem;letter-spacing:0.06em;}
+.nav-btn.active{color:var(--gold-bright);}
+body.warden-mode .nav-btn.active{color:var(--crown);}
+
+.footer-note{text-align:center;color:var(--parch-faint);font-style:italic;font-size:0.82rem;margin-top:26px;line-height:1.7;}
+
+#confetti{position:fixed;inset:0;z-index:60;pointer-events:none;display:none;}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){ #embers{display:none;} *{transition:none !important;animation:none !important;} }
+@media (max-width:360px){ .event-title{font-size:2.1rem;} .hub{grid-template-columns:1fr;} .honor-stat-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<canvas id="embers"></canvas>
+<canvas id="confetti"></canvas>
+<div class="app">
+
+  <!-- topbar -->
+  <div class="topbar" id="topbar" style="visibility:hidden;">
+    <button class="back-btn" id="backBtn">⟵ The Hall</button>
+    <div class="whoami" id="whoami"></div>
+    <button class="sound-btn" id="soundBtn">♪</button>
+  </div>
+
+  <!-- JOIN / ROLE SELECTION -->
+  <section id="screen-join" class="screen active">
+    <div class="hero">
+      <div class="seal"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="52" fill="#9c3b2e" stroke="#5e241a" stroke-width="3"/><circle cx="60" cy="60" r="44" fill="none" stroke="#b8503e" stroke-width="1" stroke-dasharray="2 4"/><g fill="#e8c267"><polygon points="60,22 65,54 60,60 55,54"/><polygon points="98,60 66,65 60,60 66,55"/><polygon points="60,98 55,66 60,60 65,66"/><polygon points="22,60 54,55 60,60 54,65"/><polygon points="86,34 65,55 60,60 65,55" transform="rotate(45 60 60)" opacity="0.85"/></g><circle cx="60" cy="60" r="6" fill="#f4d696"/></svg></div>
+      <div class="presents">Kittens of Chaos presents</div>
+      <h1 class="event-title">Guildmaster's Day</h1>
+      <div class="event-sub">The Trials of the Guildmaster · in honor of <b>Zach</b></div>
+    </div>
+    <div class="rule"></div>
+    <div class="join-card">
+      <h3>Who enters the Hall?</h3>
+      <p>Choose your role, then enter the event code to join the Guild.</p>
+      <div class="role-opts" id="roleOpts"></div>
+      <label class="flabel" for="joinCode">Event code</label>
+      <input class="finput" id="joinCode" placeholder="Ask the host for the code" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false">
+      <div style="margin-top:12px;">
+        <button class="btn gold full" id="joinBtn">Enter the Hall</button>
+      </div>
+      <p class="ok-msg" id="joinErr" style="color:var(--wax-line);"></p>
+    </div>
+    <p class="footer-note">Your progress saves to this device.<br>The leaderboard and chest are shared by the whole guild.</p>
+  </section>
+
+  <!-- HOME -->
+  <section id="screen-home" class="screen">
+    <div class="hero">
+      <div class="seal"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="52" fill="#9c3b2e" stroke="#5e241a" stroke-width="3"/><circle cx="60" cy="60" r="44" fill="none" stroke="#b8503e" stroke-width="1" stroke-dasharray="2 4"/><g fill="#e8c267"><polygon points="60,22 65,54 60,60 55,54"/><polygon points="98,60 66,65 60,60 66,55"/><polygon points="60,98 55,66 60,60 65,66"/><polygon points="22,60 54,55 60,60 54,65"/><polygon points="86,34 65,55 60,60 65,55" transform="rotate(45 60 60)" opacity="0.85"/></g><circle cx="60" cy="60" r="6" fill="#f4d696"/></svg></div>
+      <div class="presents">Kittens of Chaos presents</div>
+      <h1 class="event-title">Guildmaster's Day</h1>
+      <div class="event-sub" id="homeEventSub">The Trials of the Guildmaster · in honor of <b>Zach</b></div>
+    </div>
+    <div class="rule"></div>
+    <div id="homeBanner"></div>
+    <div class="twoday">
+      <div class="day-pill"><div class="dp-day">Saturday</div><div class="dp-name">The Gathering</div></div>
+      <div class="day-pill"><div class="dp-day">Sunday</div><div class="dp-name">The Trials</div></div>
+    </div>
+    <div class="hub-title">Enter the Hall</div>
+    <div class="hub" id="hub"></div>
+    <p class="footer-note" id="connStatus"></p>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="screen-schedule" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">The Order of Days</div><div class="sec-title">Schedule</div></div>
+    <div id="scheduleBody"></div>
+  </section>
+
+  <!-- PROFILE -->
+  <section id="screen-profile" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">Claim Your Place</div><div class="sec-title">Guild Member</div>
+      <div class="sec-blurb">Lives on your device. No account needed.</div></div>
+    <div class="field"><label class="flabel" for="pName">Your name</label><input class="finput" id="pName" placeholder="What shall the Hall call you?"></div>
+    <div class="field"><label class="flabel" for="pGuild">Guild name <span style="color:var(--parch-faint);font-size:0.82rem;font-style:italic;">(optional)</span></label><input class="finput" id="pGuild" placeholder="e.g. The Spilled Goblet Company"></div>
+    <div class="field">
+      <label class="flabel">Choose a class <span style="color:var(--parch-faint);font-size:0.82rem;font-style:italic;">(optional)</span></label>
+      <div class="class-grid" id="classGrid"></div>
+      <div class="class-desc" id="classDesc"></div>
+    </div>
+    <div class="field" style="text-align:center;">
+      <label class="flabel">An earned title</label>
+      <div class="drawn-title" id="drawnTitle"></div>
+      <button class="btn ghost" id="drawTitleBtn">✦ Draw a random title</button>
+    </div>
+    <button class="btn gold full" id="saveProfile">Save to the Roster</button>
+    <p class="ok-msg" id="profileSaved" style="text-align:center;"></p>
+    <div style="margin-top:22px;">
+      <div class="hub-title">Your Standing</div>
+      <div class="pts-line" id="myPoints">0 points earned</div>
+      <div class="badge-strip" id="myBadges"></div>
+    </div>
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="screen-leaderboard" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">The Great Hall Rankings</div><div class="sec-title">Leaderboard</div>
+      <div class="sec-blurb">Updates live as quests are completed.</div></div>
+    <div class="lb-status" id="lbStatus"></div>
+    <div id="lbBody"></div>
+  </section>
+
+  <!-- QUESTS -->
+  <section id="screen-quests" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">The Trials</div><div class="sec-title">Quest Board</div>
+      <div class="sec-blurb">Tap a quest when you've done it. Points and badges for fun.</div></div>
+    <div id="decreeArea"></div>
+    <div id="wardenDecreePost"></div>
+    <div class="qfilter" id="qFilter"></div>
+    <div style="text-align:center;margin-bottom:14px;">
+      <button class="btn ghost sm" id="sideQuestBtn">🎲 Draw a spontaneous side quest</button>
+      <div class="sq-card" id="sqCard"></div>
+    </div>
+    <div id="questBody"></div>
+  </section>
+
+  <!-- SECRET QUEST -->
+  <section id="screen-secret" class="screen">
+    <div class="secret-wrap">
+      <div class="secret-seal">🕯️</div>
+      <div class="sec-head"><div class="sec-eyebrow">Hidden from the Board</div><div class="sec-title">The Secret Quest</div></div>
+      <div class="secret-card">
+        <div class="sc-title">The Guildmaster's Tribute</div>
+        <p>Before the weekend ends, tell Zach one thing you genuinely appreciate about him.</p>
+        <p>It can be funny, serious, simple, or specific.</p>
+        <p class="sc-rule">The only rule: it has to be real.</p>
+      </div>
+      <button class="btn gold full" id="secretDoneBtn">I completed the Secret Quest</button>
+      <p class="ok-msg" id="secretMsg"></p>
+      <p class="footer-note">Leave your words in the Guildmaster's Chest so he can keep them.</p>
+      <button class="btn ghost full" id="toChestBtn" style="margin-top:6px;">Open the Guildmaster's Chest →</button>
+    </div>
+  </section>
+
+  <!-- CHEST -->
+  <section id="screen-chest" class="screen">
+    <div class="sec-head" id="chestHead"></div>
+    <div id="chestBody"></div>
+  </section>
+
+  <!-- MENU -->
+  <section id="screen-menu" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">Hearth & Board</div><div class="sec-title">Tavern Menu</div>
+      <div class="sec-blurb">The feast of the weekend.</div></div>
+    <div id="menuBody"></div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="screen-awards" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">The Closing Ceremony</div><div class="sec-title">Guild Awards</div></div>
+    <p style="text-align:center;font-style:italic;color:var(--parch-dim);margin-bottom:18px;">Fill these in at the end of the Trials. Read them aloud with great drama.</p>
+    <div id="awardsBody"></div>
+    <button class="btn gold full" id="saveAwardsBtn" style="margin-top:8px;">Seal the Awards</button>
+    <p class="ok-msg" id="awardsSaved" style="text-align:center;"></p>
+  </section>
+
+  <!-- WARDEN'S HONOR -->
+  <section id="screen-honor" class="screen">
+    <div class="sec-head"><div class="sec-eyebrow">The Warden Surveys the Field</div><div class="sec-title">Warden's Honor</div>
+      <div class="sec-blurb">Your guild is competing in your name. Watch them rise.</div></div>
+    <div class="honor-stat-grid" id="honorStats"></div>
+    <div class="hub-title">The Guild at Work</div>
+    <div class="honor-members" id="honorMembers"></div>
+    <div class="honor-note" id="honorNote"></div>
+  </section>
+
+</div>
+
+<nav><div class="nav-inner" id="navInner"></div></nav>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script>
+/* =====================================================================
+   GUILDMASTER'S DAY — Live Multiplayer Edition
+   Powered by Firebase Realtime Database
+   ===================================================================== */
+
+/* ▼▼▼  EDIT THESE  ▼▼▼ */
+const JOIN_CODE    = 'GUILDMASTER';   // everyone enters this
+const WARDEN_CODE  = 'WARDEN';       // only Zach uses this
+const HOST_CODE    = 'KELLEIGH';     // only you use this
+const WARDEN_NAME  = 'Zach';
+const EVENT_ID     = 'gmdayfest';
+
+const CLASSES = [
+  {name:'Archer',ico:'🏹',desc:'Steady eye, steadier nerves. Born for the target line.'},
+  {name:'Warden',ico:'🛡️',desc:'Keeper of the grounds and the peace. Mostly.'},
+  {name:'Alchemist',ico:'⚗️',desc:'Turns the drink station into a laboratory of questionable genius.'},
+  {name:'Bard',ico:'🎵',desc:'Has a story for everything. Some of them are even true.'},
+  {name:'Scout',ico:'🧭',desc:'First to find the treasure, last to admit they were lost.'},
+  {name:'Knight',ico:'⚔️',desc:'Honor, valor, and a willingness to duel over yard games.'},
+  {name:'Trickster',ico:'🎭',desc:'The rules are more like suggestions, really.'},
+  {name:'Scholar',ico:'📚',desc:'Knows the lore. Will explain the lore. At length.'},
+  {name:'Chaos Goblin',ico:'👺',desc:'A responsible amount of chaos. Allegedly.'},
+  {name:'Hearthkeeper',ico:'🔥',desc:'Guardian of the food, the fire, and everyone\'s comfort.'},
+];
+const TITLES = [
+  'Keeper of the Spilled Goblet','Knight of the Unfinished Sentence','Warden of the Snack Table',
+  'Earl of Mild Inconvenience','The Dragon of Leftovers','Sovereign of the Group Chat',
+  'Baron of Bad Puns','Champion of the Last-Minute Plan','The Unbothered','Duke of the Cozy Corner',
+  'Herald of Questionable Ideas','Grand Marshal of Vibes','The One Who Brings the Cooler',
+  'Lorekeeper of Inside Jokes','Patron Saint of Naps','Bringer of the Good Snacks',
+];
+const SCHEDULE = [
+  {day:'Saturday',sub:'The Gathering — the Guild assembles under the evening fire',items:[
+    {time:'Evening',name:'Arrival & hanging out',note:'Wander in, claim a class, settle by the fire'},
+    {time:'Dinner',name:'Tavern dinner',note:'The first feast of the weekend'},
+    {time:'After',name:'Campfire & stories',note:'Tales of the Guildmaster, tall and true'},
+    {time:'Night',name:'Quest Board opens',note:'Preview tomorrow\'s Trials'},
+    {time:'Quiet',name:'Secret quests begin',note:'The Guildmaster\'s Tribute is now in play'},
+  ]},
+  {day:'Sunday',sub:'The Trials of the Guildmaster — the main event',items:[
+    {time:'Morning',name:'Breakfast & slow start',note:'No one rushes the Keeper of the Hall'},
+    {time:'Midday',name:'Skill trials open',note:'Archery, axe & target, friendly duels'},
+    {time:'Afternoon',name:'Treasure hunt',note:'Seek the Dragon\'s Hoard'},
+    {time:'Afternoon',name:'Potion lab',note:'Mix, name, and dare each other to taste'},
+    {time:'Evening',name:'Tavern feast',note:'The great table of Guildmaster\'s Day'},
+    {time:'Dusk',name:'Awards ceremony',note:'Honors, dramatic and deserved'},
+    {time:'Close',name:'Guildmaster appreciation',note:'The Chest is opened and read aloud'},
+  ]},
+];
+const QUEST_CATS = [
+  {key:'skill',name:'Skill Quests',ico:'🎯',quests:[
+    {id:'archery',name:'Hit an archery target',pts:10,badge:'Archer'},
+    {id:'bullseye',name:'Hit a bullseye',pts:25,badge:'Bullseye'},
+    {id:'axe',name:'Complete the axe / target trial',pts:15},
+    {id:'beatscore',name:'Beat your own score',pts:10},
+    {id:'duel',name:'Challenge someone to a friendly duel',pts:10},
+  ]},
+  {key:'explore',name:'Exploration Quests',ico:'🗺️',quests:[
+    {id:'token',name:'Find a hidden treasure token',pts:10,badge:'Treasure Hunter'},
+    {id:'hoard',name:'Find the Dragon\'s Hoard',pts:30,badge:'Dragon Hoarder'},
+    {id:'symbol',name:'Locate a hidden symbol',pts:10},
+    {id:'scavenger',name:'Complete the scavenger hunt',pts:20},
+  ]},
+  {key:'tavern',name:'Tavern Quests',ico:'🍺',quests:[
+    {id:'prep',name:'Help prepare food',pts:15,badge:'Hearthkeeper'},
+    {id:'namedish',name:'Name a tavern dish',pts:10},
+    {id:'potion',name:'Create a potion / drink',pts:15,badge:'Potion Master'},
+    {id:'trypotion',name:'Try someone else\'s potion',pts:10},
+  ]},
+  {key:'social',name:'Social Quests',ico:'🎭',quests:[
+    {id:'zachstory',name:'Tell a funny Zach story',pts:15,badge:'Bard'},
+    {id:'laugh',name:'Make the Guildmaster laugh',pts:15},
+    {id:'photo',name:'Take a group photo',pts:10},
+    {id:'teach',name:'Teach someone a skill',pts:15},
+    {id:'help',name:'Help another guild member complete a quest',pts:15,badge:'Guild Ally'},
+  ]},
+  {key:'heart',name:'Heartfelt Quests',ico:'🕯️',quests:[
+    {id:'appreciate',name:'Tell Zach one thing you appreciate about him',pts:20},
+    {id:'notechest',name:'Write a note for the Guildmaster\'s Chest',pts:20},
+    {id:'memory',name:'Share one memory with him',pts:20},
+    {id:'thank',name:'Thank him for something specific',pts:20},
+  ]},
+];
+const SIDE_QUESTS = [
+  'Speak only in a dramatic accent for the next 10 minutes.',
+  'Compliment three people on their goblin energy.',
+  'Invent a backstory for one item in the room.',
+  'Toast the Guildmaster loudly and without warning.',
+  'Recruit someone into your guild on the spot.',
+  'Knight someone with a nearby object.',
+  'Declare a new house rule. It is now law.',
+  'Find an object and present it as "cursed treasure."',
+  'Challenge the Guildmaster to a staring contest.',
+  'Narrate someone else\'s actions like an epic ballad.',
+  'Give a 30-second speech about why snacks matter.',
+  'Start a slow clap and see how far it gets.',
+];
+const MENU = [
+  {cat:'Main Feast',items:[{name:"Hunter's Burgers",desc:'fire-grilled, hearty'},{name:'Hearthfire Potatoes',desc:'roasted by the coals'}]},
+  {cat:'Snacks',items:[{name:'Tavern Pickles',desc:'sharp and sour'},{name:'Dragon Eggs',desc:'handle with care'}]},
+  {cat:'Drinks & Potions',items:[
+    {name:'Verdanta Elixir',desc:'green and restorative'},
+    {name:'Goblin Juice',desc:'chaotic, in a good way'},
+    {name:'Moonwater Lemonade',desc:'bright and cold'},
+    {name:"Guildmaster's Root Beer",desc:'reserved for the Keeper'},
+  ]},
+  {cat:'Desserts',items:[{name:'(add your own)',desc:'edit in the code'}]},
+];
+const AWARDS = [
+  'Best Archer','Most Chaotic Good','Best Potion Name','Most Helpful Guild Member',
+  'Best Tavern Energy','Most Dramatic Quest Completion','Funniest Story','Dragon Hoarder',
+  'Side Quest Champion',"Guildmaster's Favorite Menace",
+];
+const BADGE_ICONS = {Archer:'🏹',Bullseye:'🎯','Treasure Hunter':'💰','Dragon Hoarder':'🐉','Potion Master':'⚗️',Bard:'🎵','Chaos Goblin':'👺',Hearthkeeper:'🔥','Guild Ally':'🤝'};
+/* ▲▲▲  END EDITABLE  ▲▲▲ */
+
+/* ---- Firebase ---- */
+const firebaseConfig = {
+  apiKey:"AIzaSyA_IZeWS8Jp_6uIjKxU6D8gRv9CNGpmd_w",
+  authDomain:"fathers-day-guild-festival.firebaseapp.com",
+  databaseURL:"https://fathers-day-guild-festival-default-rtdb.firebaseio.com",
+  projectId:"fathers-day-guild-festival",
+  storageBucket:"fathers-day-guild-festival.firebasestorage.app",
+  messagingSenderId:"505211121345",
+  appId:"1:505211121345:web:bc1190fe704bd123576e40"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const EVT = `events/${EVENT_ID}`;
+
+/* ---- localStorage helpers ---- */
+function lget(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lset(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function lgetJ(k){ try{ return JSON.parse(lget(k)); }catch(e){ return null; } }
+function lsetJ(k,v){ lset(k,JSON.stringify(v)); }
+
+/* ---- local state ---- */
+let myId = lget('gm:id') || null;
+let myRole = lget('gm:role') || null; // 'member'|'warden'|'host'
+let hasJoined = lget('gm:joined') === '1';
+let profile = lgetJ('gm:profile') || {name:'',guild:'',cls:'',title:''};
+let myQuests = lgetJ('gm:quests') || {};
+let secretDone = lget('gm:secret') === '1';
+let soundOn = lget('gm:sound') === '1';
+let pendingClass = profile.cls || '';
+
+/* ---- live Firebase state ---- */
+let allMembers = {};
+let chestNotes = {};
+let chestRevealed = false;
+let activeDecree = null;
+let awardWinners = {};
+let isOnline = false;
+
+/* ---- generate a stable ID ---- */
+function genId(){ return 'gm_' + Math.random().toString(36).slice(2,10) + Date.now().toString(36); }
+if (!myId){ myId = genId(); lset('gm:id',myId); }
+
+/* ---- helpers ---- */
+function esc(s){ return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function allQuests(){ return QUEST_CATS.flatMap(c=>c.quests); }
+function calcPoints(quests){ let p=0; allQuests().forEach(q=>{ if(quests&&quests[q.id]) p+=q.pts; }); if(quests&&quests['__decree']) p+=15; return p; }
+function earnedBadges(quests){ const b=[]; allQuests().forEach(q=>{ if(q.badge&&quests&&quests[q.id]&&!b.includes(q.badge)) b.push(q.badge); }); return b; }
+
+/* ---- sound ---- */
+let actx=null;
+function chime(){ if(!soundOn) return; try{ actx=actx||new(window.AudioContext||window.webkitAudioContext)(); const o=actx.createOscillator(),g=actx.createGain(); o.type='triangle'; o.frequency.setValueAtTime(660,actx.currentTime); o.frequency.exponentialRampToValueAtTime(990,actx.currentTime+0.12); g.gain.setValueAtTime(0.0001,actx.currentTime); g.gain.exponentialRampToValueAtTime(0.12,actx.currentTime+0.02); g.gain.exponentialRampToValueAtTime(0.0001,actx.currentTime+0.4); o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime+0.4); }catch(e){} }
+
+/* ---- confetti ---- */
+const cc=document.getElementById('confetti'),cx2=cc.getContext('2d'); let parts=[],raf=null;
+function sz(c){ c.width=innerWidth; c.height=innerHeight; }
+function burst(gold){ sz(cc); cc.style.display='block';
+  const cols=gold?['#f0cc70','#d4aa50','#ffe9b0','#c9a24c','#ffffff']:['#e8c267','#c9a24c','#9bb56a','#c45441','#f4d696'];
+  parts=[]; for(let i=0;i<(gold?140:90);i++) parts.push({x:innerWidth/2+(Math.random()-.5)*120,y:innerHeight*.35,vx:(Math.random()-.5)*(gold?12:9),vy:Math.random()*-(gold?14:11)-4,g:.32+Math.random()*.12,r:3+Math.random()*4,col:cols[Math.floor(Math.random()*cols.length)],rot:Math.random()*6,vr:(Math.random()-.5)*.4,life:0});
+  if(raf) cancelAnimationFrame(raf); animC(); }
+function animC(){ cx2.clearRect(0,0,cc.width,cc.height); let alive=false;
+  parts.forEach(p=>{ p.life++; p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr;
+    if(p.y<cc.height+20&&p.life<200){ alive=true; cx2.save(); cx2.translate(p.x,p.y); cx2.rotate(p.rot); cx2.fillStyle=p.col; cx2.globalAlpha=Math.max(0,1-p.life/180); cx2.fillRect(-p.r,-p.r,p.r*2,p.r*2.6); cx2.restore(); }});
+  if(alive){ raf=requestAnimationFrame(animC); } else { cc.style.display='none'; cx2.clearRect(0,0,cc.width,cc.height); } }
+
+/* ---- embers ---- */
+const ec=document.getElementById('embers'),ectx=ec.getContext('2d'); let emPts=[];
+function initEmbers(){ sz(ec); emPts=[]; const n=innerWidth<420?16:24; for(let i=0;i<n;i++) emPts.push(newEm(true)); }
+function newEm(s){ return{x:Math.random()*ec.width,y:s?Math.random()*ec.height:ec.height+10,r:.6+Math.random()*1.8,vy:-.2-Math.random()*.5,dx:(Math.random()-.5)*.3,a:.2+Math.random()*.5,tw:Math.random()*6}; }
+function animE(){ ectx.clearRect(0,0,ec.width,ec.height); emPts.forEach((p,i)=>{ p.y+=p.vy; p.x+=p.dx; p.tw+=.05; const al=p.a*(.6+.4*Math.sin(p.tw)); ectx.beginPath(); ectx.fillStyle=`rgba(255,${150+Math.floor(Math.random()*30)},70,${al.toFixed(3)})`; ectx.arc(p.x,p.y,p.r,0,Math.PI*2); ectx.fill(); if(p.y<-10) emPts[i]=newEm(false); }); requestAnimationFrame(animE); }
+window.addEventListener('resize',()=>{ sz(ec); sz(cc); });
+
+/* ---- Firebase writes ---- */
+function pushMyProfile(){ if(!isOnline) return; db.ref(`${EVT}/members/${myId}`).update({ name:profile.name||'Anonymous', guild:profile.guild||'', cls:profile.cls||'', title:profile.title||'', role:myRole, quests:myQuests||{}, secretDone:secretDone, points:calcPoints(myQuests), updated:Date.now() }); }
+
+/* ---- Firebase listeners ---- */
+function startListeners(){
+  // members (leaderboard + honor)
+  db.ref(`${EVT}/members`).on('value', snap=>{ allMembers = snap.val()||{}; renderLeaderboard(); renderHonor(); renderTopbar(); });
+  // chest
+  db.ref(`${EVT}/chest`).on('value', snap=>{ chestNotes = snap.val()||{}; renderChest(); });
+  // chest_revealed
+  db.ref(`${EVT}/chest_revealed`).on('value', snap=>{
+    const wasRevealed=chestRevealed; chestRevealed=snap.val()===true;
+    if(!wasRevealed && chestRevealed && myRole==='warden'){ burst(true); chime(); }
+    renderChest();
+  });
+  // decree
+  db.ref(`${EVT}/decree`).on('value', snap=>{ activeDecree=snap.val()||null; renderDecreeArea(); });
+  // awards
+  db.ref(`${EVT}/awards`).on('value', snap=>{ awardWinners=snap.val()||{}; });
+  // connection
+  db.ref('.info/connected').on('value', snap=>{ isOnline=!!snap.val(); document.getElementById('connStatus').innerHTML=isOnline?'<span class="conn-dot"></span> Live · all devices connected':'<span class="conn-dot offline"></span> Offline · tap quests freely, they\'ll sync when you reconnect'; });
+}
+
+/* ---- JOIN SCREEN ---- */
+const ROLE_DEFS = [
+  {id:'member',ico:'⚔️',name:'Guild Member',desc:'Join the trials, compete for glory'},
+  {id:'warden',ico:'👑',name:'GuildWarden',desc:`${WARDEN_NAME} only — the Warden of the Hall`},
+  {id:'host',ico:'🏰',name:'Host',desc:'The one who runs the Hall (Kelleigh)'},
+];
+let pendingRole = 'member';
+
+function renderJoinRoles(){
+  const w=document.getElementById('roleOpts'); w.innerHTML='';
+  ROLE_DEFS.forEach(r=>{ const b=document.createElement('div'); b.className='role-opt'+(pendingRole===r.id?' sel':'');
+    b.innerHTML=`<span class="ro-ico">${r.ico}</span><span class="ro-body"><div class="ro-name">${r.name}</div><div class="ro-desc">${r.desc}</div></span>`;
+    b.onclick=()=>{ pendingRole=r.id; renderJoinRoles(); }; w.appendChild(b); }); }
+
+function attemptJoin(){
+  const code=(document.getElementById('joinCode').value||'').trim().toUpperCase();
+  const err=document.getElementById('joinErr');
+  let codeNeeded='';
+  if(pendingRole==='warden') codeNeeded=WARDEN_CODE.toUpperCase();
+  else if(pendingRole==='host') codeNeeded=HOST_CODE.toUpperCase();
+  else codeNeeded=JOIN_CODE.toUpperCase();
+  if(code!==codeNeeded){ err.textContent='That\'s not the right code. Check with the host.'; return; }
+  myRole=pendingRole; hasJoined=true;
+  lset('gm:role',myRole); lset('gm:joined','1');
+  applyRole(); startListeners(); pushMyProfile();
+  buildNav(); renderHub(); renderTopbar();
+  showScreen('home');
+}
+
+/* ---- ROLE SETUP ---- */
+function applyRole(){
+  document.body.classList.toggle('warden-mode', myRole==='warden');
+}
+
+/* ---- HOME ---- */
+function renderHub(){
+  const hub=document.getElementById('hub'); hub.innerHTML='';
+  const ITEMS=[
+    {s:'schedule',ico:'🗓️',name:'Schedule',desc:'The order of the two days'},
+    {s:'profile',ico:'🪪',name:'Guild Member',desc:'Claim your name & class'},
+    {s:'quests',ico:'📜',name:'Quest Board',desc:'Trials, treasure & tavern tasks'},
+    {s:'leaderboard',ico:'🏆',name:'Leaderboard',desc:'Live rankings across all devices'},
+    {s:'menu',ico:'🍖',name:'Tavern Menu',desc:'The weekend feast'},
+    {s:'awards',ico:'🎖️',name:'Awards',desc:'The closing ceremony'},
+    ...(myRole!=='warden'?[{s:'secret',ico:'🕯️',name:'Secret Quest',desc:'The Guildmaster\'s Tribute',cls:'secret'}]:[]),
+    ...(myRole==='warden'?[{s:'honor',ico:'✦',name:"Warden's Honor",desc:'Survey the guild\'s progress',cls:'special'}]:[]),
+    {s:'chest',ico:'🗝️',name:"Guildmaster's Chest",desc:myRole==='warden'?'A surprise awaits the ceremony':'Leave words for Zach to keep',cls:'wide',wide:true},
+  ];
+  ITEMS.forEach(h=>{ const b=document.createElement('button');
+    b.className='hub-card '+(h.cls||'')+(h.wide?' wide':'');
+    b.innerHTML=`<span class="hub-ico">${h.ico}</span><span class="hub-name">${h.name}</span><span class="hub-desc">${h.desc}</span>`;
+    b.onclick=()=>showScreen(h.s); hub.appendChild(b); });
+
+  const banner=document.getElementById('homeBanner');
+  if(myRole==='warden'){
+    banner.innerHTML=`<div class="warden-banner"><div class="wb-crown">👑</div><div class="wb-title">Welcome, GuildWarden ${WARDEN_NAME}</div><div class="wb-sub">Warden of the Hall · the Guild gathers in your honor.<br>Survey the trials, post a decree, and let the weekend unfold around you.</div></div>`;
+  } else {
+    banner.innerHTML=`<div class="scroll-intro"><p>The Guild has gathered to honor ${WARDEN_NAME}, Keeper of the Hall. Across two days we feast, compete, tell stories, complete quests, and cause a responsible amount of chaos.</p><p class="may">May your aim be steady, your goblin energy controlled, and your appreciation for the Guildmaster sincere.</p></div>`;
+  }
+}
+
+/* ---- TOPBAR ---- */
+function renderTopbar(){
+  const wa=document.getElementById('whoami');
+  const me=allMembers[myId];
+  const nm=me?.name||profile.name||'';
+  const cl=me?.cls||profile.cls||'';
+  if(nm){ wa.innerHTML=`<div class="wa-name">${myRole==='warden'?'👑 ':myRole==='host'?'🏰 ':''}${esc(nm)}${cl?' the '+esc(cl):''}</div>`; }
+  document.getElementById('soundBtn').classList.toggle('on',soundOn);
+  document.getElementById('connStatus').innerHTML=isOnline?'<span class="conn-dot"></span> Live · all devices connected':'<span class="conn-dot offline"></span> Offline — will sync when reconnected';
+}
+
+/* ---- NAV ---- */
+function buildNav(){
+  const ni=document.getElementById('navInner'); ni.innerHTML='';
+  const items=myRole==='warden'
+    ?[{s:'home',ico:'🏰',l:'Hall'},{s:'quests',ico:'📜',l:'Quests'},{s:'leaderboard',ico:'🏆',l:'Rankings'},{s:'honor',ico:'✦',l:'Honor'},{s:'chest',ico:'🗝️',l:'Chest'}]
+    :[{s:'home',ico:'🏰',l:'Hall'},{s:'quests',ico:'📜',l:'Quests'},{s:'leaderboard',ico:'🏆',l:'Rankings'},{s:'menu',ico:'🍖',l:'Tavern'},{s:'chest',ico:'🗝️',l:'Chest'}];
+  items.forEach(it=>{ const b=document.createElement('button'); b.className='nav-btn'; b.dataset.screen=it.s;
+    b.innerHTML=`<span class="nico">${it.ico}</span><span class="nlabel">${it.l}</span>`;
+    b.onclick=()=>showScreen(it.s); ni.appendChild(b); }); }
+
+/* ---- SCHEDULE ---- */
+function renderSchedule(){
+  const w=document.getElementById('scheduleBody'); w.innerHTML='';
+  SCHEDULE.forEach(d=>{ const sec=document.createElement('div'); sec.className='timeline-day';
+    sec.innerHTML=`<div class="tl-daytitle">${d.day}</div><div class="tl-daysub">${d.sub}</div>`;
+    d.items.forEach(it=>{ const r=document.createElement('div'); r.className='tl-item';
+      r.innerHTML=`<div class="tl-time">${it.time}</div><div><div class="tl-name">${it.name}</div><div class="tl-note">${it.note}</div></div>`;
+      sec.appendChild(r); }); w.appendChild(sec); }); }
+
+/* ---- PROFILE ---- */
+function renderProfile(){
+  document.getElementById('pName').value=profile.name||'';
+  document.getElementById('pGuild').value=profile.guild||'';
+  const grid=document.getElementById('classGrid'); grid.innerHTML='';
+  CLASSES.forEach(c=>{ const b=document.createElement('button'); b.type='button';
+    b.className='class-opt'+(pendingClass===c.name?' sel':'');
+    b.innerHTML=`<span class="co-ico">${c.ico}</span><span class="co-name">${c.name}</span>`;
+    b.onclick=()=>{ pendingClass=(pendingClass===c.name)?'':c.name; renderProfile(); }; grid.appendChild(b); });
+  const cd=CLASSES.find(c=>c.name===pendingClass);
+  document.getElementById('classDesc').textContent=cd?cd.desc:'';
+  document.getElementById('drawnTitle').textContent=profile.title||'';
+  renderStanding();
+}
+function renderStanding(){
+  document.getElementById('myPoints').textContent=calcPoints(myQuests)+' points earned';
+  const bs=document.getElementById('myBadges'); const badges=earnedBadges(myQuests);
+  bs.innerHTML=badges.length?badges.map(b=>`<span class="badge"><span>${BADGE_ICONS[b]||'✦'}</span>${b}</span>`).join(''):'<div class="no-badges">No badges yet — the Trials await.</div>';
+}
+async function saveProfile(){
+  profile.name=document.getElementById('pName').value.trim();
+  profile.guild=document.getElementById('pGuild').value.trim();
+  profile.cls=pendingClass; lsetJ('gm:profile',profile);
+  renderTopbar(); renderHub();
+  pushMyProfile();
+  const m=document.getElementById('profileSaved');
+  m.textContent=profile.name?`Welcome to the roster, ${profile.name}.`:'Saved.';
+  setTimeout(()=>m.textContent='',2200); burst(false);
+}
+
+/* ---- LEADERBOARD ---- */
+function renderLeaderboard(){
+  const w=document.getElementById('lbBody'); if(!w) return;
+  const members=Object.entries(allMembers).map(([id,m])=>({id,...m,pts:m.points||0,qc:Object.keys(m.quests||{}).length}));
+  members.sort((a,b)=>b.pts-a.pts||(b.qc-a.qc));
+  const online=Object.keys(allMembers).length;
+  document.getElementById('lbStatus').innerHTML=`<span class="conn-dot${isOnline?'':' offline'}"></span> ${online} guild member${online!==1?'s':''} in the Hall`;
+  if(!members.length){ w.innerHTML='<div class="lb-empty">The guild hall is quiet.<br>Others will appear here as they join.</div>'; return; }
+  const max=members[0]?.pts||1;
+  w.innerHTML='';
+  members.forEach((m,i)=>{
+    const isMe=m.id===myId, isWarden=m.role==='warden';
+    const row=document.createElement('div');
+    row.className='lb-row'+(isMe?' me':'')+(isWarden?' warden-row':'');
+    const rankCell=isWarden?`<div class="lb-crown">👑</div>`:`<div class="lb-rank">${i+1}</div>`;
+    const nameStr=`${esc(m.name||'Unknown')}${isMe?' <span class="me-tag">(you)</span>':''}`;
+    const classStr=m.cls?`${m.cls}${m.guild?` · ${esc(m.guild)}`:''}`:(m.guild?esc(m.guild):'');
+    row.innerHTML=`${rankCell}<div class="lb-body"><div class="lb-name">${nameStr}</div>${classStr?`<div class="lb-class">${classStr}</div>`:''}</div><div class="lb-right"><div class="lb-pts">${m.pts}</div><div class="lb-quests">${m.qc} quest${m.qc!==1?'s':''}</div></div>`;
+    w.appendChild(row); }); }
+
+/* ---- QUESTS ---- */
+let qFilter='all';
+function renderDecreeArea(){
+  const w=document.getElementById('decreeArea'); if(!w) return; w.innerHTML='';
+  if(activeDecree){
+    const isMyDecree=myRole==='warden'||activeDecree.from===profile.name;
+    const decreeDone=!!(myQuests&&myQuests['__decree']===activeDecree.ts);
+    w.innerHTML=`<div class="decree-card"><div class="decree-label">⚜ Warden's Decree</div><div class="decree-text">${esc(activeDecree.text)}</div><div class="decree-from">— ${esc(activeDecree.from||WARDEN_NAME)}, GuildWarden</div>${!isMyDecree&&!decreeDone?`<button class="btn gold sm" id="acceptDecreeBtn">Accept the Decree · +15 pts</button>`:(decreeDone?`<div style="color:var(--moss-bright);font-style:italic;font-size:0.9rem;">Decree accepted ✓</div>`:'')}</div>`;
+    if(!isMyDecree&&!decreeDone) document.getElementById('acceptDecreeBtn').onclick=acceptDecree; }
+  // warden gets the post form
+  const wp=document.getElementById('wardenDecreePost'); if(!wp) return; wp.innerHTML='';
+  if(myRole==='warden'){
+    wp.innerHTML=`<div class="decree-post"><div class="decree-post-label">⚜ Post a Warden's Decree</div><textarea class="decree-textarea" id="decreeText" placeholder="Issue a challenge, toast, or command to your guild…" rows="2"></textarea><div class="decree-row"><button class="btn gold sm" id="postDecreeBtn">Post Decree</button><button class="btn ghost sm" id="clearDecreeBtn">Clear</button></div></div>`;
+    document.getElementById('postDecreeBtn').onclick=postDecree;
+    document.getElementById('clearDecreeBtn').onclick=()=>db.ref(`${EVT}/decree`).remove();
+  }
+}
+function postDecree(){
+  const t=(document.getElementById('decreeText')?.value||'').trim(); if(!t) return;
+  db.ref(`${EVT}/decree`).set({text:t,from:profile.name||WARDEN_NAME,ts:Date.now()});
+  if(document.getElementById('decreeText')) document.getElementById('decreeText').value='';
+}
+function acceptDecree(){
+  if(!activeDecree) return;
+  myQuests['__decree']=activeDecree.ts; lsetJ('gm:quests',myQuests); pushMyProfile(); renderDecreeArea(); renderQFilter(); renderQuests(); chime();
+}
+function renderQFilter(){
+  const f=document.getElementById('qFilter'); if(!f) return; f.innerHTML='';
+  const mk=(key,label)=>{ const b=document.createElement('button'); b.textContent=label; b.className=qFilter===key?'on':''; b.onclick=()=>{ qFilter=key; renderQFilter(); renderQuests(); }; f.appendChild(b); };
+  mk('all','All'); QUEST_CATS.forEach(c=>mk(c.key,c.name.replace(' Quests','')));
+}
+function renderQuests(){
+  const w=document.getElementById('questBody'); if(!w) return; w.innerHTML='';
+  QUEST_CATS.filter(c=>qFilter==='all'||c.key===qFilter).forEach(cat=>{
+    const sec=document.createElement('div'); sec.className='qcat';
+    sec.innerHTML=`<div class="qcat-head">${cat.ico} ${cat.name}</div>`;
+    cat.quests.forEach(q=>{ const done=!!(myQuests&&myQuests[q.id]);
+      const card=document.createElement('button'); card.className='quest'+(done?' done':''); card.setAttribute('aria-pressed',done);
+      card.innerHTML=`<span class="qcheck">✓</span><span class="qbody"><span class="qname">${q.name}</span>${q.badge?`<div class="qhint">earns the ${q.badge} badge</div>`:''}</span><span class="qpts">${q.pts}p</span>`;
+      card.onclick=()=>toggleQuest(q.id); sec.appendChild(card); });
+    w.appendChild(sec); }); }
+function toggleQuest(id){
+  const was=!!(myQuests&&myQuests[id]);
+  if(was) delete myQuests[id]; else myQuests[id]=true;
+  lsetJ('gm:quests',myQuests); pushMyProfile();
+  renderQuests(); renderStanding(); renderHonor();
+  if(!was){ burst(false); chime(); }
+}
+function drawSideQuest(){
+  const card=document.getElementById('sqCard');
+  card.innerHTML=`<div class="sq-label">A Spontaneous Side Quest</div><div>${SIDE_QUESTS[Math.floor(Math.random()*SIDE_QUESTS.length)]}</div>`;
+  card.classList.add('show');
+}
+
+/* ---- SECRET ---- */
+function renderSecret(){
+  const btn=document.getElementById('secretDoneBtn'), msg=document.getElementById('secretMsg');
+  if(secretDone){ btn.textContent='✓ Secret Quest complete'; btn.className='btn ghost full'; msg.textContent="The Guildmaster's Tribute is fulfilled. Well done."; }
+  else { btn.textContent='I completed the Secret Quest'; btn.className='btn gold full'; msg.textContent=''; }
+}
+function completeSecret(){ if(secretDone) return; secretDone=true; lset('gm:secret','1'); pushMyProfile(); renderSecret(); burst(false); chime(); }
+
+/* ---- CHEST ---- */
+function renderChest(){
+  const head=document.getElementById('chestHead'), body=document.getElementById('chestBody');
+  if(!head||!body) return;
+  const notes=Object.values(chestNotes);
+  if(myRole==='warden' && !chestRevealed){
+    // sealed view
+    head.innerHTML=`<div class="sec-eyebrow">Something Awaits</div><div class="sec-title">Guildmaster's Chest</div>`;
+    body.innerHTML=`<div class="chest-wrap"><div class="sealed-chest"><span class="sc-ico">🔒</span><div class="sc-sealed-title">The Chest is Sealed</div><div class="sc-sealed-sub">Your guild has prepared a tribute for you.<br>It will be revealed at the closing ceremony.</div><div class="sc-scroll-count">${notes.length} sealed scroll${notes.length!==1?'s':''} inside</div><div class="sc-hint">The Warden does not peek. The Warden waits.</div></div></div>`;
+    return;
+  }
+  if(myRole==='warden' && chestRevealed){
+    head.innerHTML=`<div class="sec-eyebrow">The Tribute Revealed</div><div class="sec-title">Guildmaster's Chest</div>`;
+    body.innerHTML=`<div class="chest-revealed-header"><div class="cr-ico">🗝️</div><div class="cr-title">A Tribute to the GuildWarden</div><div class="cr-sub">These words were written for you, ${WARDEN_NAME}.<br>Happy Guildmaster's Day.</div></div><div id="chestNotesList"></div>`;
+    renderNotes(document.getElementById('chestNotesList'), notes);
+    return;
+  }
+  // member / host view
+  head.innerHTML=`<div class="sec-eyebrow">For ${WARDEN_NAME} to Keep</div><div class="sec-title">Guildmaster's Chest</div>`;
+  let revealBtn='';
+  if(myRole==='host'){ revealBtn=`<div class="reveal-btn-wrap"><button class="btn gold full" id="revealBtn">🗝️ Reveal the Chest at the Ceremony</button></div>`; }
+  body.innerHTML=`<p style="text-align:center;font-style:italic;color:var(--parch-dim);margin-bottom:18px;">Leave a note, a memory, or a thank-you. They gather here to be read at the ceremony.</p>${revealBtn}<div class="chest-form"><textarea id="noteText" placeholder="Write something true for the Guildmaster…"></textarea><div class="chest-from-row"><input id="noteFrom" placeholder="Signed…"><button class="btn gold" id="addNoteBtn">Place in Chest</button></div></div><div class="chest-count" id="chestCnt"></div><div id="chestNotesList"></div>`;
+  document.getElementById('addNoteBtn').onclick=addNote;
+  if(myRole==='host') document.getElementById('revealBtn').onclick=revealChest;
+  const cnt=document.getElementById('chestCnt');
+  cnt.textContent=notes.length?`${notes.length} note${notes.length!==1?'s':''} gathered`:'';
+  renderNotes(document.getElementById('chestNotesList'), notes);
+}
+function renderNotes(container, notes){
+  if(!container) return;
+  if(!notes.length){ container.innerHTML=`<div class="chest-empty">The chest is empty for now.<br>Be the first to leave the Guildmaster something true.</div>`; return; }
+  container.innerHTML=[...notes].reverse().map(n=>`<div class="note-scroll"><div class="note-text">${esc(n.text)}</div><div class="note-from">— ${esc(n.from||'a guild member')}</div></div>`).join('');
+}
+function addNote(){
+  const t=(document.getElementById('noteText')?.value||'').trim();
+  const f=(document.getElementById('noteFrom')?.value||'').trim()||(profile.name||'a guild member');
+  if(!t) return;
+  db.ref(`${EVT}/chest`).push({text:t,from:f,ts:Date.now()});
+  if(document.getElementById('noteText')) document.getElementById('noteText').value='';
+  burst(false); chime();
+}
+function revealChest(){ if(!confirm('Reveal the Chest now? This opens it for Zach on his phone.')) return; db.ref(`${EVT}/chest_revealed`).set(true); }
+
+/* ---- HONOR (warden) ---- */
+function renderHonor(){
+  const hs=document.getElementById('honorStats'), hm=document.getElementById('honorMembers'), hn=document.getElementById('honorNote');
+  if(!hs||!hm||!hn) return;
+  const members=Object.values(allMembers).filter(m=>m.role!=='warden');
+  let totalPts=0, totalQuests=0;
+  members.forEach(m=>{ totalPts+=(m.points||0); totalQuests+=Object.keys(m.quests||{}).length; });
+  hs.innerHTML=`<div class="h-stat"><div class="h-stat-num">${totalPts}</div><div class="h-stat-label">Points in Your Honor</div></div><div class="h-stat"><div class="h-stat-num">${totalQuests}</div><div class="h-stat-label">Quests Completed</div></div><div class="h-stat"><div class="h-stat-num">${members.length}</div><div class="h-stat-label">Guild Members Active</div></div><div class="h-stat"><div class="h-stat-num">${Object.keys(chestNotes).length}</div><div class="h-stat-label">Notes in Your Chest</div></div>`;
+  const sorted=[...members].sort((a,b)=>(b.points||0)-(a.points||0));
+  const maxPts=sorted[0]?.points||1;
+  hm.innerHTML=sorted.length?sorted.map(m=>`<div class="hm-row"><div class="hm-name">${esc(m.name||'?')}${m.cls?` <span style="color:var(--parch-faint);font-style:italic;font-size:0.8rem;">the ${esc(m.cls)}</span>`:''}</div><div class="hm-bar-wrap"><div class="hm-bar" style="width:${Math.round(((m.points||0)/maxPts)*100)}%"></div></div><div class="hm-pts">${m.points||0}</div></div>`).join(''):'<div style="color:var(--parch-faint);font-style:italic;padding:16px 0;">Waiting for the guild to arrive…</div>';
+  const msgs=["The Realm watches, Warden. They compete in your name.","The guild rises. Every quest is for you.","Look at them go. This is your weekend.","They're out there earning glory, Warden. As they should be."];
+  hn.textContent=msgs[Math.floor(Date.now()/60000)%msgs.length];
+}
+
+/* ---- MENU ---- */
+function renderMenu(){
+  const w=document.getElementById('menuBody'); if(!w) return; w.innerHTML='';
+  MENU.forEach(c=>{ const sec=document.createElement('div'); sec.className='menu-cat';
+    sec.innerHTML=`<div class="menu-cat-head">${c.cat}</div><div class="menu-rule"></div>`;
+    c.items.forEach(it=>{ const r=document.createElement('div'); r.className='menu-item';
+      r.innerHTML=`<span class="menu-name">${it.name}</span><span class="menu-dots"></span><span class="menu-desc">${it.desc||''}</span>`;
+      sec.appendChild(r); }); w.appendChild(sec); }); }
+
+/* ---- AWARDS ---- */
+function renderAwards(){
+  const w=document.getElementById('awardsBody'); if(!w) return; w.innerHTML='';
+  AWARDS.forEach((a,i)=>{ const row=document.createElement('div'); row.className='award-row';
+    row.innerHTML=`<div class="award-name">${a}</div><input class="award-input" data-i="${i}" placeholder="Awarded to…" value="${esc(awardWinners[i]||'')}">`;
+    w.appendChild(row); }); }
+function saveAwards(){
+  document.querySelectorAll('.award-input').forEach(inp=>{ awardWinners[inp.dataset.i]=inp.value.trim(); });
+  db.ref(`${EVT}/awards`).set(awardWinners);
+  const m=document.getElementById('awardsSaved'); m.textContent='The awards are sealed.'; setTimeout(()=>m.textContent='',2000);
+}
+
+/* ---- NAV / SCREEN ---- */
+function showScreen(name){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const scr=document.getElementById('screen-'+name); if(!scr) return; scr.classList.add('active');
+  const onHome=(name==='home'||name==='join');
+  document.getElementById('topbar').style.visibility=onHome?'hidden':'visible';
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.screen===name));
+  if(name==='schedule') renderSchedule();
+  if(name==='profile') renderProfile();
+  if(name==='leaderboard') renderLeaderboard();
+  if(name==='quests'){ renderDecreeArea(); renderQFilter(); renderQuests(); }
+  if(name==='secret') renderSecret();
+  if(name==='chest') renderChest();
+  if(name==='menu') renderMenu();
+  if(name==='awards') renderAwards();
+  if(name==='honor') renderHonor();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---- INIT ---- */
+(function init(){
+  initEmbers(); animE();
+
+  // sound
+  document.getElementById('soundBtn').onclick=()=>{ soundOn=!soundOn; lset('gm:sound',soundOn?'1':'0'); renderTopbar(); if(soundOn) chime(); };
+
+  // back button
+  document.getElementById('backBtn').onclick=()=>showScreen('home');
+
+  // join screen
+  renderJoinRoles();
+  document.getElementById('joinBtn').onclick=attemptJoin;
+  document.getElementById('joinCode').addEventListener('keydown',e=>{ if(e.key==='Enter') attemptJoin(); });
+
+  // profile actions
+  document.getElementById('drawTitleBtn').onclick=()=>{ profile.title=TITLES[Math.floor(Math.random()*TITLES.length)]; document.getElementById('drawnTitle').textContent=profile.title; };
+  document.getElementById('saveProfile').onclick=saveProfile;
+
+  // quest board actions
+  document.getElementById('sideQuestBtn').onclick=drawSideQuest;
+
+  // secret
+  document.getElementById('secretDoneBtn').onclick=completeSecret;
+  document.getElementById('toChestBtn').onclick=()=>showScreen('chest');
+
+  // awards
+  document.getElementById('saveAwardsBtn').onclick=saveAwards;
+
+  // already joined?
+  if(hasJoined && myRole){
+    applyRole(); startListeners(); buildNav(); renderHub(); renderTopbar();
+    showScreen('home');
+  } else {
+    showScreen('join');
+  }
+})();
+</script>
+</body>
+</html>
