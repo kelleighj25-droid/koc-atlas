@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a120b">
+<title>A Trial for Two Wardens</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{min-height:100%;background:#1a120b;color:#ecdcb0;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.7;}
+body{display:flex;align-items:center;justify-content:center;padding:36px 22px;
+  background-image:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(155,95,212,.18) 0%,transparent 60%),
+  radial-gradient(ellipse 70% 50% at 50% 110%,rgba(122,42,32,.2) 0%,transparent 65%);}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.4;
+  background-image:repeating-linear-gradient(92deg,rgba(0,0,0,.10) 0px,rgba(0,0,0,0) 3px,rgba(255,200,120,.01) 6px,rgba(0,0,0,.08) 11px);}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.wrap{position:relative;z-index:1;max-width:480px;width:100%;text-align:center;}
+.seal{width:86px;height:86px;margin:0 auto 20px;filter:drop-shadow(0 0 20px rgba(155,95,212,.55));}
+.eyebrow{font-family:'IM Fell English SC',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#9b5fd4;margin-bottom:10px;}
+.title{font-family:'IM Fell English SC',serif;font-size:2rem;line-height:1.1;color:#e8c267;text-shadow:0 0 30px rgba(155,95,212,.45);margin-bottom:26px;}
+.rule{height:1px;max-width:280px;margin:0 auto 30px;background:linear-gradient(90deg,transparent,#9b5fd4,#c9a24c,#9b5fd4,transparent);}
+.scroll{background:linear-gradient(160deg,rgba(155,95,212,.1),rgba(122,42,32,.08));border:1px solid rgba(155,95,212,.4);border-radius:4px;padding:30px 28px;text-align:left;}
+.scroll p{margin-bottom:18px;font-size:1.05rem;line-height:1.75;color:#ecdcb0;}
+.scroll p:last-child{margin-bottom:0;}
+.clue-label{font-family:'IM Fell English SC',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#9b5fd4;margin-top:24px;margin-bottom:8px;}
+.clue-line{font-family:'IM Fell English SC',serif;font-size:1.3rem;color:#e8c267;text-align:center;padding:16px 10px;border-top:1px solid rgba(201,162,76,.3);border-bottom:1px solid rgba(201,162,76,.3);}
+.footer{margin-top:30px;font-style:italic;color:#9b8763;font-size:.88rem;line-height:1.7;}
+.koc{font-family:'IM Fell English SC',serif;color:#9b5fd4;font-style:normal;}
+</style>
+</head>
+<body>
+<canvas id="embers"></canvas>
+<div class="wrap">
+  <svg class="seal" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="52" fill="#4a1f6e" stroke="#7b3fa0" stroke-width="2"/>
+    <circle cx="60" cy="60" r="44" fill="none" stroke="#9b5fd4" stroke-width="1" stroke-dasharray="2 4"/>
+    <polygon fill="#e8c267" points="60,22 65,48 87,33 72,55 98,60 72,65 87,87 65,72 60,98 55,72 33,87 48,65 22,60 48,55 33,33 55,48"/>
+    <circle cx="60" cy="60" r="6" fill="#f4d696"/>
+  </svg>
+  <div class="eyebrow">Kittens of Chaos &nbsp;·&nbsp; A Private Summons</div>
+  <h1 class="title">A Trial for Two Wardens</h1>
+  <div class="rule"></div>
+  <div class="scroll">
+    <p>Before there were titles, there were responsibilities; and before there were Guilds, there were those who carried the weight of others.</p>
+    <p>This trial is not a test of strength alone. It is a test of observation, of trust, and of perseverance.</p>
+    <p>Two Wardens have been called to walk the same path. Some burdens are easier carried together and some destinations cannot be reached alone. Your first clue waits nearby.</p>
+    <p>The Hall offers only this:</p>
+    <div class="clue-label">First Clue</div>
+    <div class="clue-line">The birds know.</div>
+  </div>
+  <p class="footer">This summons was sent by <span class="koc">Mömther</span>, of the Octarine Axis.<br>No phones after the first clue is found.</p>
+</div>
+<script>
+const ec=document.getElementById('embers'),ctx=ec.getContext('2d');let pts=[];
+function init(){ec.width=innerWidth;ec.height=innerHeight;pts=[];for(let i=0;i<22;i++)pts.push(np(true));}
+function np(s){return{x:Math.random()*ec.width,y:s?Math.random()*ec.height:ec.height+10,r:.5+Math.random()*1.8,vy:-.15-Math.random()*.45,dx:(Math.random()-.5)*.28,a:.15+Math.random()*.45,tw:Math.random()*6};}
+function draw(){ctx.clearRect(0,0,ec.width,ec.height);pts.forEach((p,i)=>{p.y+=p.vy;p.x+=p.dx;p.tw+=.04;const al=p.a*(.5+.5*Math.sin(p.tw));ctx.beginPath();ctx.fillStyle=`rgba(155,95,212,${al.toFixed(3)})`;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();if(p.y<-10)pts[i]=np(false);});requestAnimationFrame(draw);}
+window.addEventListener('resize',init);init();draw();
+</script>
+</body>
+</html>
