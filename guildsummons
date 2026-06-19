@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a120b">
+<title>A Summons from the Hall</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{min-height:100%;background:#1a120b;color:#ecdcb0;font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.7;}
+body{display:flex;align-items:center;justify-content:center;padding:36px 22px;
+  background-image:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(255,170,70,.12) 0%,transparent 60%),
+  radial-gradient(ellipse 70% 50% at 50% 110%,rgba(122,42,32,.22) 0%,transparent 65%);}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.4;
+  background-image:repeating-linear-gradient(92deg,rgba(0,0,0,.10) 0px,rgba(0,0,0,0) 3px,rgba(255,200,120,.01) 6px,rgba(0,0,0,.08) 11px);}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.wrap{position:relative;z-index:1;max-width:480px;width:100%;text-align:center;}
+.seal{width:90px;height:90px;margin:0 auto 20px;filter:drop-shadow(0 0 18px rgba(232,194,103,.4));}
+.eyebrow{font-family:'IM Fell English SC',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:#c9a24c;margin-bottom:10px;}
+.title{font-family:'IM Fell English SC',serif;font-size:2rem;line-height:1.1;color:#e8c267;text-shadow:0 0 28px rgba(232,194,103,.3);margin-bottom:26px;}
+.rule{height:1px;max-width:280px;margin:0 auto 30px;background:linear-gradient(90deg,transparent,#8a6f31,#b8503e,#8a6f31,transparent);}
+.scroll{background:linear-gradient(160deg,rgba(236,220,176,.06),rgba(122,42,32,.06));border:1px solid #382818;border-radius:4px;padding:30px 28px;text-align:left;}
+.scroll p{margin-bottom:16px;font-size:1.05rem;line-height:1.75;color:#ecdcb0;}
+.scroll p:last-child{margin-bottom:0;}
+.detail-block{margin:22px 0;padding:18px 20px;background:rgba(201,162,76,.08);border:1px solid rgba(201,162,76,.3);border-radius:3px;text-align:center;}
+.detail-label{font-family:'IM Fell English SC',serif;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#c9a24c;margin-bottom:8px;}
+.detail-val{font-family:'IM Fell English SC',serif;font-size:1.25rem;color:#e8c267;line-height:1.35;}
+.detail-val.time{font-size:1.6rem;margin-top:6px;}
+.warning{font-style:italic;color:#9b8763;font-size:.9rem;margin-top:18px;line-height:1.65;}
+.rsvp-section{margin-top:26px;}
+.rsvp-label{font-family:'IM Fell English SC',serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#9b8763;margin-bottom:12px;}
+.rsvp-btn{display:inline-block;font-family:'IM Fell English SC',serif;font-size:.95rem;letter-spacing:.05em;padding:14px 28px;background:#9c3b2e;border:1px solid #b8503e;color:#ecdcb0;text-decoration:none;border-radius:3px;cursor:pointer;transition:all .2s;}
+.rsvp-btn:hover{background:#b8503e;}
+.footer{margin-top:28px;font-style:italic;color:#9b8763;font-size:.86rem;line-height:1.7;}
+.koc{font-family:'IM Fell English SC',serif;color:#c9a24c;font-style:normal;}
+</style>
+</head>
+<body>
+<canvas id="embers"></canvas>
+<div class="wrap">
+  <svg class="seal" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="52" fill="#9c3b2e" stroke="#5e241a" stroke-width="3"/>
+    <circle cx="60" cy="60" r="44" fill="none" stroke="#b8503e" stroke-width="1" stroke-dasharray="2 4"/>
+    <polygon fill="#e8c267" points="60,22 65,48 87,33 72,55 98,60 72,65 87,87 65,72 60,98 55,72 33,87 48,65 22,60 48,55 33,33 55,48"/>
+    <circle cx="60" cy="60" r="6" fill="#f4d696"/>
+  </svg>
+
+  <div class="eyebrow">By Order of the Guild Hall</div>
+  <h1 class="title">A Summons</h1>
+  <div class="rule"></div>
+
+  <div class="scroll">
+    <p>The Hall has arranged a private trial. The nature of this arrangement is not for general knowledge, and is extended only to those whose names have been given to Mömther directly.</p>
+    <p>You are one of those names.</p>
+    <p>The details of what awaits you will be revealed in person. What can be said now is this: it will require your presence, your attention, and your willingness to see something through.</p>
+    <p>Come as you are. Bring nothing but yourself.</p>
+
+    <div class="detail-block">
+      <div class="detail-label">Where</div>
+      <div class="detail-val">The Tavern</div>
+      <div class="detail-label" style="margin-top:14px;">When</div>
+      <div class="detail-val time">Friday &nbsp;·&nbsp; 8pm</div>
+    </div>
+
+    <p>If you wish to attend, the Guild Hall welcomes you. If you are unable to attend, for whatever reason, we understand. Please send your response below.</p>
+  </div>
+
+  <div class="rsvp-section">
+    <div class="rsvp-label">Respond to the Summons</div>
+    <a class="rsvp-btn" href="sms:?body=Accepted.">&#9993;&nbsp; Tap to Send Your Reply</a>
+  </div>
+
+  <p class="footer">This summons was issued by <span class="koc">Mömther</span>, of the Octarine Axis.</p>
+</div>
+<script>
+const ec=document.getElementById('embers'),ctx=ec.getContext('2d');let pts=[];
+function init(){ec.width=innerWidth;ec.height=innerHeight;pts=[];for(let i=0;i<20;i++)pts.push(np(true));}
+function np(s){return{x:Math.random()*ec.width,y:s?Math.random()*ec.height:ec.height+10,r:.5+Math.random()*1.8,vy:-.18-Math.random()*.5,dx:(Math.random()-.5)*.3,a:.15+Math.random()*.45,tw:Math.random()*6};}
+function draw(){ctx.clearRect(0,0,ec.width,ec.height);pts.forEach((p,i)=>{p.y+=p.vy;p.x+=p.dx;p.tw+=.04;const al=p.a*(.5+.5*Math.sin(p.tw));ctx.beginPath();ctx.fillStyle=`rgba(255,130,50,${al.toFixed(3)})`;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();if(p.y<-10)pts[i]=np(false);});requestAnimationFrame(draw);}
+window.addEventListener('resize',init);init();draw();
+</script>
+</body>
+</html>
